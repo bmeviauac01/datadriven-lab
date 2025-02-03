@@ -1,6 +1,18 @@
 # Power BI
 
-A labor során egy új eszközzel, a _Microsoft Power BI_ szolgáltatással ismerkedünk meg, így a labor részben vezetett. Az első feladat laborvezetővel együtt megoldott, a továbbiak önálló feladatok. A közös feladatmegoldás és az önálló feladatmegoldás eredményét is be kell adni.
+A labor során egy új eszközzel, a _Microsoft Power BI_ szolgáltatással ismerkedünk meg.
+
+A Power BI egy Microsoft által fejlesztett üzleti analitikai eszköz, mely lehetővé teszi a felhasználók számára, hogy adatokat vizualizáljanak és jelentéseket készítsenek. Az eszközzel az adatokat összegyűjthetjük, elemezhetjük és könnyen érthető diagramokban és grafikonokban ábrázolhatjuk.
+
+- A Power BI legfőbb tulajdonságai közé tartozik:
+- Interaktív vizualizációk: Lehetőséget biztosít dinamikus grafikonok, diagramok és jelentések létrehozására, amelyek könnyen frissíthetők és módosíthatók.
+- Könnyű integráció: Számos adatforráshoz, például Excel, SQL Server, SharePoint vagy akár webes API-khoz is kapcsolódhat.
+- Adatfeldolgozás és elemzés: Az adatok tisztítására, transzformálására és modellezésére szolgáló eszközöket kínál.
+- Webes és mobil megjelenés: Lehetővé teszi a jelentések megtekintését és megosztását bárhonnan, bármilyen eszközről.
+- Felhasználóbarát felület: Könnyen használható, drag-and-drop felülettel rendelkezik, amely minimális technikai háttérrel is hozzáférhető.
+
+Feladatunk egy interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgozikbaj és táblázatos megjelenítést szolgáltatbak a felhasználó számára szűrhető módon.
+Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb vizualizációjához.
 
 ## Előfeltételek, felkészülés
 
@@ -25,9 +37,6 @@ A feladatok megoldása során ne felejtsd el követni a [feladat beadás folyama
 
 1. Várd meg, míg elkészül a repository, majd checkout-old ki.
 
-    !!! warning "Jelszó az egyetemi laborokban"
-        Egyetemi laborokban, ha a checkout során nem kér a rendszer felhasználónevet és jelszót, és nem sikerül a checkout, akkor valószínűleg a gépen korábban megjegyzett felhasználónévvel próbálkozott a rendszer. Először töröld ki a mentett belépési adatokat (lásd [itt](../GitHub-credentials.md)), és próbáld újra.
-
 1. Hozz létre egy új ágat `megoldas` néven, és ezen az ágon dolgozz.
 
 1. A `neptun.txt` fájlba írd bele a Neptun kódodat. A fájlban semmi más ne szerepeljen, csak egyetlen sorban a Neptun kód 6 karaktere.
@@ -42,7 +51,7 @@ A feladatok megoldása során ne felejtsd el követni a [feladat beadás folyama
 
 ### PowerBI Desktop telepítése
 
-Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk használni. Ez a laborgépeken előre telepítve van, saját eszközön valószínűleg telepíteni kell.
+Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk használni. Amit saját eszközön valószínűleg telepíteni kell.
 
 1. Ellenőrizd, hogy telepítve van-e a gépedre a Power BI Desktop alkalmazás, ha igen, nincs szükség a lenti lépésekre.
 
@@ -54,7 +63,7 @@ Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk has
 
 ## 1. Feladat: Táblázatos jelentés (5p)
 
-A feladat a laborvezetővel **közösen megoldott**.
+**A feladat 5 pontot ér.**
 
 A Power BI jelentések létrehozása általában egy jellemző munkafolyamatot követ, melynek lépései a következők:
 
@@ -179,7 +188,7 @@ Az alábbiakban egyedi szűrőket definiálunk a jelentéshez, majd publikáljuk
 
 ## 2. Feladat: Diagram (5p)
 
-**A feladat önálló munka, és 5 pontot ér.**
+**A feladat 5 pontot ér.**
 
 ### Diagram létrehozása
 
@@ -236,7 +245,7 @@ Következő lépésként szeretnénk az előbbi adatokat éves bontásban is meg
 
 ## 3. Feladat: Térkép (5p)
 
-**A feladat önálló munka, és 5 pontot ér.**
+**A feladat 5 pontot ér.**
 
 A Power BI számos látványos és intelligens diagrammodellel rendelkezik. A következőkben megjelenítjük egy világtérképen az egyes országok eladási darabszámait kategóriánkénti bontásban.
 
@@ -267,7 +276,7 @@ A Power BI számos látványos és intelligens diagrammodellel rendelkezik. A k�
 
 ## 4. Feladat: Értékesítői riport (5p)
 
-**A feladat önálló munka, és 5 pontot ér.**
+**A feladat 5 pontot ér.**
 
 Ebben a feladatban megismerkedünk az összetett szűrőkkel, a vonaldiagrammal és a komplex adatokkal
 
