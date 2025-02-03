@@ -1,6 +1,6 @@
 ﻿# Query optimization
 
-We will examine the query optimization behavior of Microsoft SQL Server. To properly understand the optimizer's behavior, in the **first 5 exercises**, we will explain the queries and the behavior too. The **rest of the exercises is individual work** where it is your task to infer the reason for a specific plan. Your task is to document the behavior and submit the documentation of all exercises.
+We will examine the query optimization behavior of Microsoft SQL Server. To properly understand the optimizer's behavior, in the **first 5 exercises**, we will explain the queries and the behavior too. The **rest of the exercises is individual work** where it is your task to infer the reason for a specific plan. Your task is to document the behavior and submit the documentation of **all** exercises in markdown format.
 
 ## Pre-requisites and preparation
 
@@ -21,8 +21,7 @@ Materials for preparing for this laboratory:
 - Markdown [introduction](https://guides.github.com/features/mastering-markdown/) and [detailed documentation](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 - Using Microsoft SQL Server: [description](https://bmeviauac01.github.io/datadriven/en/db/mssql/)
 - The [schema](https://bmeviauac01.github.io/datadriven/en/db/) of the database
-- Microsoft SQL Server query optimization
-    - Check the materials of _Data-driven systems_
+- [Microsoft SQL Server query optimization](../images/queryopt/07-Query-optimization.pdf) data driven course materials
 
 ## Initial steps
 
@@ -94,7 +93,7 @@ The plan will be displayed after the query is completed at the bottom of the win
 
 The plan is a data flow diagram where the query execution is the flow of the data. The items are the individual steps, and the percentages are the relative cost of each step with regards to the whole query.
 
-## Exercises solved together
+## Exercises with solution drafts
 
 !!! example "SUBMISSION"
     The submission shall be a documentation written in the `README.md` file:
@@ -105,7 +104,7 @@ The plan is a data flow diagram where the query execution is the flow of the dat
 
     The documentation should correctly display with the images in the web interface of GitHub! You need to verify this during the submission: open the repository in the browser and switch to your branch; GitHub will automatically render the `README.md` file with the images.
 
-!!! warning "Submit your own work"
+!!! danger "Submit your own work"
     Even though the solutions are provided below, you are required to execute the queries, get the execution plan, think about it, and document it with your own words. Copying the explanations from below is not acceptable!
 
 If the query plan or the explanation of subsequent exercises is the same, or at least very similar, it is enough to document everything once (one screenshot and one reasoning); and list which (sub)exercises it is the solution for.
@@ -126,7 +125,7 @@ Execute the following queries on the `Customer` table and examine the execution 
 
 Document the SQL commands you used and explain the actual query execution plan!
 
-??? success "Solution"
+??? success "Solution draft"
     The SQL **queries**:
 
     - a) `select * from customer`
@@ -160,7 +159,7 @@ Re-create the primary key of the `Customer` table:
 
 Re-run the same queries as in the previous exercise. What do you experience?
 
-??? success "Solution"
+??? success "Solution draft"
     The commands are the same as before.
 
     **a)**
@@ -201,7 +200,7 @@ Execute the following queries on the `Product` table.
 
 Document the SQL commands you used and explain the actual query execution plan!
 
-??? success "Solution"
+??? success "Solution draft"
     The SQL **commands**:
 
     - f) `select * from product`
@@ -236,7 +235,7 @@ Indices should have meaningful names, e.g., `IX_Tablename_Fieldname`. Add _Price
 
 Repeat the queries from the previous exercise and explain the plans!
 
-??? success "Solution"
+??? success "Solution draft"
     The SQL commands are the same as in the previous exercise.
 
     **f)**
@@ -278,7 +277,7 @@ SELECT 'Apple', n%50000, n%100, 3, 13
 FROM Numbers
 ```
 
-??? success "Solution"
+??? success "Solution draft"
     The SQL commands are the same.
 
     **f)**

@@ -1,6 +1,19 @@
 # Power BI
 
-During the lab, we get acquainted with a new tool called _Microsoft Power BI_. We will start working together, then some of the exercises will be individual work. You shall submit the solution to all exercises.
+During the lab, we get acquainted with a new tool called _Microsoft Power BI_.
+
+Power BI is a powerful business analytics tool developed by Microsoft. It allows users to visualize their data, share insights across their organization, and embed them in an app or website. With Power BI, you can connect to multiple data sources, transform and model your data, and create interactive reports and dashboards that are easy to understand and share. It's particularly useful for turning raw data into actionable insights.
+
+Here's a quick overview of its main features:
+
+- Data Connectivity: Connect to a wide range of data sources, including Excel, databases, cloud services, and more.
+- Data Transformation: Clean and transform your data using Power Query Editor.
+- Data Modeling: Create relationships between different data sets and build complex data models.
+- Visualizations: Use a variety of visual elements like charts, graphs, and maps to represent your data visually.
+- Dashboards: Combine multiple reports into interactive dashboards that provide a comprehensive view of your data.
+- Sharing & Collaboration: Share your reports and dashboards with others, collaborate in real-time, and embed them in your apps or websites.
+
+Our task to create interactive reports which are working from Excel data sources to visualize data in grids and charts with filtering support.
 
 ## Prerequisites, preparation
 
@@ -25,9 +38,6 @@ Keep in mind that you are expected to follow the [submission process](../GitHub.
 
 1. Wait for the repository creation to complete, then check out the repository.
 
-    !!! warning "Password in the labs"
-        If you are not asked for credentials to log in to GitHub in university computer laboratories when checking out the repository, the operation may fail. This is likely due to the machine using someone else's GitHub credentials. Delete these credentials first (see [here](../GitHub-credentials.md)), then retry the checkout.
-
 1. Create a new branch with the name `solution` and work on this branch.
 
 1. Open the checked-out folder and type your Neptun code into the `neptun.txt` file. There should be a single line with the 6 characters of your Neptun code and nothing else in this file.
@@ -42,7 +52,7 @@ Keep in mind that you are expected to follow the [submission process](../GitHub.
 
 ### Install PowerBI Desktop
 
-We will use the Power BI Desktop application to create Power BI reports. It is pre-installed on lab machines, it probably needs to be installed on your own device.
+We will use the Power BI Desktop application to create Power BI reports. It probably needs to be installed on your own device.
 
 1. Make sure that you have the Power BI Desktop app installed on your computer, and if you do, you don't need to follow the steps below.
 
@@ -52,9 +62,7 @@ We will use the Power BI Desktop application to create Power BI reports. It is p
 
     ![Setup](../images/powerbi/pb-install-store.png)
 
-## 1. Task: Spreadsheet Report (5p)
-
-This exercise is solved **together** with the lab instructor.
+## 1. Task: Spreadsheet Report (5 points)
 
 Generating Power BI reports usually follows a typical workflow with the following steps:
 
@@ -180,9 +188,7 @@ Below we define custom filters for the report and then publish our work.
 
     Also upload the updated `NEPTUN.pbix` file.
 
-## 2. Task: Chart (5p)
-
-**This exercise is to be completed individually for 5 points.**
+## 2. Task: Chart (5 points)
 
 ### Create chart
 
@@ -232,9 +238,7 @@ As a next step, we would like to look at the previous data in an annual breakdow
 !!! example "SUBMISSION"
     Take a screenshot of the published report. Save the image as `f2.png` and submit it with the other files of the solution. The image should show the entire screen (browser window, system tray, etc.). Check again that your Neptun code is visible (in the upper gray line)!
 
-## 3. Task: Map (5p)
-
-**This exercise is to be completed individually for 5 points.**
+## 3. Task: Map (5 points)
 
 Power BI has a number of spectacular and intelligent diagram models. The following is a world map showing each country's sales by category.
 
@@ -259,9 +263,7 @@ Power BI has a number of spectacular and intelligent diagram models. The followi
 !!! example "SUBMISSION"
     Take a screenshot of the published report. Save the image as `f3.png` and submit it with the other files of the solution. The image should show the entire screen (browser window, system tray, etc.). Check again that your Neptun code is visible (in the upper gray line)!
 
-## 4. Task: Sales Reports (5p)
-
-**This exercise is to be completed individually for 5 points.**
+## 4. Task: Sales Reports (5 points)
 
 In this exercise, you will learn about complex filters, line diagrams, and complex data
 
@@ -318,7 +320,7 @@ The solution steps are described below:
 
 ## 5. Task: Optional task
 
-**You can earn 3 IMSc points by completing this task.**
+**You can earn 3 IMSc points by completing this task (only on hungarian special courses).**
 
 Create a pie chart about the number of transactions in each product category. **Enter your Neptune code in the title of the diagram.**.
 

@@ -11,7 +11,7 @@ A Power BI egy Microsoft által fejlesztett üzleti analitikai eszköz, mely leh
 - Webes és mobil megjelenés: Lehetővé teszi a jelentések megtekintését és megosztását bárhonnan, bármilyen eszközről.
 - Felhasználóbarát felület: Könnyen használható, drag-and-drop felülettel rendelkezik, amely minimális technikai háttérrel is hozzáférhető.
 
-Feladatunk egy interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgozikbaj és táblázatos megjelenítést szolgáltatbak a felhasználó számára szűrhető módon.
+Feladatunk interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgozikbaj és táblázatos megjelenítést szolgáltatbak a felhasználó számára szűrhető módon.
 Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb vizualizációjához.
 
 ## Előfeltételek, felkészülés
