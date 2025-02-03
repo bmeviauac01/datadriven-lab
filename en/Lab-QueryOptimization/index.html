@@ -633,13 +633,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercises-solved-together" class="md-nav__link">
+  <a href="#exercises-with-solution-drafts" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises solved together
+      Exercises with solution drafts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Exercises solved together">
+    <nav class="md-nav" aria-label="Exercises with solution drafts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -993,13 +993,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercises-solved-together" class="md-nav__link">
+  <a href="#exercises-with-solution-drafts" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercises solved together
+      Exercises with solution drafts
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Exercises solved together">
+    <nav class="md-nav" aria-label="Exercises with solution drafts">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1214,7 +1214,7 @@
 
 
 <h1 id="query-optimization">Query optimization<a class="headerlink" href="#query-optimization" title="Permanent link">&para;</a></h1>
-<p>We will examine the query optimization behavior of Microsoft SQL Server. To properly understand the optimizer's behavior, in the <strong>first 5 exercises</strong>, we will explain the queries and the behavior too. The <strong>rest of the exercises is individual work</strong> where it is your task to infer the reason for a specific plan. Your task is to document the behavior and submit the documentation of all exercises.</p>
+<p>We will examine the query optimization behavior of Microsoft SQL Server. To properly understand the optimizer's behavior, in the <strong>first 5 exercises</strong>, we will explain the queries and the behavior too. The <strong>rest of the exercises is individual work</strong> where it is your task to infer the reason for a specific plan. Your task is to document the behavior and submit the documentation of <strong>all</strong> exercises in markdown format.</p>
 <h2 id="pre-requisites-and-preparation">Pre-requisites and preparation<a class="headerlink" href="#pre-requisites-and-preparation" title="Permanent link">&para;</a></h2>
 <p>Required tools to complete the tasks:</p>
 <ul>
@@ -1235,10 +1235,7 @@
 <li>Markdown <a href="https://guides.github.com/features/mastering-markdown/">introduction</a> and <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">detailed documentation</a></li>
 <li>Using Microsoft SQL Server: <a href="https://bmeviauac01.github.io/datadriven/en/db/mssql/">description</a></li>
 <li>The <a href="https://bmeviauac01.github.io/datadriven/en/db/">schema</a> of the database</li>
-<li>Microsoft SQL Server query optimization<ul>
-<li>Check the materials of <em>Data-driven systems</em></li>
-</ul>
-</li>
+<li><a href="../images/queryopt/07-Query-optimization.pdf">Microsoft SQL Server query optimization</a> data driven course materials</li>
 </ul>
 <h2 id="initial-steps">Initial steps<a class="headerlink" href="#initial-steps" title="Permanent link">&para;</a></h2>
 <p>Keep in mind that you are expected to follow the <a href="../GitHub/">submission process</a>.</p>
@@ -1322,7 +1319,7 @@
 <p>The plan will be displayed after the query is completed at the bottom of the window on the <em>Execution plan</em> pane.</p>
 <p><a class="glightbox" href="../images/queryopt/queryopt-plan-result.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="View query plan" src="../images/queryopt/queryopt-plan-result.png" /></a></p>
 <p>The plan is a data flow diagram where the query execution is the flow of the data. The items are the individual steps, and the percentages are the relative cost of each step with regards to the whole query.</p>
-<h2 id="exercises-solved-together">Exercises solved together<a class="headerlink" href="#exercises-solved-together" title="Permanent link">&para;</a></h2>
+<h2 id="exercises-with-solution-drafts">Exercises with solution drafts<a class="headerlink" href="#exercises-with-solution-drafts" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">SUBMISSION</p>
 <p>The submission shall be a documentation written in the <code>README.md</code> file:</p>
@@ -1333,7 +1330,7 @@
 </ul>
 <p>The documentation should correctly display with the images in the web interface of GitHub! You need to verify this during the submission: open the repository in the browser and switch to your branch; GitHub will automatically render the <code>README.md</code> file with the images.</p>
 </div>
-<div class="admonition warning">
+<div class="admonition danger">
 <p class="admonition-title">Submit your own work</p>
 <p>Even though the solutions are provided below, you are required to execute the queries, get the execution plan, think about it, and document it with your own words. Copying the explanations from below is not acceptable!</p>
 </div>
@@ -1351,7 +1348,7 @@
 </ul>
 <p>Document the SQL commands you used and explain the actual query execution plan!</p>
 <details class="success">
-<summary>Solution</summary>
+<summary>Solution draft</summary>
 <p>The SQL <strong>queries</strong>:</p>
 <ul>
 <li>a) <code>select * from customer</code></li>
@@ -1377,7 +1374,7 @@
 </ul>
 <p>Re-run the same queries as in the previous exercise. What do you experience?</p>
 <details class="success">
-<summary>Solution</summary>
+<summary>Solution draft</summary>
 <p>The commands are the same as before.</p>
 <p><strong>a)</strong></p>
 <p><a class="glightbox" href="../images/queryopt/f2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/queryopt/f2-1.png" /></a></p>
@@ -1404,7 +1401,7 @@
 </ul>
 <p>Document the SQL commands you used and explain the actual query execution plan!</p>
 <details class="success">
-<summary>Solution</summary>
+<summary>Solution draft</summary>
 <p>The SQL <strong>commands</strong>:</p>
 <ul>
 <li>f) <code>select * from product</code></li>
@@ -1428,7 +1425,7 @@
 <p><a class="glightbox" href="../images/queryopt/queryopt-index-properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Index properties" src="../images/queryopt/queryopt-index-properties.png" /></a></p>
 <p>Repeat the queries from the previous exercise and explain the plans!</p>
 <details class="success">
-<summary>Solution</summary>
+<summary>Solution draft</summary>
 <p>The SQL commands are the same as in the previous exercise.</p>
 <p><strong>f)</strong></p>
 <p>Despite the new index, it is still an Index Scan - since we asked for the contents of the entire table.</p>
@@ -1457,7 +1454,7 @@
 <span class="k">FROM</span><span class="w"> </span><span class="n">Numbers</span>
 </code></pre></div>
 <details class="success">
-<summary>Solution</summary>
+<summary>Solution draft</summary>
 <p>The SQL commands are the same.</p>
 <p><strong>f)</strong></p>
 <p>Same as before.</p>
@@ -1564,8 +1561,8 @@
           </path>
         </svg>
       </span>
-      <span title="March 13, 2023 09:04:47">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-13T09:04:47+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-13</span>
+      <span title="February 3, 2025 16:51:03">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T16:51:03+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
       </span>
     </span>
 
