@@ -1,6 +1,6 @@
 # Lekérdezés optimalizálás
 
-A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldást és a magyarázatot is. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. A közös feladatmegoldás és az önálló feladatmegoldás eredményét is dokumentálni kell és be kell adni.
+A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldás és amagyarázat vázát. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának **saját szavaiddal** mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.
 
 ## Előfeltételek, felkészülés
 
@@ -21,7 +21,7 @@ A labor elvégzéséhez használható segédanyagok és felkészülési anyagok:
 - Markdown formátum [rövid ismertetője](https://guides.github.com/features/mastering-markdown/) és [részletes dokumentációja](https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
 - Microsoft SQL Server használata: [leírás](https://bmeviauac01.github.io/datadriven/hu/db/mssql/)
 - Az adatbázis [sémájának leírása](https://bmeviauac01.github.io/datadriven/hu/db/)
-- [Microsoft SQL Server lekérdezés optimalizálása](../images/queryopt/07-Lekerdezes_optimalizalas.pdf)
+- [Microsoft SQL Server lekérdezés optimalizálása előadás](../images/queryopt/08-Lekerdezes-optimalizalas.pdf)
 
 ## Előkészület
 
@@ -42,7 +42,7 @@ A feladatok megoldása során ne felejtsd el követni a [feladat beadás folyama
 
 ### Markdown fájl megnyitása
 
-A feladatok megoldása során a dokumentációt markdown formátumban készítsd. Az előbb letöltött git repository-t nyisd meg egy markdown kompatibilis szerkesztővel. Javasolt a Visual Studio Code használata:
+A feladatok megoldása során egy jegyzőkönyvet szükséges készíteni markdown formátumban. Az előbb letöltött git repository-t nyisd meg egy markdown kompatibilis szerkesztővel. Javasolt a Visual Studio Code használata:
 
 1. Indítsd el a VS Code-ot.
 
@@ -93,18 +93,18 @@ A tervet a lekérdezés lefuttatása után az ablak alján, az eredmények néze
 
 A lekérdezési terv diagramot adatfolyamként kell olvasnunk, az adat folyásának iránya a lekérdezés végrehajtása. Az egyes elemek a lekérdezési terv műveletei, a százalékos érték pedig az egész lekérdezéshez viszonyított relatív költség.
 
-## Közös feladatok
+## Vezetett feladatok
 
 !!! example "BEADANDÓ"
     A feladatok megoldása során dokumentáld a `README.md` markdown fájlba:
 
     - a használt SQL utasítást (amennyiben ezt a feladat szövege kérte),
     - a lekérdezési tervről készített képet (csak a tervet, _ne_ az egész képernyőt),
-    - és a lekérdezési terv magyarázatát: _mit_ látunk és _miért_.
+    - és a lekérdezési terv magyarázatát mondatokba fogalmazva: **mit látunk és miért?**
 
     A dokumentációnak a képekkel együtt helyesen kell megjelenniük a GitHub webes felületén is! Ezt ellenőrizd a beadás során: nyisd meg a repository-d webes felületét, váltsd át a megfelelő ágra, és a GitHub automatikusan renderelni fogja a `README.md` fájlt a képekkel együtt.
 
-!!! warning "Önálló munka"
+!!! danger "Önálló munka"
     Annak ellenére, hogy a megoldások megtalálhatóak alább, az SQL utasítások kiadása, a lekérdezési terv képernyőkép elkészítése és a saját magyarázattal együtt való dokumentálás szükséges része a feladatnak. A lentebb található magyarázatok bemásolása nem elfogadható megoldás!
 
 Amennyiben egyes (rész)feladatok lekérdezési terve és/vagy a magyarázat azonos, vagy legalábbis nagyon hasonló, elég egyszer elkészíteni a lekérdezési tervről a képet, és a magyarázatot is elég egyszer megadni, csak jelezd, hogy ez mely feladatokra vonatkozik.
@@ -125,7 +125,7 @@ Vizsgáld meg a következő lekérdezések végrehajtási tervét a `Customer` t
 
 Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terveket, és adj magyarázatot rájuk!
 
-??? success "Megoldás"
+??? success "Megoldás vázlat"
     A kiadott **parancsok**:
 
     - a) `SELECT * FROM customer`
@@ -154,12 +154,12 @@ Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terve
 
 Hozd létre újra az elsődleges kulcsot a `Customer` táblán:
 
-- Job kattintás a táblán > Design > az ID oszlopon "Set Primary Key " és Mentés gomb,
+- Jobb kattintás a táblán > Design > az ID oszlopon "Set Primary Key " és Mentés gomb,
 - vagy az `ALTER TABLE [dbo].[Customer] ADD PRIMARY KEY CLUSTERED ([ID] ASC)` SQL utasítás lefuttatása.
 
 Futtasd újra az előbbi lekérdezéseket. Mit tapasztalsz?
 
-??? success "Megoldás"
+??? success "Megoldás vázlat"
     A kiadott parancsok megegyeznek az 1.-es feladattal.
 
     **a)**
@@ -200,7 +200,7 @@ Futtasd az alábbi lekérdezéseket a `Product` táblán megfogalmazva.
 
 Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terveket, és adj magyarázatot rájuk!
 
-??? success "Megoldás"
+??? success "Megoldás vázlat"
     A kiadott **parancsok**:
 
     - f) `SELECT * FROM product`
@@ -235,7 +235,7 @@ Adj az indexeknek értelmes, egységes konvenció szerinti nevet, pl. `IX_Tablan
 
 Ismételd meg az előbbi lekérdezéseket, és értelmezd a terveket!
 
-??? success "Megoldás"
+??? success "Megoldás vázlat"
     A parancsok megegyeznek az előző feladatéval.
 
     **f)**
@@ -275,7 +275,7 @@ SELECT 'Apple', n%50000, n%100, 3, 13
 FROM Numbers
 ```
 
-??? success "Megoldás"
+??? success "Megoldás vázlat"
     A parancsok megegyeznek a korábbiakkal.
 
     **f)**
@@ -311,7 +311,7 @@ FROM Numbers
 ## Önálló feladatok
 
 !!! example "BEADANDÓ"
-    A feladatok megoldása során a közös feladatoknak megfelelő dokumentálást kérjük.
+    A feladatok megoldása során a vezetett feladatoknak megfelelő dokumentálást kérjük.
 
     Ne felejtsd, hogy a dokumentációnak a képekkel együtt helyesen kell megjelenniük a GitHub webes felületén is! Ezt ellenőrizd a beadás során: nyisd meg a repository-d webes felületét, váltsd át a megfelelő ágra, és a GitHub automatikusan renderelni fogja a `README.md` fájlt a képekkel együtt.
 
