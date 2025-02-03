@@ -1088,7 +1088,18 @@
 
 
 <h1 id="power-bi">Power BI<a class="headerlink" href="#power-bi" title="Permanent link">&para;</a></h1>
-<p>A labor során egy új eszközzel, a <em>Microsoft Power BI</em> szolgáltatással ismerkedünk meg, így a labor részben vezetett. Az első feladat laborvezetővel együtt megoldott, a továbbiak önálló feladatok. A közös feladatmegoldás és az önálló feladatmegoldás eredményét is be kell adni.</p>
+<p>A labor során egy új eszközzel, a <em>Microsoft Power BI</em> szolgáltatással ismerkedünk meg.</p>
+<p>A Power BI egy Microsoft által fejlesztett üzleti analitikai eszköz, mely lehetővé teszi a felhasználók számára, hogy adatokat vizualizáljanak és jelentéseket készítsenek. Az eszközzel az adatokat összegyűjthetjük, elemezhetjük és könnyen érthető diagramokban és grafikonokban ábrázolhatjuk.</p>
+<ul>
+<li>A Power BI legfőbb tulajdonságai közé tartozik:</li>
+<li>Interaktív vizualizációk: Lehetőséget biztosít dinamikus grafikonok, diagramok és jelentések létrehozására, amelyek könnyen frissíthetők és módosíthatók.</li>
+<li>Könnyű integráció: Számos adatforráshoz, például Excel, SQL Server, SharePoint vagy akár webes API-khoz is kapcsolódhat.</li>
+<li>Adatfeldolgozás és elemzés: Az adatok tisztítására, transzformálására és modellezésére szolgáló eszközöket kínál.</li>
+<li>Webes és mobil megjelenés: Lehetővé teszi a jelentések megtekintését és megosztását bárhonnan, bármilyen eszközről.</li>
+<li>Felhasználóbarát felület: Könnyen használható, drag-and-drop felülettel rendelkezik, amely minimális technikai háttérrel is hozzáférhető.</li>
+</ul>
+<p>Feladatunk egy interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgozikbaj és táblázatos megjelenítést szolgáltatbak a felhasználó számára szűrhető módon.
+Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb vizualizációjához.</p>
 <h2 id="elofeltetelek-felkeszules">Előfeltételek, felkészülés<a class="headerlink" href="#elofeltetelek-felkeszules" title="Permanent link">&para;</a></h2>
 <p>A labor elvégzéséhez szükséges eszközök:</p>
 <ul>
@@ -1110,10 +1121,6 @@
 </li>
 <li>
 <p>Várd meg, míg elkészül a repository, majd checkout-old ki.</p>
-<div class="admonition warning">
-<p class="admonition-title">Jelszó az egyetemi laborokban</p>
-<p>Egyetemi laborokban, ha a checkout során nem kér a rendszer felhasználónevet és jelszót, és nem sikerül a checkout, akkor valószínűleg a gépen korábban megjegyzett felhasználónévvel próbálkozott a rendszer. Először töröld ki a mentett belépési adatokat (lásd <a href="../GitHub-credentials.md">itt</a>), és próbáld újra.</p>
-</div>
 </li>
 <li>
 <p>Hozz létre egy új ágat <code>megoldas</code> néven, és ezen az ágon dolgozz.</p>
@@ -1133,7 +1140,7 @@
 </li>
 </ol>
 <h3 id="powerbi-desktop-telepitese">PowerBI Desktop telepítése<a class="headerlink" href="#powerbi-desktop-telepitese" title="Permanent link">&para;</a></h3>
-<p>Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk használni. Ez a laborgépeken előre telepítve van, saját eszközön valószínűleg telepíteni kell.</p>
+<p>Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk használni. Amit saját eszközön valószínűleg telepíteni kell.</p>
 <ol>
 <li>
 <p>Ellenőrizd, hogy telepítve van-e a gépedre a Power BI Desktop alkalmazás, ha igen, nincs szükség a lenti lépésekre.</p>
@@ -1145,7 +1152,7 @@
 </li>
 </ol>
 <h2 id="1-feladat-tablazatos-jelentes-5p">1. Feladat: Táblázatos jelentés (5p)<a class="headerlink" href="#1-feladat-tablazatos-jelentes-5p" title="Permanent link">&para;</a></h2>
-<p>A feladat a laborvezetővel <strong>közösen megoldott</strong>.</p>
+<p><strong>A feladat 5 pontot ér.</strong></p>
 <p>A Power BI jelentések létrehozása általában egy jellemző munkafolyamatot követ, melynek lépései a következők:</p>
 <p><a class="glightbox" href="../images/powerbi/pb-intro-workflow.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Power BI Workflow" src="../images/powerbi/pb-intro-workflow.png" /></a></p>
 <p>A folyamat során a jelentések tervezésére a <strong>Power BI Desktop</strong> alkalmazást fogjuk használni, míg a jelentések publikálását és megosztását a <strong>Power BI Service</strong> segítségével végezzük, mely egy online szolgáltatás.</p>
@@ -1285,7 +1292,7 @@
 <p>A megváltozott NEPTUN.pbix fájlt is töltsd fel.</p>
 </div>
 <h2 id="2-feladat-diagram-5p">2. Feladat: Diagram (5p)<a class="headerlink" href="#2-feladat-diagram-5p" title="Permanent link">&para;</a></h2>
-<p><strong>A feladat önálló munka, és 5 pontot ér.</strong></p>
+<p><strong>A feladat 5 pontot ér.</strong></p>
 <h3 id="diagram-letrehozasa">Diagram létrehozása<a class="headerlink" href="#diagram-letrehozasa" title="Permanent link">&para;</a></h3>
 <p>A táblázatos megjelenítés részletesen mutatja az eladási adatokat. Egy diagram azonban gyorsabban áttekinthető. Készítsünk egy diagramot, ami az egyes termékkategóriák eladási darabszámait mutatja.</p>
 <ol>
@@ -1347,7 +1354,7 @@
 <p>A megváltozott NEPTUN.pbix fájlt is töltsd fel.</p>
 </div>
 <h2 id="3-feladat-terkep-5p">3. Feladat: Térkép (5p)<a class="headerlink" href="#3-feladat-terkep-5p" title="Permanent link">&para;</a></h2>
-<p><strong>A feladat önálló munka, és 5 pontot ér.</strong></p>
+<p><strong>A feladat 5 pontot ér.</strong></p>
 <p>A Power BI számos látványos és intelligens diagrammodellel rendelkezik. A következőkben megjelenítjük egy világtérképen az egyes országok eladási darabszámait kategóriánkénti bontásban.</p>
 <ol>
 <li>
@@ -1381,7 +1388,7 @@
 <p>A megváltozott NEPTUN.pbix fájlt is töltsd fel.</p>
 </div>
 <h2 id="4-feladat-ertekesitoi-riport-5p">4. Feladat: Értékesítői riport (5p)<a class="headerlink" href="#4-feladat-ertekesitoi-riport-5p" title="Permanent link">&para;</a></h2>
-<p><strong>A feladat önálló munka, és 5 pontot ér.</strong></p>
+<p><strong>A feladat 5 pontot ér.</strong></p>
 <p>Ebben a feladatban megismerkedünk az összetett szűrőkkel, a vonaldiagrammal és a komplex adatokkal</p>
 <h3 id="riport-tartalma">Riport tartalma<a class="headerlink" href="#riport-tartalma" title="Permanent link">&para;</a></h3>
 <p>Készíts táblázatos jelentést arról, hogy az egyes kategóriákban és alkategóriákban hogyan alakult a termékek eladása éves, és azon belül havi bontásban. Az eredményeket diagrammon is szemléltesd!</p>
@@ -1485,8 +1492,8 @@
           </path>
         </svg>
       </span>
-      <span title="2024. február 19. 14:52:27">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2024-02-19T14:52:27+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-02-19</span>
+      <span title="2025. február 3. 15:53:04">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T15:53:04+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
       </span>
     </span>
 
