@@ -633,13 +633,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kozos-feladatok" class="md-nav__link">
+  <a href="#vezetett-feladatok" class="md-nav__link">
     <span class="md-ellipsis">
-      Közös feladatok
+      Vezetett feladatok
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Közös feladatok">
+    <nav class="md-nav" aria-label="Vezetett feladatok">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -993,13 +993,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kozos-feladatok" class="md-nav__link">
+  <a href="#vezetett-feladatok" class="md-nav__link">
     <span class="md-ellipsis">
-      Közös feladatok
+      Vezetett feladatok
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Közös feladatok">
+    <nav class="md-nav" aria-label="Vezetett feladatok">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1214,7 +1214,7 @@
 
 
 <h1 id="lekerdezes-optimalizalas">Lekérdezés optimalizálás<a class="headerlink" href="#lekerdezes-optimalizalas" title="Permanent link">&para;</a></h1>
-<p>A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az <strong>első 5 feladat</strong> során megadjuk a megoldást és a magyarázatot is. A <strong>továbbiak önálló feladatok</strong>, ahol a magyarázat kitalálása a feladat része. A közös feladatmegoldás és az önálló feladatmegoldás eredményét is dokumentálni kell és be kell adni.</p>
+<p>A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az <strong>első 5 feladat</strong> során megadjuk a megoldás és amagyarázat vázát. A <strong>továbbiak önálló feladatok</strong>, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának <strong>saját szavaiddal</strong> mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.</p>
 <h2 id="elofeltetelek-felkeszules">Előfeltételek, felkészülés<a class="headerlink" href="#elofeltetelek-felkeszules" title="Permanent link">&para;</a></h2>
 <p>A labor elvégzéséhez szükséges eszközök:</p>
 <ul>
@@ -1235,7 +1235,7 @@
 <li>Markdown formátum <a href="https://guides.github.com/features/mastering-markdown/">rövid ismertetője</a> és <a href="https://help.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax">részletes dokumentációja</a></li>
 <li>Microsoft SQL Server használata: <a href="https://bmeviauac01.github.io/datadriven/hu/db/mssql/">leírás</a></li>
 <li>Az adatbázis <a href="https://bmeviauac01.github.io/datadriven/hu/db/">sémájának leírása</a></li>
-<li><a href="../images/queryopt/07-Lekerdezes_optimalizalas.pdf">Microsoft SQL Server lekérdezés optimalizálása</a></li>
+<li><a href="../images/queryopt/08-Lekerdezes-optimalizalas.pdf">Microsoft SQL Server lekérdezés optimalizálása előadás</a></li>
 </ul>
 <h2 id="elokeszulet">Előkészület<a class="headerlink" href="#elokeszulet" title="Permanent link">&para;</a></h2>
 <p>A feladatok megoldása során ne felejtsd el követni a <a href="../GitHub/">feladat beadás folyamatát</a>.</p>
@@ -1259,7 +1259,7 @@
 </li>
 </ol>
 <h3 id="markdown-fajl-megnyitasa">Markdown fájl megnyitása<a class="headerlink" href="#markdown-fajl-megnyitasa" title="Permanent link">&para;</a></h3>
-<p>A feladatok megoldása során a dokumentációt markdown formátumban készítsd. Az előbb letöltött git repository-t nyisd meg egy markdown kompatibilis szerkesztővel. Javasolt a Visual Studio Code használata:</p>
+<p>A feladatok megoldása során egy jegyzőkönyvet szükséges készíteni markdown formátumban. Az előbb letöltött git repository-t nyisd meg egy markdown kompatibilis szerkesztővel. Javasolt a Visual Studio Code használata:</p>
 <ol>
 <li>
 <p>Indítsd el a VS Code-ot.</p>
@@ -1319,18 +1319,18 @@
 <p>A tervet a lekérdezés lefuttatása után az ablak alján, az eredmények nézet helyett választható <em>Execution plan</em> lapon találjuk.</p>
 <p><a class="glightbox" href="../images/queryopt/queryopt-plan-result.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Lekérdezési terv bekapcsolása" src="../images/queryopt/queryopt-plan-result.png" /></a></p>
 <p>A lekérdezési terv diagramot adatfolyamként kell olvasnunk, az adat folyásának iránya a lekérdezés végrehajtása. Az egyes elemek a lekérdezési terv műveletei, a százalékos érték pedig az egész lekérdezéshez viszonyított relatív költség.</p>
-<h2 id="kozos-feladatok">Közös feladatok<a class="headerlink" href="#kozos-feladatok" title="Permanent link">&para;</a></h2>
+<h2 id="vezetett-feladatok">Vezetett feladatok<a class="headerlink" href="#vezetett-feladatok" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
 <p>A feladatok megoldása során dokumentáld a <code>README.md</code> markdown fájlba:</p>
 <ul>
 <li>a használt SQL utasítást (amennyiben ezt a feladat szövege kérte),</li>
 <li>a lekérdezési tervről készített képet (csak a tervet, <em>ne</em> az egész képernyőt),</li>
-<li>és a lekérdezési terv magyarázatát: <em>mit</em> látunk és <em>miért</em>.</li>
+<li>és a lekérdezési terv magyarázatát mondatokba fogalmazva: <strong>mit látunk és miért?</strong></li>
 </ul>
 <p>A dokumentációnak a képekkel együtt helyesen kell megjelenniük a GitHub webes felületén is! Ezt ellenőrizd a beadás során: nyisd meg a repository-d webes felületét, váltsd át a megfelelő ágra, és a GitHub automatikusan renderelni fogja a <code>README.md</code> fájlt a képekkel együtt.</p>
 </div>
-<div class="admonition warning">
+<div class="admonition danger">
 <p class="admonition-title">Önálló munka</p>
 <p>Annak ellenére, hogy a megoldások megtalálhatóak alább, az SQL utasítások kiadása, a lekérdezési terv képernyőkép elkészítése és a saját magyarázattal együtt való dokumentálás szükséges része a feladatnak. A lentebb található magyarázatok bemásolása nem elfogadható megoldás!</p>
 </div>
@@ -1348,7 +1348,7 @@
 </ul>
 <p>Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terveket, és adj magyarázatot rájuk!</p>
 <details class="success">
-<summary>Megoldás</summary>
+<summary>Megoldás vázlat</summary>
 <p>A kiadott <strong>parancsok</strong>:</p>
 <ul>
 <li>a) <code>SELECT * FROM customer</code></li>
@@ -1369,12 +1369,12 @@
 <h3 id="2-feladat-2p">2. Feladat (2p)<a class="headerlink" href="#2-feladat-2p" title="Permanent link">&para;</a></h3>
 <p>Hozd létre újra az elsődleges kulcsot a <code>Customer</code> táblán:</p>
 <ul>
-<li>Job kattintás a táblán &gt; Design &gt; az ID oszlopon "Set Primary Key " és Mentés gomb,</li>
+<li>Jobb kattintás a táblán &gt; Design &gt; az ID oszlopon "Set Primary Key " és Mentés gomb,</li>
 <li>vagy az <code>ALTER TABLE [dbo].[Customer] ADD PRIMARY KEY CLUSTERED ([ID] ASC)</code> SQL utasítás lefuttatása.</li>
 </ul>
 <p>Futtasd újra az előbbi lekérdezéseket. Mit tapasztalsz?</p>
 <details class="success">
-<summary>Megoldás</summary>
+<summary>Megoldás vázlat</summary>
 <p>A kiadott parancsok megegyeznek az 1.-es feladattal.</p>
 <p><strong>a)</strong></p>
 <p><a class="glightbox" href="../images/queryopt/f2-1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../images/queryopt/f2-1.png" /></a></p>
@@ -1401,7 +1401,7 @@
 </ul>
 <p>Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terveket, és adj magyarázatot rájuk!</p>
 <details class="success">
-<summary>Megoldás</summary>
+<summary>Megoldás vázlat</summary>
 <p>A kiadott <strong>parancsok</strong>:</p>
 <ul>
 <li>f) <code>SELECT * FROM product</code></li>
@@ -1425,7 +1425,7 @@
 <p><a class="glightbox" href="../images/queryopt/queryopt-index-properties.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Index tulajdonságok" src="../images/queryopt/queryopt-index-properties.png" /></a></p>
 <p>Ismételd meg az előbbi lekérdezéseket, és értelmezd a terveket!</p>
 <details class="success">
-<summary>Megoldás</summary>
+<summary>Megoldás vázlat</summary>
 <p>A parancsok megegyeznek az előző feladatéval.</p>
 <p><strong>f)</strong></p>
 <p>Hiába az új index, ez még mindíg Index Scan lesz - hiszen a teljes tábla tartalmát kértük.</p>
@@ -1452,7 +1452,7 @@
 <span class="k">FROM</span><span class="w"> </span><span class="n">Numbers</span>
 </code></pre></div>
 <details class="success">
-<summary>Megoldás</summary>
+<summary>Megoldás vázlat</summary>
 <p>A parancsok megegyeznek a korábbiakkal.</p>
 <p><strong>f)</strong></p>
 <p>Megegyezik az előző feladattal.</p>
@@ -1473,7 +1473,7 @@
 <h2 id="onallo-feladatok">Önálló feladatok<a class="headerlink" href="#onallo-feladatok" title="Permanent link">&para;</a></h2>
 <div class="admonition example">
 <p class="admonition-title">BEADANDÓ</p>
-<p>A feladatok megoldása során a közös feladatoknak megfelelő dokumentálást kérjük.</p>
+<p>A feladatok megoldása során a vezetett feladatoknak megfelelő dokumentálást kérjük.</p>
 <p>Ne felejtsd, hogy a dokumentációnak a képekkel együtt helyesen kell megjelenniük a GitHub webes felületén is! Ezt ellenőrizd a beadás során: nyisd meg a repository-d webes felületét, váltsd át a megfelelő ágra, és a GitHub automatikusan renderelni fogja a <code>README.md</code> fájlt a képekkel együtt.</p>
 </div>
 <h3 id="6-feladat-1p">6. Feladat (1p)<a class="headerlink" href="#6-feladat-1p" title="Permanent link">&para;</a></h3>
@@ -1558,8 +1558,8 @@
           </path>
         </svg>
       </span>
-      <span title="2023. március 13. 12:23:02">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-03-13T12:23:02+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-03-13</span>
+      <span title="2025. február 3. 16:19:45">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2025-02-03T16:19:45+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-03</span>
       </span>
     </span>
 
