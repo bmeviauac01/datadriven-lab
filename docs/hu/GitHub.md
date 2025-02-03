@@ -60,7 +60,7 @@ Alább részletesen bemutatjuk a beadás menetét. Itt egy rövid összefoglaló
 
 1. Ezen a megoldás ágon dolgozva készítsd el a beadandókat. Akárhányszor kommitolhatsz és pusholhatsz.
 
-    !!! note "Egyetemi laborban"
+    ??? note "Commit szerzője"
         Laborgépeken mindig ellenőrízd, hogy a megfelelő névvel és email címmel kommitolsz-e. Ezt a következő command line paranccsal tudod megtenni.
 
         ```bash
@@ -75,7 +75,6 @@ Alább részletesen bemutatjuk a beadás menetét. Itt egy rövid összefoglaló
         git config user.email "john@doe.org"
         ```
 
-    !!! tip "Otthon"
         Otthon a fentieket érdemes lehet a globálisan vizsgálni és felülírni a `--global` kapcsolóval.
 
     GitHub Desktop-ban így tudsz kommitolni. Mindig ellenőrizd, hogy jó ágon vagy-e. Első alkalommal a _megoldas_ ág csak helyben létezik, ezért publikálni kell: _Publish this branch_.

@@ -1,6 +1,6 @@
 copyright: Copyright &copy; BME-VIK-AUT
-repo_name: bmeviauac01/softwarelab1
-repo_url: https://github.com/bmeviauac01/softwarelab1
+repo_name: bmeviauac01/datadriven-lab
+repo_url: https://github.com/bmeviauac01/datadriven-lab
 
 theme:
   name: material
@@ -39,10 +39,10 @@ extra_css:
 extra:
   alternate:
     - name: English
-      link: https://bmeviauac01.github.io/softwarelab1/en/
+      link: https://bmeviauac01.github.io/datadriven-lab/en/
       lang: en
     - name: Magyar
-      link: https://bmeviauac01.github.io/softwarelab1/hu/
+      link: https://bmeviauac01.github.io/datadriven-lab/hu/
       lang: hu
 
 markdown_extensions:
@@ -83,5 +83,5 @@ plugins:
     # not a vanilla yaml syntax, only works with mkdocs.yaml because of pyyaml_env_tag
     enabled: !ENV [IsAuthorsPluginEnabled, false]
     github_token: !ENV [GITHUB_TOKEN, '']
-    repository: bmeviauac01/softwarelab1
+    repository: bmeviauac01/datadriven-lab
     branch: master

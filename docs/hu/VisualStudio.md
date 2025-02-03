@@ -1,6 +1,6 @@
 # Visual Studio & .NET SDK telepítése
 
-Egyes laborokhoz a Microsoft Visual Studio **2022 17.8 vagy újabb** verziója szükséges. Az ingyenes, [Community változata](https://visualstudio.microsoft.com/vs/community/) is elegendő a feladatok megoldásához.
+Egyes laborokhoz a Microsoft Visual Studio **2022 17.12 vagy újabb** verziója szükséges. Az ingyenes, [Community változata](https://visualstudio.microsoft.com/vs/community/) is elegendő a feladatok megoldásához.
 
 A verziót a _Visual Studio Installer_ elindításával ellenőrizhetjük:
 

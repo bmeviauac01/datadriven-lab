@@ -1,10 +1,10 @@
-# BMEVIAUAC09 Szoftverfejlesztés laboratórium 1
+# BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor
 
-![Build docs](https://github.com/bmeviauac01/softwarelab1/workflows/Build%20docs/badge.svg?branch=master)
+![Build docs](https://github.com/bmeviauac01/datadriven-lab/workflows/Build%20docs/badge.svg?branch=master)
 
-[BMEVIAUAC09 Szoftverfejlesztés laboratórium 1](https://www.aut.bme.hu/Course/szoftverlabor1) tárgy labor feladatai.
+[BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor](https://portal.vik.bme.hu/kepzes/targyak/VIAUAC16/) tárgy labor feladatai.
 
-A jegyzetek MkDocs segítségével készülnek és GitHub Pages-en kerülnek publikálásra: <https://bmeviauac01.github.io/softwarelab1/hu/>
+A jegyzetek MkDocs segítségével készülnek és GitHub Pages-en kerülnek publikálásra: <https://bmeviauac01.github.io/datadriven-lab/hu/>
 
 ## MKDocs tesztelése (Docker-rel)
 
@@ -34,13 +34,13 @@ A repository tartalmaz egy Dockerfile-t, ami at MKDocs keretrendszer és függő
 4. Markdown szerkesztése és mentése után automatikusan frissül a weboldal.
 5. Tipp: VSCode-ban használhatod a CTR+SHIFT+B-vel elérhető build taskokat a fordításhoz és a futtatáshoz.
 
-# ENVIAUAC09 Software Development Laboratory 1
+# ENVIAUAC16 Data-Driven Software Development Lab
 
-![Build docs](https://github.com/bmeviauac01/softwarelab1/workflows/Build%20docs/badge.svg?branch=master)
+![Build docs](https://github.com/bmeviauac01/datadriven-lab/workflows/Build%20docs/badge.svg?branch=master)
 
-[ENVIAUAC09 Software Development Laboratory 1](https://www.aut.bme.hu/Course/ENVIAUAC03/) course laboratory exercises.
+[ENVIAUAC16 Data-Driven Software Development Lab](https://portal.vik.bme.hu/kepzes/targyak/VIAUAC16/en/) course laboratory exercises.
 
-The content in built using MkDocs and is published to GitHub Pages at: <https://bmeviauac01.github.io/softwarelab1/en/>
+The content in built using MkDocs and is published to GitHub Pages at: <https://bmeviauac01.github.io/datadriven-lab/en/>
 
 ## Render website (with Docker)
 

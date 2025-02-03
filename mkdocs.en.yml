@@ -1,8 +1,8 @@
 INHERIT: mkdocs.common.yml
 
-site_name: BMEVIAUAC09 Software development laboratory 1
+site_name: BMEVIAUAC16 Data-Driven Software Development Lab
 site_author: István Albert, Tibor Tóth
-site_url: https://bmeviauac01.github.io/softwarelab1/en/
+site_url: https://bmeviauac01.github.io/datadriven-lab/en/
 docs_dir: 'docs/en'
 site_dir: 'site/en'
 edit_uri: 'blob/master/docs/en'
@@ -19,12 +19,11 @@ plugins:
     docs_path: docs/en/
 
 nav:
-  - "Software development laboratory 1":
+  - "Data-Driven Software Development Lab":
       - index.md
       - GitHub.md
       - GitHub-Actions.md
       - VisualStudio.md
-      - GitHub-credentials.md
   - "Laboratories":
       - "Reporting": Lab-PowerBI/index.md
       - "Query optimization": Lab-QueryOptimization/index.md

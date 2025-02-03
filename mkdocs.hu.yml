@@ -1,8 +1,8 @@
 INHERIT: mkdocs.common.yml
 
-site_name: BMEVIAUAC09 Szoftverfejlesztés laboratórium 1
+site_name: BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor
 site_author: Albert István, Tóth Tibor
-site_url: https://bmeviauac01.github.io/softwarelab1/hu/
+site_url: https://bmeviauac01.github.io/datadriven-lab/hu/
 docs_dir: 'docs/hu'
 site_dir: 'site/hu'
 edit_uri: 'blob/master/docs/hu'
@@ -19,12 +19,11 @@ plugins:
     docs_path: docs/hu/
 
 nav:
-  - "Szoftverfejlesztés laboratórium 1":
+  - "Adatvezérelt szoftverfejlesztés labor":
       - index.md
       - GitHub.md
       - GitHub-Actions.md
       - VisualStudio.md
-      - GitHub-credentials.md
   - "Laborok":
       - "Reporting": Lab-PowerBI/index.md
       - "Lekérdezés optimalizálás": Lab-QueryOptimization/index.md
