@@ -1,6 +1,6 @@
 # BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor
 
-![Build docs](https://github.com/bmeviauac01/datadriven-lab/workflows/Build%20docs/badge.svg?branch=master)
+[![Build docs](https://github.com/bmeviauac01/datadriven-lab/actions/workflows/github-pages.yml/badge.svg)](https://github.com/bmeviauac01/datadriven-lab/actions/workflows/github-pages.yml)
 
 [BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor](https://portal.vik.bme.hu/kepzes/targyak/VIAUAC16/) tárgy labor feladatai.
 
