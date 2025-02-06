@@ -2,30 +2,28 @@
 
 Laborvezető/demonstrátor lennél? Az alábbiakat érdemes tudnod.
 
+A tárgy alapképzés (BSc) 6. félévében specializációs tárgy. Ezt azt jelenti, hogy a hallgatók szoftverfejlesztési alapismeretekkel és adatbázis alapismeretekkel rendelkeznek, valamint a megelőző félévben teljesítették az _Adatvezérelt rendszerek_ c. tárgyat, amelynek jelen tárgy a laborja. A tárgyunk célja a tudás elmélyítése és az önálló munka gyakorlása. A laborok során -egy kivételtől eltekintve- már ismert technológiákkal foglalkozunk.
+
 ## Laborvezető feladatai
 
-A laborvezető a tárgy oktatásában segít a laborok megtartása és a számonkérések során. A feladat **2022 tavasszal** az alábbiakból áll.
+A laborvezető a tárgy oktatásában segít a beadott megoldások értékelésében és hallgatók konzultálásában. A feladat **2025 tavasszal** az alábbiakból áll.
 
-**Félév során összesen 4-6 darab labor személyes megtartása.** Ez a szám 2 vagy 3 labor csoportot jelent heti váltásban. Ez a személyes labor fix órarendi időben van, 4*45 perces, és számítógép laborban tartjuk. A személyes laborok részben vezetettek kiadott segédlet alapján, részben pedig hallgatói önálló munkából állnak. A laborvezető feladata a laborra való felkészülés, a labor megtartása, ennek során a szükséges háttérismeretek rövid átismétlése, és a hallgatók segítése a labor során.
+Korábban az 1. és 2. feladat jelenléti formában folyt, **viszont 2025-től a tárgy oktatása teljesen aszinkron/online formában történik.**
 
-2022 tavaszi félév során a laborok órarendi időpontjai:
+**Otthon teljesített laborok során segítségnyújtás.** Csoportonként van 5 darab otthon elvégzett labor, amit a hallgatók házi feladatként önállóan teljesítenek a megadott határidőig. Ennek során, ha szükséges, a laborvezető segítséget nyújt a hallgatóknak kérdés és probléma esetén.
 
-- hétfő 14:15-18:00
-- szerda 08:15-12:00
-- szerda 14:15-18:00
-- csütörtök 14:15-18:00
+**Labor feladatok értékelése.** A félév során csoportonként összesen 5 labor van, mindegyiket jeggyel értékeljük. A laborok beadása az adatvezérelt rendszerek házi feladataival analóg, GitHub pull request-ek formájában történik. A laborok kiértékelése részben automatikusan történik: egy szoftver lefuttatja és ellenőrzi a beadott munkát (3., 4., 5., labor), ahol ez lehetséges. A laborvezető feladata a beadott házi feladat formai és tartalmi ellenőrzése a beadás után:
 
-**Otthon teljesített laborok során segítségnyújtás.** A személyes laborok mellett csoportonként van 3 darab otthon elvégzett labor, amit a hallgatók házi feladatként önállóan teljesítenek egy-egy kéthetes időablakon belül. Ennek során, ha szükséges, a laborvezető segítséget nyújt a hallgatóknak kérdés és probléma esetén.
-
-**Labor feladatok értékelése.** A félév során csoportonként összesen 5 labor van, mindegyiket jeggyel értékeljük - azt is, amit személyesen egyetemi laborban készít a hallgató, és az otthon teljesítetteket is. A laborok beadása GitHub pull request-ek formájában történik. A laborok kiértékelése részben automatikusan történik: egy szoftver lefuttatja és ellenőrzi a beadott munkát, ahol ez lehetséges. A laborvezető feladata a beadott házi feladat formai ellenőrzése: kért képernyőképek megfelelnek-e az előírásoknak és konzisztensek-e a beadott forráskóddal.
+* kért képernyőképek megfelelnek-e az előírásoknak és konzisztensek-e a beadott forráskóddal
+* code-review a PR-ben, ahol visszajelzést tudunk adni a megoldással kapcsolatban pl.: miért nem adott pontot a kiértékelő, esetleg egy szebb megoldási javaslat
 
 ## Demonstrátorság
 
-Hallgató vagy de szeretnél bekapcsolódni az oktatásba? Szeretnéd kipróbálni magad laborvezetőként? Szeretsz magyarázni? Elvégezted ezt a tárgyat ötössel? Várunk demonstrátorként!
+Hallgató vagy de szeretnél bekapcsolódni az oktatásba? Elvégezted ezt a tárgyat ötössel? Várunk demonstrátorként!
 
 A TVSZ pár követelményt szab demonstrátoroknak: (lásd [aktuális TVSZ](https://www.kth.bme.hu/document/2376/original/BME_TVSZ_2016%20elfogadott_mod_20200131-T.pdf) 165.§):
 
-!!!quote ""
+!!! quote ""
     (5) A demonstrátori pályázat benyújtásának feltétele, hogy a pályázó
 
     a) a demonstrátori jogviszonnyal érintett félévben rendelkezzen aktív hallgatói jogviszonnyal;
@@ -36,34 +34,11 @@ A TVSZ pár követelményt szab demonstrátoroknak: (lásd [aktuális TVSZ](http
 
     d) ne álljon fegyelmi büntetés hatálya alatt.
 
-Ha érdekel a lehetőség, megfelelsz a fenti követelményeknek, és az órarendedbe belefér a labor (lásd az időpontokat fentebb), keresd a [tárgyfelelőst](mailto:dudas.akos@aut.bme.hu).
-
-## Tudnivalók a laborok megtartásához
-
-A tárgy alapképzés (BSc) 6. félévében specializációs tárgy. Ezt azt jelenti, hogy a hallgatók szoftverfejlesztési alapismeretekkel és adatbázis alapismeretekkel rendelkeznek, valamint a megelőző félévben teljesítették az _Adatvezérelt rendszerek_ c. tárgyat, amelynek jelen tárgy a laborja. A tárgyunk célja a tudás elmélyítése és az önálló munka gyakorlása. A laborok során -egy kivételtől eltekintve- már ismert technológiákkal foglalkozunk.
-
-### Oktatás módja
-
-Két féle labor van: személyes és otthoni. A személyes laborokon elvárt a részvétel, de ezt is be lehet fejezni otthon. Minden laboron többségében önálló munkát várunk el, és az elvégzett munka osztályzásra kerül. A laborok anyaga jelöli, mi a közös munka. A laborvezető segít elindulni a feladatokkal, átbeszélve a közös feladatokat, majd a hallgatók utána önállóan dolgoznak. Mivel a labor feladatok megoldására jegyet adunk, elvárjuk a hallgatótól az önálló munkavégzést.
-
-### Adminisztratív tudnivalók
-
-- A személyes laborokat óra 15-kor kezdjük pontosan és a 4*45 percet egyben, szünet nélkül tartjuk. A késő hallgatókat első alkalommal figyelmeztessük. Ha többször előfordul vagy zavaróan sokat késik (>5 perc), akkor küldjétek el (TVSZ erre jogot ad!).
-- A labor teljesítésének adminisztrálása Moodle-ben történik. Személyes labor esetén a teljesítés a laboron való megjelenést, és a munka veletek történő elvégzését jelenti, majd a végső munka beadását. Otthoni labor esetén csak a beadás elég. (Tehát személyes labor esetén a hallgató nem sétálhat ki a labor közepén és nem foglalkozhat mással, csak a laborral. Eseti problémákat azért kezeljünk le, pl. ZH-ja van máshol, stb. Egy-egy kivétel belefér.) Érdemes a jelenlétet a labor elején könyvelni.
-- Ha az órán több ember jelenne meg, mint ahány gép van (hiányzás pótlása pl.), vagy egy gép nem működik, akkor akinek nem jut hely, leül valaki mellé.
-- A csoportok között nincs ad-hoc átjárás. Ha valaki jelzi, hogy nem tud részt venni egy laboron, akkor előre/utólag/ugyanazon a héten egy másik csoportban pótolhat (ha van rá mód). Ennek a megszervezését alapvetően a hallgató bonyolítsa (nézze meg, mikor van még labor azonos anyagból, és egyeztessen a tárgyfelelőssel, vagy a laborvezetőkkel), de segítsük, ha kell.
+Ha érdekel a lehetőség, megfelelsz a fenti követelményeknek, és az órarendedbe belefér a labor (lásd az időpontokat fentebb), keresd a [tárgyfelelőst](mailto:albert.istvan@vik.bme.hu).
 
 ### Anyagok elérhetősége
 
 - A tárgy minden anyaga ezen az oldalon érhető el. Ha hibát, elgépelést találsz benne, arra kérünk, hogy javítsd: minden anyag jobb felső sarkában van egy kis ceruza ikon, javítsd a hibát, és küldj PR-t.
-
-### Belépések
-
-A **labor termekhez** kulcsra és/vagy kártyára van szükség. Ezeket a titkárságon (QB207) kell kérni. I épülethez kell a teremkulcs, ill. a folyosóhoz szükség van kártyára is (kivéve, akinek van ilyenje). Q épület laborjaihoz hozzáférést külön szervezzük. Demonstrátorok: mindezt megmutatom első alkalommal.
-
-**Gépekre**: emailben küldöm félév elején. Kis- és nagybetű számít! Pár elgépelés után le lesz tiltva az account!
-
-**MS SQL szerver**: localdb: nincs jelszó, Windows Authentication-t használjunk
 
 ## Beadott labor megoldás értékelése
 
@@ -91,7 +66,7 @@ Automatikus értékelés esetén (ami nem minden labornál van) a forráskódot 
 
 A konkrét laborok és értékelésük:
 
-- Reporting services: képernyőképek alapján kell kiértékelni a megoldást, diszkrepancia esetén meg lehet nézni a Report Server Visual Studio projektet is
+- Reporting: képernyőképek alapján kell kiértékelni a megoldást, diszkrepancia esetén meg lehet nézni a PowerBI projektet is
 - Lekérdezés optimalizálás: szöveges magyarázatot és képeket kérünk markdown fogmájában, értékelni kell feladatonként a helyes magyarázatot
 - MSSQL: van automata értékelés, a kódot ránézésre kell ellenőrizni (nincs-e benne pl. beégetett eredmény valós megoldás helyett, vagy nem nagyon hatékonytalan-e), valamint a képek és a kód konzisztenciáját kell ellenőrizni
 - MongoDB: u.a.
@@ -126,7 +101,7 @@ A parancs hatását látjuk is utána PR-ben:
 **Nem futott le az automata értékelés.**
 
 - Lehet, hogy a hallgató _draft_ módban hagyta a PR-t, ezt vissza kell állítani. A PR alján megjelenik ilyenkor egy _Ready for review_ gomb.
-- Ha sikertelen volt a kiértékelés, meg lehet ismételni. Ez segít a tranziens hibákon (ritka eset). Ehhez tegyél egy _eval_ nevű labelt-t a PR-re (új label-ként kell létrehozni).
+- Ha sikertelen volt a kiértékelés, meg lehet ismételni. Ez segít a tranziens hibákon (ritka eset). Ehhez tegyél egy _eval_ nevű labelt-t a PR-re (lehet hogy új label-ként kell létrehozni).
 
 **Több, mint 5-ször futott a kiértékelés.** Ezt pontlevonással szankcionáljuk. Első alkalommal eltekinthetünk tőle, de mindenképpen tájékoztassuk a hallgatót.
 
