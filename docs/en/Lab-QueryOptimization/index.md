@@ -12,7 +12,7 @@ Required tools to complete the tasks:
     - A [Linux version](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup) is also available.
     - On macOS, you can use Docker.
 - [Visual Studio Code](https://code.visualstudio.com/) or any other tool for writing markdown
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), or you may also use the platform-independent [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download) is
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), or you may also use the platform-independent [VS Code MSSQL Extension](http://aka.ms/vscode-mssql-docs)
 - Database initialization script: [mssql.sql](../db/mssql.sql)
 - GitHub account and a git client
 
@@ -81,7 +81,7 @@ Create the documentation in a markdown file. Open the checked-out git repository
 ### Getting the actual execution plan
 
 !!! tip "If you are not using Windows"
-    We are primarily using SQL Server Management Studio to get the execution plans. If you are not using Windows, you can also use Azure Data Studio-t to [obtain the query plan](https://richbenner.com/2019/02/azure-data-studio-execution-plans/).
+    We are primarily using SQL Server Management Studio to get the execution plans. If you are not using Windows, you can also use VSCode MSSQL Extension to [obtain the query plan](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code?view=sql-server-ver16#query-results-pane).
 
 We will check the query plan the optimizer chose and the server executed in the following exercises. In SQL Server Management Studio, open the _Query_ menu and check [_Include Actual Execution Plan_](https://docs.microsoft.com/en-us/sql/relational-databases/performance/display-an-actual-execution-plan).
 

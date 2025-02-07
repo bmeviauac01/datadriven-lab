@@ -12,7 +12,7 @@ A labor elvégzéséhez szükséges eszközök:
     - Van [Linux változata](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup) is.
     - MacOS-en Docker-rel futtatható.
 - [Visual Studio Code](https://code.visualstudio.com/) vagy más, markdown kompatibilis szerkesztő
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), vagy kipróbálható a platformfüggetlen [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download) is
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), vagy kipróbálható a platformfüggetlen [VS Code MSSQL kiegészítőt](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code?view=sql-server-ver16) is
 - Az adatbázist létrehozó script: [mssql.sql](../db/mssql.sql)
 - GitHub account és egy git kliens
 
@@ -81,7 +81,7 @@ A feladatok megoldása során egy jegyzőkönyvet szükséges készíteni markdo
 ### Lekérdezési terv bekapcsolása
 
 !!! tip "Nem Windows platformon"
-    A lekérdezési tervhez alapvetően Microsoft SQL Server Management Studio-t használunk. Ha nem Windows platformon dolgozol, kipróbálhatod az Azure Data Studio-t, ebben is [lekérdezhető a végrehajtási terv](https://richbenner.com/2019/02/azure-data-studio-execution-plans/).
+    A lekérdezési tervhez alapvetően Microsoft SQL Server Management Studio-t használunk. Ha nem Windows platformon dolgozol, kipróbálhatod az VS Code MSSQL kiegészítőt, ebben is [lekérdezhető a végrehajtási terv](https://learn.microsoft.com/en-us/sql/tools/visual-studio-code-extensions/mssql/mssql-extension-visual-studio-code?view=sql-server-ver16#query-results-pane).
 
 Az összes feladat során szükségünk lesz a legjobb lekérdezési tervre, amit a szerver végeredményben választott. Ezt SQL Server Management Studio-ban a _Query_ menüben az [_Include Actual Execution Plan_ opcióval](https://docs.microsoft.com/en-us/sql/relational-databases/performance/display-an-actual-execution-plan) kapcsolhatjuk be.
 

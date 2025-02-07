@@ -11,7 +11,7 @@ Required tools to complete the tasks:
     - The free Express version is sufficient, or you may also use _localdb_ installed with Visual Studio
     - A [Linux version](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup) is also available.
     - On macOS, you can use Docker.
-- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), or you may also use the platform-independent [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download) is
+- [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms), or you may also use the platform-independent [VS Code MSSQL Extension](http://aka.ms/vscode-mssql-docs)
 - Database initialization script: [mssql.sql](../db/mssql.sql)
 - GitHub account and a git client
 
