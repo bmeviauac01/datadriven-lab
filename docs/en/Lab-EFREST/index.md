@@ -40,7 +40,7 @@ Keep in mind that you are expected to follow the [submission process](../GitHub.
 
 1. Wait for the repository creation to complete, then check out the repository.
 
-   !!! warning "Password in the labs"
+    !!! warning "Password in the labs"
         If you are not asked for credentials to log in to GitHub in university computer laboratories when checking out the repository, the operation may fail. This is likely due to the machine using someone else's GitHub credentials. Delete these credentials first (see [here](../GitHub-credentials.md)), then retry the checkout.
 
 1. Create a new branch with the name `solution` and work on this branch.
@@ -67,7 +67,7 @@ Open the Visual Studio solution (the `.sln`) file in the checked-out repository.
 The solution is structured according to a multi-tier architecture:
 
 - The `Controllers` folder contains the Web Api controllers that serve the REST requests.
-- The `Song` folder contains the data access layer that contains the Entity Framework Core Code First model.
+- The `Dal` folder contains the data access layer that contains the Entity Framework Core Code First model.
 - The `Services` folder contains the business logic layer (BLL) service classes.
 - `Dtos` contains the classes of Data Transfer Objects, which represent the data traveling on the network.
 
@@ -183,7 +183,7 @@ Implement the first operation to list all available status entities.
 
 1. Compile the code and start the app.
 
-1. Open Postman and send a GET request to URL <http://localhost:5000/api/statuses/neptun> (with your Neptun code in the URL).
+1. Open Postman and send a GET request to URL <http://localhost:5000/api/status/neptun> (with your Neptun code in the URL).
 
     ![Query statuses with Postman](../images/efrest/rest-postman-get-statuses.png)
 
@@ -217,9 +217,9 @@ Implement the first operation to list all available status entities.
 
 There are a few other operations we need to implement:
 
-- check existence by specifying name (`HEAD /api/statuses/neptun/{name}`),
-- find record by ID (`GET /api/statuses/neptun/{id}`),
-- adding a new status record (`POST /api/statuses/neptun`).
+- check existence by specifying name (`HEAD /api/status/neptun/{name}`),
+- find record by ID (`GET /api/status/neptun/{id}`),
+- adding a new status record (`POST /api/status/neptun`).
 
 Let us implement these.
 
@@ -344,7 +344,7 @@ In the `Dal` folder, create a new class called `TaskService` that implements the
 
 - `IReadOnlyCollection<Task> List()`: list all tasks
 - `Task FindById(int taskId)`: returns the task whose id matches the parameter; or return `null` if there is none
-- `Task Insert(CreateTask value)`: add a new task to the database with the given address and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier
+- `Task Insert(CreateTask value)`: add a new task to the database with the given titleaddress and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier
 - `Task Delete(int taskId)`: delete the specified task instance; its return value is the deleted task entity (in the state before deletion), or `null` if it does not exist
 
 Do not implement the other operations for now, but they must also have an implementation so that the code will compile. For now, it is enough if their body simply throws an error: `throw new NotImplementedException();`
@@ -354,16 +354,16 @@ Do not implement the other operations for now, but they must also have an implem
 
 ### Operations on the REST Api
 
-Create a new `TasksController` in the `Controllers` folder. The controller shall handle REST queries on URL `/api/tasks/neptun` where the last part is your **own Neptun code** lowercase.
+Create a new `TasksController` in the `Controllers` folder. The controller shall handle REST queries on URL `/api/task/neptun` where the last part is your **own Neptun code** lowercase.
 
 Take an instance of `ITaskService` in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the `Program' class, just like the other service. (The controller _does_ not have to be registered.)
 
 Implement the following operations using the previously implemented repository methods:
 
-- `GET /api/tasks/neptun`: returns all tasks; response code is always `200 OK`
-- `GET /api/tasks/neptun/{id}`: gets a single task; response code is `200 OK` or `404 Not found`
-- `POST /api/tasks/neptun`: add a new task based on a `Dto.CreateTask` instance specified in the body; the response code is `201 Created` with the new entity in the body and an appropriate _Location_ header
-- `DELETE /api/tasks/neptun/{id}`: deleted a task; response code is `204 No content` or `404 Not found`
+- `GET /api/task/neptun`: returns all tasks; response code is always `200 OK`
+- `GET /api/task/neptun/{id}`: gets a single task; response code is `200 OK` or `404 Not found`
+- `POST /api/task/neptun`: add a new task based on a `Dto.CreateTask` instance specified in the body; the response code is `201 Created` with the new entity in the body and an appropriate _Location_ header
+- `DELETE /api/task/neptun/{id}`: deleted a task; response code is `204 No content` or `404 Not found`
 
 !!! example "SUBMISSION"
     Create a **screenshot** in Postman (or an alternative tool you used) that shows an **arbitrary** request and response from the list above. Save the screenshot as `f2.png` and submit it with the other files of the solution. The screenshot shall include both the **request and the response with all details** (URL, body, response code, response body). Verify that your **Neptun code** is visible in the URL! The screenshot is required to earn the points.
@@ -376,7 +376,7 @@ Implement two new endpoints in the controller handling tasks that alter existing
 
 The flag `Task.Done` signals that a task is completed. Create a new http endpoint that uses the `ITasksRepository.MarkDone` method to set this flag on a task instance.
 
-Request: `PATCH /api/tasks/neptun/{id}/done` with `{id}` being the tasks ID.
+Request: `PATCH /api/task/neptun/{id}/done` with `{id}` being the tasks ID.
 
 Response:
 
@@ -387,7 +387,7 @@ Response:
 
 A task is associated with status through `Task.StatusId` (or similar). Create a new http endpoint that uses the `ITasksRepository.MoveToStatus` method to change the status of the specified tasks to a new one. If the new status with the provided name does not exist, create one.
 
-Request: `PATCH /api/tasks/neptun/{id}/move` with
+Request: `PATCH /api/task/neptun/{id}/move` with
 
 - `{id}` is the task identifier,
 - and the **name** of the new status comes in the body in a `status` property.
@@ -420,7 +420,7 @@ If we have lots of tasks listing them should not return all of them at once. Imp
     - and as a help, the URL with which the next page can be retrieved (`NextUrl`), or `null` if there are no more pages.
 
         !!! tip "Generating URLs"
-            Use the `Url.Action` helper method to assemble this URL. Do not hardcode "localhost:5000" or "/api/tasks/paged" in the source code! You will _not_ need string operations to achieve this.
+            Use the `Url.Action` helper method to assemble this URL. Do not hardcode "localhost:5000" or "/api/task/paged" in the source code! You will _not_ need string operations to achieve this.
 
             `Url.Action` will give you an absolute URL when all parameters (`action`, `controller`, `values`, `protocol`, and `host`) are specified; for the latter ones `this.HttpContext.Request` can provide you the required values.
 
@@ -428,7 +428,7 @@ If we have lots of tasks listing them should not return all of them at once. Imp
 
 The requests-responses shows you the expected behavior:
 
-1. `GET /api/tasks/neptun/paged?count=2`
+1. `GET /api/task/neptun/paged?count=2`
 
     This is the first request. There is no `from` value specified to start from the first item.
 
@@ -456,7 +456,7 @@ The requests-responses shows you the expected behavior:
     }
     ```
 
-2. `GET /api/tasks/neptun/paged?from=3&count=2`
+2. `GET /api/task/neptun/paged?from=3&count=2`
 
     This is to query the second page.
 
@@ -480,7 +480,7 @@ The requests-responses shows you the expected behavior:
 
     The response indicates no further pages as both `nextId` and `nextUrl` are null.
 
-3. `GET /api/tasks/neptun/paged?from=999&count=999`
+3. `GET /api/task/neptun/paged?from=999&count=999`
 
     Returns an empty page.
 

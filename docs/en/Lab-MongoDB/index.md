@@ -259,14 +259,14 @@ The outline of the solution is as follows.
 
     ```csharp
     return dbCategories
-    .Select(k => new Category
-       {
-           Name = k.Name,
-           ParentCategoryName = k.ParentCategoryId.HasValue
+        .Select(k => new Category
+        {
+            Name = k.Name,
+            ParentCategoryName = k.ParentCategoryId.HasValue
                ? dbCategories.Single(p => p.Id == k.ParentCategoryId.Value).Name
                : null,
-           NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryID == k.Id)?.NumberOfProducts ?? 0
-       })
+            NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryID == k.Id)?.NumberOfProducts ?? 0
+        })
        .ToList();
     ```
 
@@ -325,7 +325,7 @@ Before starting the tasks below, do not forget to add and initialize an `_orderC
 When updating the record in `UpdateOrder`, only update the information present in `Models.Order`: `Date`, `Deadline`, `Status`, and `PaymentMethod`. Ignore the value `Total`; it does not need to be considered in this context.
 
 !!! tip "Hint"
-You can combine multiple updates using `Builders<Entities.Order>.Update.Combine`.
+    You can combine multiple updates using `Builders<Entities.Order>.Update.Combine`.
 
 Keep in mind that the `IsUpsert` property should be set to `false` in the update!
 
