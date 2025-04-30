@@ -344,7 +344,7 @@ In the `Dal` folder, create a new class called `TaskService` that implements the
 
 - `IReadOnlyCollection<Task> List()`: list all tasks
 - `Task FindById(int taskId)`: returns the task whose id matches the parameter; or return `null` if there is none
-- `Task Insert(CreateTask value)`: add a new task to the database with the given titleaddress and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier
+- `Task Insert(CreateTask value)`: add a new task to the database with the given title and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier
 - `Task Delete(int taskId)`: delete the specified task instance; its return value is the deleted task entity (in the state before deletion), or `null` if it does not exist
 
 Do not implement the other operations for now, but they must also have an implementation so that the code will compile. For now, it is enough if their body simply throws an error: `throw new NotImplementedException();`
