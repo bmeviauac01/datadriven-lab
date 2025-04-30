@@ -1108,11 +1108,11 @@
 </li>
 <li>
 <p>Wait for the repository creation to complete, then check out the repository.</p>
+<div class="admonition warning">
+<p class="admonition-title">Password in the labs</p>
+<p>If you are not asked for credentials to log in to GitHub in university computer laboratories when checking out the repository, the operation may fail. This is likely due to the machine using someone else's GitHub credentials. Delete these credentials first (see <a href="../GitHub-credentials/">here</a>), then retry the checkout.</p>
+</div>
 </li>
-</ol>
-<p>!!! warning "Password in the labs"
-        If you are not asked for credentials to log in to GitHub in university computer laboratories when checking out the repository, the operation may fail. This is likely due to the machine using someone else's GitHub credentials. Delete these credentials first (see <a href="../GitHub-credentials/">here</a>), then retry the checkout.</p>
-<ol>
 <li>
 <p>Create a new branch with the name <code>solution</code> and work on this branch.</p>
 </li>
@@ -1134,7 +1134,7 @@
 <p>The solution is structured according to a multi-tier architecture:</p>
 <ul>
 <li>The <code>Controllers</code> folder contains the Web Api controllers that serve the REST requests.</li>
-<li>The <code>Song</code> folder contains the data access layer that contains the Entity Framework Core Code First model.</li>
+<li>The <code>Dal</code> folder contains the data access layer that contains the Entity Framework Core Code First model.</li>
 <li>The <code>Services</code> folder contains the business logic layer (BLL) service classes.</li>
 <li><code>Dtos</code> contains the classes of Data Transfer Objects, which represent the data traveling on the network.</li>
 </ul>
@@ -1246,7 +1246,7 @@
 <p>Compile the code and start the app.</p>
 </li>
 <li>
-<p>Open Postman and send a GET request to URL <a href="http://localhost:5000/api/statuses/neptun">http://localhost:5000/api/statuses/neptun</a> (with your Neptun code in the URL).</p>
+<p>Open Postman and send a GET request to URL <a href="http://localhost:5000/api/status/neptun">http://localhost:5000/api/status/neptun</a> (with your Neptun code in the URL).</p>
 <p><a class="glightbox" href="../images/efrest/rest-postman-get-statuses.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Query statuses with Postman" src="../images/efrest/rest-postman-get-statuses.png" /></a></p>
 <div class="admonition success">
 <p>The query is successful if Postman reports status code 200, and the result is empty. If there is an error, check the Output window in Visual Studio and the running application console window.</p>
@@ -1279,9 +1279,9 @@
 <h3 id="query-and-insert-operations-4-points">Query and insert operations (4 points)<a class="headerlink" href="#query-and-insert-operations-4-points" title="Permanent link">&para;</a></h3>
 <p>There are a few other operations we need to implement:</p>
 <ul>
-<li>check existence by specifying name (<code>HEAD /api/statuses/neptun/{name}</code>),</li>
-<li>find record by ID (<code>GET /api/statuses/neptun/{id}</code>),</li>
-<li>adding a new status record (<code>POST /api/statuses/neptun</code>).</li>
+<li>check existence by specifying name (<code>HEAD /api/status/neptun/{name}</code>),</li>
+<li>find record by ID (<code>GET /api/status/neptun/{id}</code>),</li>
+<li>adding a new status record (<code>POST /api/status/neptun</code>).</li>
 </ul>
 <p>Let us implement these.</p>
 <ol>
@@ -1400,7 +1400,7 @@
 <ul>
 <li><code>IReadOnlyCollection&lt;Task&gt; List()</code>: list all tasks</li>
 <li><code>Task FindById(int taskId)</code>: returns the task whose id matches the parameter; or return <code>null</code> if there is none</li>
-<li><code>Task Insert(CreateTask value)</code>: add a new task to the database with the given address and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier</li>
+<li><code>Task Insert(CreateTask value)</code>: add a new task to the database with the given title and assign it to the given status; if there is no status with the specified name, add a new status; its return value is the new task entity with the new identifier</li>
 <li><code>Task Delete(int taskId)</code>: delete the specified task instance; its return value is the deleted task entity (in the state before deletion), or <code>null</code> if it does not exist</li>
 </ul>
 <p>Do not implement the other operations for now, but they must also have an implementation so that the code will compile. For now, it is enough if their body simply throws an error: <code>throw new NotImplementedException();</code></p>
@@ -1409,14 +1409,14 @@
 <p>For the mapping between the C# class used in the database and the model entity class, it will be useful to define a <code>ToModel</code> helper function as seen earlier. In order for the database to query the status entity connected to the task (which will be needed for the name), it will be important to use the appropriate <code>Include</code>.</p>
 </div>
 <h3 id="operations-on-the-rest-api">Operations on the REST Api<a class="headerlink" href="#operations-on-the-rest-api" title="Permanent link">&para;</a></h3>
-<p>Create a new <code>TasksController</code> in the <code>Controllers</code> folder. The controller shall handle REST queries on URL <code>/api/tasks/neptun</code> where the last part is your <strong>own Neptun code</strong> lowercase.</p>
+<p>Create a new <code>TasksController</code> in the <code>Controllers</code> folder. The controller shall handle REST queries on URL <code>/api/task/neptun</code> where the last part is your <strong>own Neptun code</strong> lowercase.</p>
 <p>Take an instance of <code>ITaskService</code> in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the `Program' class, just like the other service. (The controller <em>does</em> not have to be registered.)</p>
 <p>Implement the following operations using the previously implemented repository methods:</p>
 <ul>
-<li><code>GET /api/tasks/neptun</code>: returns all tasks; response code is always <code>200 OK</code></li>
-<li><code>GET /api/tasks/neptun/{id}</code>: gets a single task; response code is <code>200 OK</code> or <code>404 Not found</code></li>
-<li><code>POST /api/tasks/neptun</code>: add a new task based on a <code>Dto.CreateTask</code> instance specified in the body; the response code is <code>201 Created</code> with the new entity in the body and an appropriate <em>Location</em> header</li>
-<li><code>DELETE /api/tasks/neptun/{id}</code>: deleted a task; response code is <code>204 No content</code> or <code>404 Not found</code></li>
+<li><code>GET /api/task/neptun</code>: returns all tasks; response code is always <code>200 OK</code></li>
+<li><code>GET /api/task/neptun/{id}</code>: gets a single task; response code is <code>200 OK</code> or <code>404 Not found</code></li>
+<li><code>POST /api/task/neptun</code>: add a new task based on a <code>Dto.CreateTask</code> instance specified in the body; the response code is <code>201 Created</code> with the new entity in the body and an appropriate <em>Location</em> header</li>
+<li><code>DELETE /api/task/neptun/{id}</code>: deleted a task; response code is <code>204 No content</code> or <code>404 Not found</code></li>
 </ul>
 <div class="admonition example">
 <p class="admonition-title">SUBMISSION</p>
@@ -1426,7 +1426,7 @@
 <p>Implement two new endpoints in the controller handling tasks that alter existing tasks as follows.</p>
 <h3 id="marking-a-task-as-done-3-points">Marking a task as done (3 points)<a class="headerlink" href="#marking-a-task-as-done-3-points" title="Permanent link">&para;</a></h3>
 <p>The flag <code>Task.Done</code> signals that a task is completed. Create a new http endpoint that uses the <code>ITasksRepository.MarkDone</code> method to set this flag on a task instance.</p>
-<p>Request: <code>PATCH /api/tasks/neptun/{id}/done</code> with <code>{id}</code> being the tasks ID.</p>
+<p>Request: <code>PATCH /api/task/neptun/{id}/done</code> with <code>{id}</code> being the tasks ID.</p>
 <p>Response:</p>
 <ul>
 <li><code>404 Not found</code> if no such task exists.</li>
@@ -1434,7 +1434,7 @@
 </ul>
 <h3 id="move-to-a-new-status-3-points">Move to a new status (3 points)<a class="headerlink" href="#move-to-a-new-status-3-points" title="Permanent link">&para;</a></h3>
 <p>A task is associated with status through <code>Task.StatusId</code> (or similar). Create a new http endpoint that uses the <code>ITasksRepository.MoveToStatus</code> method to change the status of the specified tasks to a new one. If the new status with the provided name does not exist, create one.</p>
-<p>Request: <code>PATCH /api/tasks/neptun/{id}/move</code> with</p>
+<p>Request: <code>PATCH /api/task/neptun/{id}/move</code> with</p>
 <ul>
 <li><code>{id}</code> is the task identifier,</li>
 <li>and the <strong>name</strong> of the new status comes in the body in a <code>status</code> property.</li>
@@ -1471,7 +1471,7 @@
 <p>and as a help, the URL with which the next page can be retrieved (<code>NextUrl</code>), or <code>null</code> if there are no more pages.</p>
 <div class="admonition tip">
 <p class="admonition-title">Generating URLs</p>
-<p>Use the <code>Url.Action</code> helper method to assemble this URL. Do not hardcode "localhost:5000" or "/api/tasks/paged" in the source code! You will <em>not</em> need string operations to achieve this.</p>
+<p>Use the <code>Url.Action</code> helper method to assemble this URL. Do not hardcode "localhost:5000" or "/api/task/paged" in the source code! You will <em>not</em> need string operations to achieve this.</p>
 <p><code>Url.Action</code> will give you an absolute URL when all parameters (<code>action</code>, <code>controller</code>, <code>values</code>, <code>protocol</code>, and <code>host</code>) are specified; for the latter ones <code>this.HttpContext.Request</code> can provide you the required values.</p>
 </div>
 </li>
@@ -1484,7 +1484,7 @@
 <p>The requests-responses shows you the expected behavior:</p>
 <ol>
 <li>
-<p><code>GET /api/tasks/neptun/paged?count=2</code></p>
+<p><code>GET /api/task/neptun/paged?count=2</code></p>
 <p>This is the first request. There is no <code>from</code> value specified to start from the first item.</p>
 <p>Response:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1509,7 +1509,7 @@
 </code></pre></div>
 </li>
 <li>
-<p><code>GET /api/tasks/neptun/paged?from=3&amp;count=2</code></p>
+<p><code>GET /api/task/neptun/paged?from=3&amp;count=2</code></p>
 <p>This is to query the second page.</p>
 <p>Response:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1529,7 +1529,7 @@
 <p>The response indicates no further pages as both <code>nextId</code> and <code>nextUrl</code> are null.</p>
 </li>
 <li>
-<p><code>GET /api/tasks/neptun/paged?from=999&amp;count=999</code></p>
+<p><code>GET /api/task/neptun/paged?from=999&amp;count=999</code></p>
 <p>Returns an empty page.</p>
 <p>Response:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -1555,8 +1555,8 @@
           </path>
         </svg>
       </span>
-      <span title="November 23, 2023 15:30:03">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-23T15:30:03+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-23</span>
+      <span title="April 30, 2025 09:00:38">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 30, 2025 09:00:38"><span class="timeago" datetime="2025-04-30T09:00:38+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 30, 2025 09:00:38">2025-04-30</span>
       </span>
     </span>
 
@@ -1575,6 +1575,8 @@
           <img src="https://avatars.githubusercontent.com/u/11335181?u=9971512094b94810046de53f5c1dee78e9776a4f&v=4?size=72" alt="@Akos Dudas">
         </a><a href="https://github.com/ialbert-AUT" target="_blank" rel="noopener noreferrer" class="md-author" title="@István Albert">
           <img src="https://avatars.githubusercontent.com/u/61751571?v=4?size=72" alt="@István Albert">
+        </a><a href="https://github.com/KlevisImeri" target="_blank" rel="noopener noreferrer" class="md-author" title="@Klevis">
+          <img src="https://avatars.githubusercontent.com/u/96891515?u=6a55d1629b68edb71395830f3be880efe35737ba&v=4?size=72" alt="@Klevis">
         </a><a href="https://github.com/tibitoth" target="_blank" rel="noopener noreferrer" class="md-author" title="@Tibor Tóth">
           <img src="https://avatars.githubusercontent.com/u/8333960?u=d26653213d265ecdceeaf20a896d74f479d35450&v=4?size=72" alt="@Tibor Tóth">
         </a></nav>      
