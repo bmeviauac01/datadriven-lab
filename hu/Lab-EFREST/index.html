@@ -1,7 +1,4 @@
-
-<!doctype html>
-<html lang="hu" class="no-js">
-  <head>
+<!DOCTYPE html><html lang="hu" class="no-js"><head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,19 +14,26 @@
       
       
       
+        
+          <link rel="alternate" href="https://bmeviauac01.github.io/datadriven-lab/en/" hreflang="en">
+        
+          <link rel="alternate" href="https://bmeviauac01.github.io/datadriven-lab/hu/" hreflang="hu">
+        
+      
+      
       <link rel="icon" href="../img/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.11">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
     
     
       
-        <title>Entity Framework & REST - BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor</title>
+        <title>Entity Framework &amp; REST - BMEVIAUAC16 Adatvezérelt szoftverfejlesztés labor</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.fad675c6.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.356b1318.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -43,7 +47,7 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
@@ -52,23 +56,23 @@
     
       <link rel="stylesheet" href="../extra-material-theme.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
-    
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-    html.glightbox-open { overflow: initial; height: 100%; }
-    .gslide-title { margin-top: 0px; user-select: text; }
-    .gslide-desc { color: #666; user-select: text; }
-    .gslide-image img { background: white; }
-    .gscrollbar-fixer { padding-right: 15px; }
-    .gdesc-inner { font-size: 0.75rem; }
-    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
   
   
     
@@ -80,9 +84,6 @@
     
     <body dir="ltr" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red">
   
-    
-    
-      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -111,7 +112,7 @@
     </a>
     <label class="md-header__button md-icon" for="__drawer">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
     </label>
     <div class="md-header__title" data-md-component="header-title">
       <div class="md-header__ellipsis">
@@ -123,7 +124,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Entity Framework & REST
+              Entity Framework &amp; REST
             
           </span>
         </div>
@@ -136,20 +137,20 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red"  aria-label="Switch to Dark Mode"  type="radio" name="__palette" id="__palette_1">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="aut" data-md-color-primary="aut" data-md-color-accent="red" aria-label="Switch to Dark Mode" type="radio" name="__palette" id="__palette_0">
     
-      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_2" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to Dark Mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"></path></svg>
       </label>
     
   
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo"  aria-label="Switch to Light Mode"  type="radio" name="__palette" id="__palette_2">
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="red" data-md-color-accent="indigo" aria-label="Switch to Light Mode" type="radio" name="__palette" id="__palette_1">
     
-      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      <label class="md-header__button md-icon" title="Switch to Light Mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9z"></path></svg>
       </label>
     
   
@@ -157,11 +158,14 @@
       
     
     
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
       <div class="md-header__option">
   <div class="md-select">
     
     <button class="md-header__button md-icon" aria-label="Nyelvváltás">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"></path></svg>
     </button>
     <div class="md-select__inner">
       <ul class="md-select__list">
@@ -184,26 +188,28 @@
 </div>
     
     
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" aria-label="Keresés" placeholder="Keresés" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
         
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
       </label>
       <nav class="md-search__options" aria-label="Keresés">
         
         <button type="reset" class="md-search__icon md-icon" title="Törlés" aria-label="Törlés" tabindex="-1">
           
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
         </button>
       </nav>
       
@@ -211,7 +217,7 @@
       
     </form>
     <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
             Keresés inicializálása
@@ -222,13 +228,14 @@
     </div>
   </div>
 </div>
+      
     
     
       <div class="md-header__source">
         <a href="https://github.com/bmeviauac01/datadriven-lab" title="Főoldalra ugrás" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
     bmeviauac01/datadriven-lab
@@ -254,11 +261,13 @@
   
   
   
+  
     
     
       <li class="md-tabs__item">
         <a href=".." class="md-tabs__link">
           
+  
   
   Adatvezérelt szoftverfejlesztés labor
 
@@ -271,6 +280,7 @@
         
   
   
+  
     
   
   
@@ -279,6 +289,7 @@
       <li class="md-tabs__item md-tabs__item--active">
         <a href="../Lab-PowerBI/" class="md-tabs__link">
           
+  
   
   Laborok
 
@@ -299,7 +310,7 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -322,7 +333,7 @@
       <a href="https://github.com/bmeviauac01/datadriven-lab" title="Főoldalra ugrás" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
   </div>
   <div class="md-source__repository">
     bmeviauac01/datadriven-lab
@@ -337,7 +348,7 @@
   
   
   
-    
+  
     
     
     
@@ -345,20 +356,27 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1">
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Adatvezérelt szoftverfejlesztés labor
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -367,7 +385,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
-            Adatvezérelt szoftverfejlesztés labor
+            
+  
+    Adatvezérelt szoftverfejlesztés labor
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -376,13 +398,21 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Tárgy ismertető
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -393,6 +423,7 @@
             
               
                 
+  
   
   
   
@@ -400,9 +431,16 @@
       <a href="../GitHub/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Feladatok beadása (GitHub)
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -413,6 +451,7 @@
             
               
                 
+  
   
   
   
@@ -420,9 +459,16 @@
       <a href="../GitHub-Actions/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     GitHub Actions ismertető
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -436,13 +482,21 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../VisualStudio/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
-    Visual Studio & .NET SDK telepítése
+    
+  
+    Visual Studio &amp; .NET SDK telepítése
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -465,17 +519,20 @@
     
   
   
-    
+  
     
     
     
     
       
+        
+        
       
+      
+    
     
     <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
-        
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
@@ -484,9 +541,16 @@
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
+  
   <span class="md-ellipsis">
+    
+  
     Laborok
+  
+
+    
   </span>
+  
   
 
             <span class="md-nav__icon md-icon"></span>
@@ -495,7 +559,11 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            Laborok
+            
+  
+    Laborok
+  
+
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -504,13 +572,21 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../Lab-PowerBI/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Reporting
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -521,6 +597,7 @@
             
               
                 
+  
   
   
   
@@ -528,9 +605,16 @@
       <a href="../Lab-QueryOptimization/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     Lekérdezés optimalizálás
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -541,6 +625,7 @@
             
               
                 
+  
   
   
   
@@ -548,9 +633,16 @@
       <a href="../Lab-MSSQL/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     MSSQL
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -564,13 +656,21 @@
   
   
   
+  
     <li class="md-nav__item">
       <a href="../Lab-MongoDB/" class="md-nav__link">
         
   
+  
   <span class="md-ellipsis">
+    
+  
     MongoDB
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -584,6 +684,7 @@
   
   
     
+  
   
   
     <li class="md-nav__item md-nav__item--active">
@@ -597,9 +698,16 @@
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
+  
   <span class="md-ellipsis">
-    Entity Framework & REST
+    
+  
+    Entity Framework &amp; REST
+  
+
+    
   </span>
+  
   
 
           <span class="md-nav__icon md-icon"></span>
@@ -608,9 +716,16 @@
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
+  
   <span class="md-ellipsis">
-    Entity Framework & REST
+    
+  
+    Entity Framework &amp; REST
+  
+
+    
   </span>
+  
   
 
       </a>
@@ -633,7 +748,9 @@
         <li class="md-nav__item">
   <a href="#elofeltetelek-felkeszules" class="md-nav__link">
     <span class="md-ellipsis">
-      Előfeltételek, felkészülés
+      
+        Előfeltételek, felkészülés
+      
     </span>
   </a>
   
@@ -642,7 +759,9 @@
         <li class="md-nav__item">
   <a href="#feladat-attekintese" class="md-nav__link">
     <span class="md-ellipsis">
-      Feladat áttekintése
+      
+        Feladat áttekintése
+      
     </span>
   </a>
   
@@ -651,7 +770,9 @@
         <li class="md-nav__item">
   <a href="#elokeszulet" class="md-nav__link">
     <span class="md-ellipsis">
-      Előkészület
+      
+        Előkészület
+      
     </span>
   </a>
   
@@ -661,7 +782,9 @@
           <li class="md-nav__item">
   <a href="#git-repository-letrehozasa-es-letoltese" class="md-nav__link">
     <span class="md-ellipsis">
-      Git repository létrehozása és letöltése
+      
+        Git repository létrehozása és letöltése
+      
     </span>
   </a>
   
@@ -670,7 +793,9 @@
           <li class="md-nav__item">
   <a href="#adatbazis-letrehozasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Adatbázis létrehozása
+      
+        Adatbázis létrehozása
+      
     </span>
   </a>
   
@@ -684,7 +809,9 @@
         <li class="md-nav__item">
   <a href="#1-feladat-statuszok-kezelese-8-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Feladat: Státuszok kezelése (8 pont)
+      
+        1. Feladat: Státuszok kezelése (8 pont)
+      
     </span>
   </a>
   
@@ -694,7 +821,9 @@
           <li class="md-nav__item">
   <a href="#visual-studio-solution-megnyitasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual Studio solution megnyitása
+      
+        Visual Studio solution megnyitása
+      
     </span>
   </a>
   
@@ -703,7 +832,9 @@
           <li class="md-nav__item">
   <a href="#webalkalmazas-elinditasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Webalkalmazás elindítása
+      
+        Webalkalmazás elindítása
+      
     </span>
   </a>
   
@@ -712,7 +843,9 @@
           <li class="md-nav__item">
   <a href="#minden-statusz-listazasa-4p" class="md-nav__link">
     <span class="md-ellipsis">
-      Minden státusz listázása (4p)
+      
+        Minden státusz listázása (4p)
+      
     </span>
   </a>
   
@@ -721,7 +854,9 @@
           <li class="md-nav__item">
   <a href="#lekerdezes-es-beszuras-muveletek-4p" class="md-nav__link">
     <span class="md-ellipsis">
-      Lekérdezés és beszúrás műveletek (4p)
+      
+        Lekérdezés és beszúrás műveletek (4p)
+      
     </span>
   </a>
   
@@ -735,7 +870,9 @@
         <li class="md-nav__item">
   <a href="#2-feladat-task-alapmuveletek-6-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Feladat: Task alapműveletek (6 pont)
+      
+        2. Feladat: Task alapműveletek (6 pont)
+      
     </span>
   </a>
   
@@ -745,7 +882,9 @@
           <li class="md-nav__item">
   <a href="#entity-framework-sema-elokeszitese" class="md-nav__link">
     <span class="md-ellipsis">
-      Entity Framework séma előkészítése
+      
+        Entity Framework séma előkészítése
+      
     </span>
   </a>
   
@@ -754,7 +893,9 @@
           <li class="md-nav__item">
   <a href="#muveletek-service-szinten" class="md-nav__link">
     <span class="md-ellipsis">
-      Műveletek service szinten
+      
+        Műveletek service szinten
+      
     </span>
   </a>
   
@@ -763,7 +904,9 @@
           <li class="md-nav__item">
   <a href="#muveletek-rest-api-n" class="md-nav__link">
     <span class="md-ellipsis">
-      Műveletek REST Api-n
+      
+        Műveletek REST Api-n
+      
     </span>
   </a>
   
@@ -777,7 +920,9 @@
         <li class="md-nav__item">
   <a href="#3-feladat-task-on-vegzett-muveletek-6-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Feladat: Task-on végzett műveletek (6 pont)
+      
+        3. Feladat: Task-on végzett műveletek (6 pont)
+      
     </span>
   </a>
   
@@ -787,7 +932,9 @@
           <li class="md-nav__item">
   <a href="#kesz-allapot-jelzese-3p" class="md-nav__link">
     <span class="md-ellipsis">
-      Kész állapot jelzése (3p)
+      
+        Kész állapot jelzése (3p)
+      
     </span>
   </a>
   
@@ -796,7 +943,9 @@
           <li class="md-nav__item">
   <a href="#atsorolas-masik-statuszba-3p" class="md-nav__link">
     <span class="md-ellipsis">
-      Átsorolás másik státuszba (3p)
+      
+        Átsorolás másik státuszba (3p)
+      
     </span>
   </a>
   
@@ -810,7 +959,9 @@
         <li class="md-nav__item">
   <a href="#4-feladat-opcionalis-imsc-feladat-3-imsc-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Feladat: Opcionális iMSc feladat (3 iMSc pont)
+      
+        4. Feladat: Opcionális iMSc feladat (3 iMSc pont)
+      
     </span>
   </a>
   
@@ -840,7 +991,7 @@
             
             
               
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -861,7 +1012,9 @@
         <li class="md-nav__item">
   <a href="#elofeltetelek-felkeszules" class="md-nav__link">
     <span class="md-ellipsis">
-      Előfeltételek, felkészülés
+      
+        Előfeltételek, felkészülés
+      
     </span>
   </a>
   
@@ -870,7 +1023,9 @@
         <li class="md-nav__item">
   <a href="#feladat-attekintese" class="md-nav__link">
     <span class="md-ellipsis">
-      Feladat áttekintése
+      
+        Feladat áttekintése
+      
     </span>
   </a>
   
@@ -879,7 +1034,9 @@
         <li class="md-nav__item">
   <a href="#elokeszulet" class="md-nav__link">
     <span class="md-ellipsis">
-      Előkészület
+      
+        Előkészület
+      
     </span>
   </a>
   
@@ -889,7 +1046,9 @@
           <li class="md-nav__item">
   <a href="#git-repository-letrehozasa-es-letoltese" class="md-nav__link">
     <span class="md-ellipsis">
-      Git repository létrehozása és letöltése
+      
+        Git repository létrehozása és letöltése
+      
     </span>
   </a>
   
@@ -898,7 +1057,9 @@
           <li class="md-nav__item">
   <a href="#adatbazis-letrehozasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Adatbázis létrehozása
+      
+        Adatbázis létrehozása
+      
     </span>
   </a>
   
@@ -912,7 +1073,9 @@
         <li class="md-nav__item">
   <a href="#1-feladat-statuszok-kezelese-8-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      1. Feladat: Státuszok kezelése (8 pont)
+      
+        1. Feladat: Státuszok kezelése (8 pont)
+      
     </span>
   </a>
   
@@ -922,7 +1085,9 @@
           <li class="md-nav__item">
   <a href="#visual-studio-solution-megnyitasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Visual Studio solution megnyitása
+      
+        Visual Studio solution megnyitása
+      
     </span>
   </a>
   
@@ -931,7 +1096,9 @@
           <li class="md-nav__item">
   <a href="#webalkalmazas-elinditasa" class="md-nav__link">
     <span class="md-ellipsis">
-      Webalkalmazás elindítása
+      
+        Webalkalmazás elindítása
+      
     </span>
   </a>
   
@@ -940,7 +1107,9 @@
           <li class="md-nav__item">
   <a href="#minden-statusz-listazasa-4p" class="md-nav__link">
     <span class="md-ellipsis">
-      Minden státusz listázása (4p)
+      
+        Minden státusz listázása (4p)
+      
     </span>
   </a>
   
@@ -949,7 +1118,9 @@
           <li class="md-nav__item">
   <a href="#lekerdezes-es-beszuras-muveletek-4p" class="md-nav__link">
     <span class="md-ellipsis">
-      Lekérdezés és beszúrás műveletek (4p)
+      
+        Lekérdezés és beszúrás műveletek (4p)
+      
     </span>
   </a>
   
@@ -963,7 +1134,9 @@
         <li class="md-nav__item">
   <a href="#2-feladat-task-alapmuveletek-6-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Feladat: Task alapműveletek (6 pont)
+      
+        2. Feladat: Task alapműveletek (6 pont)
+      
     </span>
   </a>
   
@@ -973,7 +1146,9 @@
           <li class="md-nav__item">
   <a href="#entity-framework-sema-elokeszitese" class="md-nav__link">
     <span class="md-ellipsis">
-      Entity Framework séma előkészítése
+      
+        Entity Framework séma előkészítése
+      
     </span>
   </a>
   
@@ -982,7 +1157,9 @@
           <li class="md-nav__item">
   <a href="#muveletek-service-szinten" class="md-nav__link">
     <span class="md-ellipsis">
-      Műveletek service szinten
+      
+        Műveletek service szinten
+      
     </span>
   </a>
   
@@ -991,7 +1168,9 @@
           <li class="md-nav__item">
   <a href="#muveletek-rest-api-n" class="md-nav__link">
     <span class="md-ellipsis">
-      Műveletek REST Api-n
+      
+        Műveletek REST Api-n
+      
     </span>
   </a>
   
@@ -1005,7 +1184,9 @@
         <li class="md-nav__item">
   <a href="#3-feladat-task-on-vegzett-muveletek-6-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Feladat: Task-on végzett műveletek (6 pont)
+      
+        3. Feladat: Task-on végzett műveletek (6 pont)
+      
     </span>
   </a>
   
@@ -1015,7 +1196,9 @@
           <li class="md-nav__item">
   <a href="#kesz-allapot-jelzese-3p" class="md-nav__link">
     <span class="md-ellipsis">
-      Kész állapot jelzése (3p)
+      
+        Kész állapot jelzése (3p)
+      
     </span>
   </a>
   
@@ -1024,7 +1207,9 @@
           <li class="md-nav__item">
   <a href="#atsorolas-masik-statuszba-3p" class="md-nav__link">
     <span class="md-ellipsis">
-      Átsorolás másik státuszba (3p)
+      
+        Átsorolás másik státuszba (3p)
+      
     </span>
   </a>
   
@@ -1038,7 +1223,9 @@
         <li class="md-nav__item">
   <a href="#4-feladat-opcionalis-imsc-feladat-3-imsc-pont" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Feladat: Opcionális iMSc feladat (3 iMSc pont)
+      
+        4. Feladat: Opcionális iMSc feladat (3 iMSc pont)
+      
     </span>
   </a>
   
@@ -1054,22 +1241,24 @@
           
           
             <div class="md-content" data-md-component="content">
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
   
-    <a href="https://github.com/bmeviauac01/datadriven-lab/blob/master/docs/hu/Lab-EFREST/index.md" title="Oldal szerkesztése" class="md-content__button md-icon">
+    <a href="https://github.com/bmeviauac01/datadriven-lab/blob/master/docs/hu/Lab-EFREST/index.md" title="Oldal szerkesztése" class="md-content__button md-icon" rel="edit">
       
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
     </a>
   
   
 
 
-<h1 id="entity-framework-es-rest">Entity Framework és REST<a class="headerlink" href="#entity-framework-es-rest" title="Permanent link">&para;</a></h1>
+<h1 id="entity-framework-es-rest">Entity Framework és REST<a class="headerlink" href="#entity-framework-es-rest" title="Permanent link">¶</a></h1>
 <p>A labor során egy Entity Framework Core adatelérésre épülő REST API (ASP.NET Core Web Api) alkalmazást készítünk.</p>
-<h2 id="elofeltetelek-felkeszules">Előfeltételek, felkészülés<a class="headerlink" href="#elofeltetelek-felkeszules" title="Permanent link">&para;</a></h2>
+<h2 id="elofeltetelek-felkeszules">Előfeltételek, felkészülés<a class="headerlink" href="#elofeltetelek-felkeszules" title="Permanent link">¶</a></h2>
 <p>A labor elvégzéséhez szükséges eszközök:</p>
 <ul>
 <li>Windows, Linux, vagy MacOS: Minden szükséges program platform független, vagy van platformfüggetlen alternatívája.</li>
@@ -1097,12 +1286,12 @@
 </li>
 <li>Hivatalos Microsoft tutorial <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&amp;tabs=visual-studio">Web API készítéséhez</a></li>
 </ul>
-<h2 id="feladat-attekintese">Feladat áttekintése<a class="headerlink" href="#feladat-attekintese" title="Permanent link">&para;</a></h2>
+<h2 id="feladat-attekintese">Feladat áttekintése<a class="headerlink" href="#feladat-attekintese" title="Permanent link">¶</a></h2>
 <p>A feladok elkészítése során egy egyszerű feladatkezelő webalkalmazás backendjét készítjük el. Az alkalmazás <strong>két féle entitást kezel: státusz és task</strong>, ahol egy státuszhoz több task rendelhető (1-* kapcsolat). (A feladatszövegben <em>task</em> néven fogunk hivatkozni a második entitásra, és kerüljük a "feladat" megnevezést, amely félreérthető lenne.)</p>
 <p>Ha lenne frontendünk is, akkor egy <a href="https://en.wikipedia.org/wiki/Kanban_board">Kanban-tábla</a> szerű feladatkezelőt készítenénk. A frontendtől eltekintünk, csak a szükséges REST Api-t és Entity Framework Core + ASP.NET Core Web Api alapú kiszolgálót készítjük el.</p>
-<h2 id="elokeszulet">Előkészület<a class="headerlink" href="#elokeszulet" title="Permanent link">&para;</a></h2>
+<h2 id="elokeszulet">Előkészület<a class="headerlink" href="#elokeszulet" title="Permanent link">¶</a></h2>
 <p>A feladatok megoldása során ne felejtsd el követni a <a href="../GitHub/">feladat beadás folyamatát</a>.</p>
-<h3 id="git-repository-letrehozasa-es-letoltese">Git repository létrehozása és letöltése<a class="headerlink" href="#git-repository-letrehozasa-es-letoltese" title="Permanent link">&para;</a></h3>
+<h3 id="git-repository-letrehozasa-es-letoltese">Git repository létrehozása és letöltése<a class="headerlink" href="#git-repository-letrehozasa-es-letoltese" title="Permanent link">¶</a></h3>
 <ol>
 <li>
 <p>Moodle-ben keresd meg a laborhoz tartozó meghívó URL-jét és annak segítségével hozd létre a saját repository-dat.</p>
@@ -1121,12 +1310,12 @@
 <p>A <code>neptun.txt</code> fájlba írd bele a Neptun kódodat. A fájlban semmi más ne szerepeljen, csak egyetlen sorban a Neptun kód 6 karaktere.</p>
 </li>
 </ol>
-<h3 id="adatbazis-letrehozasa">Adatbázis <del>létrehozása</del><a class="headerlink" href="#adatbazis-letrehozasa" title="Permanent link">&para;</a></h3>
+<h3 id="adatbazis-letrehozasa">Adatbázis <del>létrehozása</del><a class="headerlink" href="#adatbazis-letrehozasa" title="Permanent link">¶</a></h3>
 <p>Ebben a feladatban nem Microsoft SQL Server-t használunk, hanem <em>Sqlite</em>-ot. Ez egy pehelysúlyú relációs adatbázis, amelyet elsősorban kliensoldali alkalmazásokban szokás használni, kiszolgáló oldalon nem javasolt a használata. Mi most az egyszerűség végett fogjuk használni. <strong>Ezt nem szükséges telepíteni</strong>.</p>
 <p>Az adatbázis sémát a <em>code first</em> modell szerint fogjuk létrehozni, így C# kóddal fogjuk leírni az adatbázisunkat. Ezért az adatbázis sémáját se kell SQL kóddal létrehoznunk.</p>
-<h2 id="1-feladat-statuszok-kezelese-8-pont">1. Feladat: Státuszok kezelése (8 pont)<a class="headerlink" href="#1-feladat-statuszok-kezelese-8-pont" title="Permanent link">&para;</a></h2>
+<h2 id="1-feladat-statuszok-kezelese-8-pont">1. Feladat: Státuszok kezelése (8 pont)<a class="headerlink" href="#1-feladat-statuszok-kezelese-8-pont" title="Permanent link">¶</a></h2>
 <p>Ebben a feladatban a státusz entitáshoz tartozó alapműveleteket fogjuk megvalósítani.</p>
-<h3 id="visual-studio-solution-megnyitasa">Visual Studio solution megnyitása<a class="headerlink" href="#visual-studio-solution-megnyitasa" title="Permanent link">&para;</a></h3>
+<h3 id="visual-studio-solution-megnyitasa">Visual Studio solution megnyitása<a class="headerlink" href="#visual-studio-solution-megnyitasa" title="Permanent link">¶</a></h3>
 <p>Nyisd meg a letöltött repository-ban a Visual Studio solution-t (<code>.sln</code> fájl). Ha a megnyitás során a Visual Studio azt jelezné, hogy a projekt típus nem támogatott, akkor telepítsd a Visual Studio hiányzó komponenseit (lásd <a href="../VisualStudio/">itt</a>).</p>
 <div class="admonition warning">
 <p class="admonition-title">NE frissíts semmilyen verziót</p>
@@ -1149,7 +1338,7 @@
 <p>Most szintén az egyszerűség kedvéért nem fogunk Repository mintát használni.</p>
 </div>
 <p>Munkád során a <code>StatusService</code> és <code>StatusController</code> osztályokba dolgozz! Ezen fájlok tartalmát tetszőlegesen módosíthatod (feltéve, hogy a service továbbra is megfelel a <code>IStatusService</code> interfésznek, és természetesen továbbra is fordul a kód).</p>
-<h3 id="webalkalmazas-elinditasa">Webalkalmazás elindítása<a class="headerlink" href="#webalkalmazas-elinditasa" title="Permanent link">&para;</a></h3>
+<h3 id="webalkalmazas-elinditasa">Webalkalmazás elindítása<a class="headerlink" href="#webalkalmazas-elinditasa" title="Permanent link">¶</a></h3>
 <p>Próbáld ki, hogy elindul-e a program.</p>
 <ol>
 <li>
@@ -1162,7 +1351,7 @@
 <div class="admonition success">
 <p>Ha minden rendben ment, akkor a böngészőben a "pong" szöveget látod, és a futó alkalmazás logjában látható a kiszolgált kérés.</p>
 </div>
-<h3 id="minden-statusz-listazasa-4p">Minden státusz listázása (4p)<a class="headerlink" href="#minden-statusz-listazasa-4p" title="Permanent link">&para;</a></h3>
+<h3 id="minden-statusz-listazasa-4p">Minden státusz listázása (4p)<a class="headerlink" href="#minden-statusz-listazasa-4p" title="Permanent link">¶</a></h3>
 <p>Valósítsuk meg az első műveletet, amely minden státuszt listáz.</p>
 <ol>
 <li>
@@ -1192,14 +1381,14 @@
 <span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">modelBuilder</span><span class="p">)</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">DbStatus</span><span class="o">&gt;</span><span class="p">()</span>
-<span class="w">        </span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">&quot;statuses&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="p">.</span><span class="n">ToTable</span><span class="p">(</span><span class="s">"statuses"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">DbStatus</span><span class="o">&gt;</span><span class="p">()</span>
 <span class="w">        </span><span class="p">.</span><span class="n">HasKey</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span>
 
 <span class="w">    </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">DbStatus</span><span class="o">&gt;</span><span class="p">()</span>
 <span class="w">        </span><span class="p">.</span><span class="n">Property</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
-<span class="w">        </span><span class="p">.</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="m">50</span><span class="p">)</span>
+<span class="w">        </span><span class="p">.</span><span class="n">HasMaxLength</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
 <span class="w">        </span><span class="p">.</span><span class="n">IsRequired</span><span class="p">(</span><span class="n">required</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">)</span>
 <span class="w">        </span><span class="p">.</span><span class="n">IsUnicode</span><span class="p">(</span><span class="n">unicode</span><span class="p">:</span><span class="w"> </span><span class="k">true</span><span class="p">);</span>
 <span class="p">}</span>
@@ -1225,7 +1414,7 @@
 </li>
 <li>
 <p>A BLL réteg után következik a controller. Nyisd meg a <code>Controllers.StatusController</code> osztályt. <strong>Fűzd bele a Neptun kódod a controller URL-jének végére</strong>, tehát a controller a <code>/api/status/neptun</code> címre érkező kérésekkel foglalkozik, ahol az utolsó 6 kisbetűs karakter a saját Neptun kódod.</p>
-<div class="highlight"><pre><span></span><code><span class="hll"><span class="na">[Route(&quot;api/[controller]</span><span class="o">/</span><span class="n">neptun</span><span class="s">&quot;)]</span>
+<div class="highlight"><pre><span></span><code><span class="hll"><span class="na">[Route("api/[controller]</span><span class="o">/</span><span class="n">neptun</span><span class="s">")]</span>
 </span><span class="na">[ApiController]</span>
 <span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">StatusController</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ControllerBase</span>
 </code></pre></div>
@@ -1248,7 +1437,7 @@
 </li>
 <li>
 <p>Nyisd meg a Postman-t és küldj a <a href="http://localhost:5000/api/status/neptun">http://localhost:5000/api/status/neptun</a> címre egy GET kérést (a saját Neptun kódodat kell itt is az URL végére írni).</p>
-<p><a class="glightbox" href="../images/efrest/rest-postman-get-statuses.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Státuszok lekérdezése Postman-nel" src="../images/efrest/rest-postman-get-statuses.png" /></a></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/efrest/rest-postman-get-statuses.png" data-desc-position="bottom"><img alt="Státuszok lekérdezése Postman-nel" src="../images/efrest/rest-postman-get-statuses.png"></a></p>
 <div class="admonition success">
 <p>Akkor sikeres a hívás, ha a Postman szerint 200 a válaszkód, és üres a válasz. Ha valami hiba lenne, akkor a Visual Studio Output ablakát ill. a futó konzol alkalmazás logját érdemes nézni.</p>
 </div>
@@ -1262,8 +1451,8 @@
 <span class="hll"><span class="w">    </span><span class="n">modelBuilder</span><span class="p">.</span><span class="n">Entity</span><span class="o">&lt;</span><span class="n">DbStatus</span><span class="o">&gt;</span><span class="p">()</span>
 </span><span class="hll"><span class="w">        </span><span class="p">.</span><span class="n">HasData</span><span class="p">(</span><span class="k">new</span><span class="p">[]</span>
 </span><span class="hll"><span class="w">        </span><span class="p">{</span>
-</span><span class="hll"><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">DbStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;new&quot;</span><span class="w"> </span><span class="p">},</span>
-</span><span class="hll"><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">DbStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;in progress&quot;</span><span class="w"> </span><span class="p">},</span>
+</span><span class="hll"><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">DbStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"new"</span><span class="w"> </span><span class="p">},</span>
+</span><span class="hll"><span class="w">            </span><span class="k">new</span><span class="w"> </span><span class="nf">DbStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"in progress"</span><span class="w"> </span><span class="p">},</span>
 </span><span class="hll"><span class="w">        </span><span class="p">});</span>
 </span><span class="p">}</span>
 </code></pre></div>
@@ -1277,7 +1466,7 @@
 </div>
 </li>
 </ol>
-<h3 id="lekerdezes-es-beszuras-muveletek-4p">Lekérdezés és beszúrás műveletek (4p)<a class="headerlink" href="#lekerdezes-es-beszuras-muveletek-4p" title="Permanent link">&para;</a></h3>
+<h3 id="lekerdezes-es-beszuras-muveletek-4p">Lekérdezés és beszúrás műveletek (4p)<a class="headerlink" href="#lekerdezes-es-beszuras-muveletek-4p" title="Permanent link">¶</a></h3>
 <p>Az összes státusz listázása mellett még vár ránk pár alapvető művelet:</p>
 <ul>
 <li>név alapján létezés ellenőrzése (<code>HEAD /api/status/neptun/{nev}</code>),</li>
@@ -1303,7 +1492,7 @@
 </li>
 <li>
 <p>A hozzájuk tartozó controller végpontok pedig:</p>
-<div class="highlight"><pre><span></span><code><span class="na">[HttpHead(&quot;{statusName}&quot;)]</span>
+<div class="highlight"><pre><span></span><code><span class="na">[HttpHead("{statusName}")]</span>
 <span class="na">[ProducesResponseType(StatusCodes.Status200OK)]</span>
 <span class="na">[ProducesResponseType(StatusCodes.Status404NotFound)]</span>
 <span class="k">public</span><span class="w"> </span><span class="n">ActionResult</span><span class="w"> </span><span class="nf">ExistsWithName</span><span class="p">(</span><span class="kt">string</span><span class="w"> </span><span class="n">statusName</span><span class="p">)</span>
@@ -1311,7 +1500,7 @@
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">_statusService</span><span class="p">.</span><span class="n">ExistsWithName</span><span class="p">(</span><span class="n">statusName</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="n">Ok</span><span class="p">()</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">NotFound</span><span class="p">();</span>
 <span class="p">}</span>
 
-<span class="na">[HttpGet(&quot;{id}&quot;)]</span>
+<span class="na">[HttpGet("{id}")]</span>
 <span class="na">[ProducesResponseType(StatusCodes.Status200OK)]</span>
 <span class="na">[ProducesResponseType(StatusCodes.Status404NotFound)]</span>
 <span class="k">public</span><span class="w"> </span><span class="n">ActionResult</span><span class="o">&lt;</span><span class="n">Status</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Get</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
@@ -1330,7 +1519,7 @@
 <span class="w">    </span><span class="k">using</span><span class="w"> </span><span class="nn">var</span><span class="w"> </span><span class="n">tran</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_dbContext</span><span class="p">.</span><span class="n">Database</span><span class="p">.</span><span class="n">BeginTransaction</span><span class="p">(</span><span class="n">IsolationLevel</span><span class="p">.</span><span class="n">RepeatableRead</span><span class="p">);</span>
 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">_dbContext</span><span class="p">.</span><span class="n">Statuses</span><span class="p">.</span><span class="n">Any</span><span class="p">(</span><span class="n">s</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">EF</span><span class="p">.</span><span class="n">Functions</span><span class="p">.</span><span class="n">Like</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="k">value</span><span class="p">.</span><span class="n">Name</span><span class="p">)))</span>
-<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentException</span><span class="p">(</span><span class="s">&quot;Name must be unique&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="nf">ArgumentException</span><span class="p">(</span><span class="s">"Name must be unique"</span><span class="p">);</span>
 
 <span class="w">    </span><span class="kt">var</span><span class="w"> </span><span class="n">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DbStatus</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">value</span><span class="p">.</span><span class="n">Name</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="n">_dbContext</span><span class="p">.</span><span class="n">Statuses</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">status</span><span class="p">);</span>
@@ -1356,11 +1545,11 @@
 <span class="w">    </span><span class="k">try</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="kt">var</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_statusService</span><span class="p">.</span><span class="n">Insert</span><span class="p">(</span><span class="k">value</span><span class="p">);</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">CreatedAtAction</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Get</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">created</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">CreatedAtAction</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">Get</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">created</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">created</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArgumentException</span><span class="w"> </span><span class="n">ex</span><span class="p">)</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">        </span><span class="n">ModelState</span><span class="p">.</span><span class="n">AddModelError</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">CreateStatus</span><span class="p">.</span><span class="n">Name</span><span class="p">),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ModelState</span><span class="p">.</span><span class="n">AddModelError</span><span class="p">(</span><span class="k">nameof</span><span class="p">(</span><span class="n">CreateStatus</span><span class="p">.</span><span class="n">Name</span><span class="p">),</span><span class="w"> </span><span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">);</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nf">ValidationProblem</span><span class="p">(</span><span class="n">ModelState</span><span class="p">);</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
@@ -1377,9 +1566,9 @@
 <p class="admonition-title">BEADANDÓ</p>
 <p>Készíts egy <strong>képernyőképet</strong> Postman-ből (avagy más, hasonló eszközből, ha nem Postman-t használtál), amely egy <strong>sikertelen</strong> beszúrást mutat. A sikertelenség oka a már létező név legyen. A képet a megoldásban <code>f1.png</code> néven add be. A képernyőképen látszódjon a <strong>kimenő kérés és a válasz is minden részletével</strong> (URL, body, válasz kód, válasz body). Ellenőrizd, hogy a <strong>Neptun kódod</strong> az URL-ben szerepel-e! A képernyőkép szükséges feltétele a pontszám megszerzésének.</p>
 </div>
-<h2 id="2-feladat-task-alapmuveletek-6-pont">2. Feladat: Task alapműveletek (6 pont)<a class="headerlink" href="#2-feladat-task-alapmuveletek-6-pont" title="Permanent link">&para;</a></h2>
+<h2 id="2-feladat-task-alapmuveletek-6-pont">2. Feladat: Task alapműveletek (6 pont)<a class="headerlink" href="#2-feladat-task-alapmuveletek-6-pont" title="Permanent link">¶</a></h2>
 <p>Ebben a feladatban az alkalmazásban kezelt másik entitás, a task alapműveleteit implementáljuk az előzőekhez hasonlóan.</p>
-<h3 id="entity-framework-sema-elokeszitese">Entity Framework séma előkészítése<a class="headerlink" href="#entity-framework-sema-elokeszitese" title="Permanent link">&para;</a></h3>
+<h3 id="entity-framework-sema-elokeszitese">Entity Framework séma előkészítése<a class="headerlink" href="#entity-framework-sema-elokeszitese" title="Permanent link">¶</a></h3>
 <p>A task-ot a <code>Dtos.Task</code> DTO osztály reprezentálja. A task rendelkezik egy azonosítóval (<code>Id</code>), egy címmel (<code>Title</code>), a <code>IsDone</code> flag jelzi ha készen van, és a <code>Status</code> mutatja azon státuszt, amelyhez a task rendelve van (1-* multiplicitással).</p>
 <p>Első lépésként az Entity Framework modellt kell elkészítened:</p>
 <ol>
@@ -1396,7 +1585,7 @@
 <p>Célszerű lesz minta adatokat is felvenni a korábban látott módon.</p>
 </li>
 </ol>
-<h3 id="muveletek-service-szinten">Műveletek service szinten<a class="headerlink" href="#muveletek-service-szinten" title="Permanent link">&para;</a></h3>
+<h3 id="muveletek-service-szinten">Műveletek service szinten<a class="headerlink" href="#muveletek-service-szinten" title="Permanent link">¶</a></h3>
 <p>Készíts a <code>Services</code> mappában egy új osztályt <code>TaskService</code> néven, amely implementálja a már létező <code>ITaskService</code> interfészt. Valósítsd meg az alábbi műveleteit:</p>
 <ul>
 <li><code>IReadOnlyCollection&lt;Task&gt; List()</code>: listázza az összes task-ot</li>
@@ -1409,7 +1598,7 @@
 <p class="admonition-title">Tipp</p>
 <p>Az adatbázisban használt C# osztály és a modell entitás osztály közötti leképzéshez célszerű lesz egy <code>ToModel</code> segédfüggvényt definiálni a korábban látott módon. Ahhoz, hogy a task-hoz kapcsolt státusz entitást is lekérdezze az adatbázis (amire a névhez szükség lesz), fontos lesz a megfelelő <code>Include</code> használata.</p>
 </div>
-<h3 id="muveletek-rest-api-n">Műveletek REST Api-n<a class="headerlink" href="#muveletek-rest-api-n" title="Permanent link">&para;</a></h3>
+<h3 id="muveletek-rest-api-n">Műveletek REST Api-n<a class="headerlink" href="#muveletek-rest-api-n" title="Permanent link">¶</a></h3>
 <p>Készíts egy új controller osztály a <code>Controllers</code> mappában <code>TaskController</code> néven. A controller a <code>/api/task/neptun</code> URL-en kezelje a REST kéréseket, ahol az URL vége a <strong>saját Neptun kódod</strong> kisbetűsen.</p>
 <p>A controller konstruktor paraméterben egy <code>ITaskService</code> példányt vegyen át. Ahhoz, hogy a dependency injection keretrendszer ezt fel tudja oldani futási időben, szükséges lesz még konfigurációra is. A <code>Program</code> osztályban kell a másik service-hez hasonlóan beregisztrálni ezt az interfészt. (A controller-t <em>nem</em> kell regisztrálni.)</p>
 <p>A fent implementált service műveletekre építve valósítsd meg az alábbi műveleteket:</p>
@@ -1423,9 +1612,9 @@
 <p class="admonition-title">BEADANDÓ</p>
 <p>Készíts egy <strong>képernyőképet</strong> Postman-ből (avagy más, hasonló eszközből, ha nem Postman-t használtál), amely egy <strong>tetszőleges</strong> kérést és válaszát mutatja a fentiek közül. A képet a megoldásban <code>f2.png</code> néven add be. A képernyőképen látszódjon a <strong>kimenő kérés és a válasz is minden részletével</strong> (URL, body, válasz kód, válasz body). Ellenőrizd, hogy a <strong>Neptun kódod</strong> az URL-ben szerepel-e! A képernyőkép szükséges feltétele a részpontszám megszerzésének.</p>
 </div>
-<h2 id="3-feladat-task-on-vegzett-muveletek-6-pont">3. Feladat: Task-on végzett műveletek (6 pont)<a class="headerlink" href="#3-feladat-task-on-vegzett-muveletek-6-pont" title="Permanent link">&para;</a></h2>
+<h2 id="3-feladat-task-on-vegzett-muveletek-6-pont">3. Feladat: Task-on végzett műveletek (6 pont)<a class="headerlink" href="#3-feladat-task-on-vegzett-muveletek-6-pont" title="Permanent link">¶</a></h2>
 <p>Implementálj két új http végpontot a task-ot kezelő controllerben, amellyel az alábbiak szerint módosítható egy-egy task példány.</p>
-<h3 id="kesz-allapot-jelzese-3p">Kész állapot jelzése (3p)<a class="headerlink" href="#kesz-allapot-jelzese-3p" title="Permanent link">&para;</a></h3>
+<h3 id="kesz-allapot-jelzese-3p">Kész állapot jelzése (3p)<a class="headerlink" href="#kesz-allapot-jelzese-3p" title="Permanent link">¶</a></h3>
 <p>A <code>Task.IsDone</code> flag jelzi a task kész voltát. Készíts egy új http végpontot az alábbiak szerint, amely az <code>ITaskService.MarkDone</code> műveleten keresztül beállítja a flaget a megadott task példányon.</p>
 <p>Kérés: <code>PATCH /api/task/neptun/{id}/done</code>, ahol <code>{id}</code> a task azonosítója.</p>
 <p>Válasz:</p>
@@ -1433,7 +1622,7 @@
 <li><code>404 Not found</code>, ha nem létezik a task</li>
 <li><code>200 OK</code> ha sikeres a művelet - a body-ban adja vissza a módosítás utáni task entitást.</li>
 </ul>
-<h3 id="atsorolas-masik-statuszba-3p">Átsorolás másik státuszba (3p)<a class="headerlink" href="#atsorolas-masik-statuszba-3p" title="Permanent link">&para;</a></h3>
+<h3 id="atsorolas-masik-statuszba-3p">Átsorolás másik státuszba (3p)<a class="headerlink" href="#atsorolas-masik-statuszba-3p" title="Permanent link">¶</a></h3>
 <p>Egy task egy státuszhoz tartozik (<code>Task.StatusId</code>). Készíts egy új http végpontot az alábbiak szerint, amely az <code>ITaskService.MoveToStatus</code> műveleten keresztül áthelyezi a megadott task-ot egy másik státuszba. Ha az új státusz nem létezik, akkor hozzon létre újat a művelet.</p>
 <p>Kérés: <code>PATCH /api/task/neptun/{id}/move</code>, ahol</p>
 <ul>
@@ -1453,7 +1642,7 @@
 <p class="admonition-title">BEADANDÓ</p>
 <p>Készíts egy <strong>képernyőképet</strong> Postman-ből (avagy más, hasonló eszközből, ha nem Postman-t használtál), amely a fentiek közül egy <strong>tetszőleges</strong> kérést és válaszát mutatja. A képet a megoldásban <code>f3.png</code> néven add be. A képernyőképen látszódjon a <strong>kimenő kérés és a válasz is minden részletével</strong> (URL, body, válasz kód, válasz body). Ellenőrizd, hogy a <strong>Neptun kódod</strong> az URL-ben szerepel-e! A képernyőkép szükséges feltétele a pontszám megszerzésének.</p>
 </div>
-<h2 id="4-feladat-opcionalis-imsc-feladat-3-imsc-pont">4. Feladat: Opcionális iMSc feladat (3 iMSc pont)<a class="headerlink" href="#4-feladat-opcionalis-imsc-feladat-3-imsc-pont" title="Permanent link">&para;</a></h2>
+<h2 id="4-feladat-opcionalis-imsc-feladat-3-imsc-pont">4. Feladat: Opcionális iMSc feladat (3 iMSc pont)<a class="headerlink" href="#4-feladat-opcionalis-imsc-feladat-3-imsc-pont" title="Permanent link">¶</a></h2>
 <p>Amennyiben sok task van, nem célszerű egyszerre mindet visszaadni listázáskor. Implementálj lapozást erre a funkcióra az alábbi követelményekkel.</p>
 <ul>
 <li>Determinisztikusan az ID alapján sorrendben adja vissza az elemeket.</li>
@@ -1493,23 +1682,23 @@
 <p>Ez az első kérés. Itt nincs <code>from</code> paraméter, ez a legelső elemtől indul.</p>
 <p>Válasz:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doing homework&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;done&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pending&quot;</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doing homework"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pending"</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;doing more homework&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;done&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;new&quot;</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doing more homework"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextId&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://localhost:5000/api/task/neptun/paged?fromId=3&amp;count=2&quot;</span>
+<span class="w">  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextUrl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://localhost:5000/api/task/neptun/paged?fromId=3&amp;count=2"</span>
 <span class="p">}</span>
 </code></pre></div>
 </li>
@@ -1518,17 +1707,17 @@
 <p>Ez a második lap tartalmának lekérése.</p>
 <p>Válasz:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;hosework&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;done&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;done&quot;</span>
+<span class="w">      </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"hosework"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"done"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"done"</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>A válasz mutatja, hogy nincs további lap, mind a <code>nextId</code>, mind a <code>nextUrl</code> null.</p>
@@ -1538,10 +1727,10 @@
 <p>Ez egy üres lap.</p>
 <p>Válasz:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
-<span class="w">  </span><span class="nt">&quot;count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextId&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;nextUrl&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">"nextUrl"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span>
 <span class="p">}</span>
 </code></pre></div>
 </li>
@@ -1551,18 +1740,15 @@
 <p class="admonition-title">BEADANDÓ</p>
 <p>Készíts egy <strong>képernyőképet</strong> Postman-ből (avagy más, hasonló eszközből, ha nem Postman-t használtál), amely a fenti bemutatott példához hasonlóan egy <strong>tetszőleges</strong> lap lekérését és válaszát mutatja. A képet a megoldásban <code>f4.png</code> néven add be. A képernyőképen látszódjon a <strong>kimenő kérés és a válasz is minden részletével</strong> (URL, body, válasz kód, válasz body). Ellenőrizd, hogy a <strong>Neptun kódod</strong> az URL-ben szerepel-e! A képernyőkép szükséges feltétele a pontszám megszerzésének.</p>
 </div>
-
-    <hr>
+  <hr>
   <div class="md-source-file">
-    <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg
-          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path
-            d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
+    <span class="md-source-file__fact"> <span class="md-icon" title="Utolsó frissítés"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z">
           </path>
         </svg>
       </span>
       <span title="2024. május 19. 21:51:17">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2024. május 19. 21:51:17"><span class="timeago" datetime="2024-05-19T21:51:17+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2024. május 19. 21:51:17">2024-05-19</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2024. május 19. 21:51:17 CEST"><span class="timeago" datetime="2024-05-19T21:51:17+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2024. május 19. 21:51:17 CEST">2024-05-19</span>
       </span>
     </span>
 
@@ -1571,30 +1757,28 @@
     <span class="md-source-file__fact">
       <span class="md-icon" title="Szerzők">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path
-            d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z">
+          <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z">
           </path>
         </svg>
       </span>
       <span>Szerzők</span>
       <nav><a href="https://github.com/akosdudas" target="_blank" rel="noopener noreferrer" class="md-author" title="@Akos Dudas">
-          <img src="https://avatars.githubusercontent.com/u/11335181?u=9971512094b94810046de53f5c1dee78e9776a4f&v=4?size=72" alt="@Akos Dudas">
+          <img src="https://avatars.githubusercontent.com/u/11335181?u=9971512094b94810046de53f5c1dee78e9776a4f&amp;v=4?size=72" alt="@Akos Dudas">
         </a><a href="https://github.com/ialbert-AUT" target="_blank" rel="noopener noreferrer" class="md-author" title="@István Albert">
           <img src="https://avatars.githubusercontent.com/u/61751571?v=4?size=72" alt="@István Albert">
         </a><a href="https://github.com/lyozi" target="_blank" rel="noopener noreferrer" class="md-author" title="@Urak József">
           <img src="https://avatars.githubusercontent.com/u/124312789?v=4?size=72" alt="@Urak József">
         </a><a href="https://github.com/norbertkurcsi" target="_blank" rel="noopener noreferrer" class="md-author" title="@Kurcsi Norbert">
-          <img src="https://avatars.githubusercontent.com/u/90260479?u=5dc2891fae39aac8292aedfc0a555941ee742a61&v=4?size=72" alt="@Kurcsi Norbert">
+          <img src="https://avatars.githubusercontent.com/u/90260479?u=5dc2891fae39aac8292aedfc0a555941ee742a61&amp;v=4?size=72" alt="@Kurcsi Norbert">
         </a><a href="https://github.com/Stellaway" target="_blank" rel="noopener noreferrer" class="md-author" title="@Ursuleac Zsolt">
-          <img src="https://avatars.githubusercontent.com/u/40556813?u=62d2e7deab1b431e369b49c47647f93d7d8b254a&v=4?size=72" alt="@Ursuleac Zsolt">
+          <img src="https://avatars.githubusercontent.com/u/40556813?u=62d2e7deab1b431e369b49c47647f93d7d8b254a&amp;v=4?size=72" alt="@Ursuleac Zsolt">
         </a><a href="https://github.com/tibitoth" target="_blank" rel="noopener noreferrer" class="md-author" title="@Tibor Tóth">
-          <img src="https://avatars.githubusercontent.com/u/8333960?u=d26653213d265ecdceeaf20a896d74f479d35450&v=4?size=72" alt="@Tibor Tóth">
+          <img src="https://avatars.githubusercontent.com/u/8333960?u=d26653213d265ecdceeaf20a896d74f479d35450&amp;v=4?size=72" alt="@Tibor Tóth">
         </a><a href="https://github.com/vandreas73" target="_blank" rel="noopener noreferrer" class="md-author" title="@None">
-          <img src="https://avatars.githubusercontent.com/u/113762114?u=72f34320e374884b31584a21539071340774aada&v=4?size=72" alt="@None">
+          <img src="https://avatars.githubusercontent.com/u/113762114?u=72f34320e374884b31584a21539071340774aada&amp;v=4?size=72" alt="@None">
         </a></nav>      
     </span>
   </div>
-
 
 
 
@@ -1604,11 +1788,12 @@
             </div>
           
           
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
         
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   Vissza a tetejére
 </button>
         
@@ -1621,7 +1806,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; BME-VIK-AUT
+      Copyright © BME-VIK-AUT
     </div>
   
   
@@ -1642,17 +1827,20 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "search.suggest", "content.action.edit"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}}</script>
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.instant", "navigation.top", "search.suggest", "content.action.edit"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "V\u00e1g\u00f3lapra m\u00e1solva", "clipboard.copy": "M\u00e1sol\u00e1s v\u00e1g\u00f3lapra", "search.result.more.one": "1 tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.more.other": "# tov\u00e1bbi tal\u00e1lat az oldalon", "search.result.none": "Nincs tal\u00e1lat", "search.result.one": "1 egyez\u0151 dokumentum", "search.result.other": "# egyez\u0151 dokumentum", "search.result.placeholder": "Keres\u00e9shez \u00edrj ide valamit", "search.result.term.missing": "\u00dcres", "select.version": "Verzi\u00f3v\u00e1lt\u00e1s"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.6c14ae12.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
         <script src="../js/timeago.min.js"></script>
       
         <script src="../js/timeago_mkdocs_material.js"></script>
       
     
-  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
-document$.subscribe(() => { lightbox.reload() });
-</script></body>
-</html>
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
