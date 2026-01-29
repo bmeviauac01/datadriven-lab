@@ -10,12 +10,12 @@ Required tools to complete the tasks:
 - [Postman](https://www.getpostman.com/)
 - [DB Browser for SQLite](https://sqlitebrowser.org/) - if you would like to check the database (not necessary)
 - GitHub account and a git client
-- Microsoft Visual Studio 2022 [with the settings here](../VisualStudio.md)
+- Microsoft Visual Studio 2026 [with the settings here](../VisualStudio.md)
     - When using Linux or macOS, you can use Visual Studio Code, the .NET SDK, and [dotnet CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/).
-- [.NET **8** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET **10** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
-    !!! warning ".NET 8.0"
-        Mind the version! You need .NET SDK version **8.0** to solve these exercises.
+    !!! warning ".NET 10.0"
+        Mind the version! You need .NET SDK version **10.0** to solve these exercises.
 
         On Windows, it might already be installed along with Visual Studio (see [here](../VisualStudio.md#check-and-install-net-core-sdk) how to check it); if not, use the link above to install (the SDK and _not_ the runtime). You need to install it manually when using Linux or macOS.
 
@@ -96,15 +96,15 @@ Check if the web application starts.
 
 Implement the first operation to list all available status entities.
 
-1. Open class `Model.Status`. This is the entity class used by the business layer.
+1. Open class `Dtos.Status`. This is the entity class used by the business layer.
 
     !!! warning ""
         Do **NOT** make any changes to this class.
 
     !!! tip "Records in C#"
-        The `record` keyword represents a type (by default `class`) that has the constructor defined in the header and the [`init` only setter](https://learn.microsoft.com/en-us/dotnet/csharp/language- reference/proposals/csharp-9.0/init) has properties. This makes a record have immutable behavior, which better matches the behavior of a DTO. Records also have other conveniences ([see more](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)), but we will not take advantage of here.
+        The `record` keyword represents a type (by default `class`) that has the constructor defined in the header and the [`init` only setter](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-9.0/init) has properties. This makes a record have immutable behavior, which better matches the behavior of a DTO. Records also have other conveniences ([see more](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record)), but we will not take advantage of here.
 
-1. Open class `DAL.EfDbContext.DbStatus`. This is the Entity Framework and database representation of the same entity. Let us implement this class:
+1. Open class `Dal.Entities.DbStatus`. This is the Entity Framework and database representation of the same entity. Let us implement this class:
 
     ```csharp hl_lines="3-4"
     public class DbStatus
@@ -116,7 +116,7 @@ Implement the first operation to list all available status entities.
 
     The `Id` is the primary key in the database, and `Name` is the name of the status.
 
-1. Open class `DAL.EfDbContext.TasksDbContext`. We need to add a new DbSet property here and configure the C# - database mapping in method `OnModelCreating`:
+1. Open class `Dal.TasksDbContext`. We need to add a new DbSet property here and configure the C# - database mapping in method `OnModelCreating`:
 
     ```csharp title="TasksDbContext.cs"
     public DbSet<DbStatus> Statuses { get; set; }
@@ -338,9 +338,9 @@ The first step is to create the Entity Framework model:
 
 4. It will be advisable to record sample data as seen earlier.
 
-### Operations in the repository
+### Operations in the service layer
 
-In the `Dal` folder, create a new class called `TaskService` that implements the existing `ITaskService` interface. Perform the following actions:
+In the `Services` folder, create a new class called `TaskService` that implements the existing `ITaskService` interface. Perform the following actions:
 
 - `IReadOnlyCollection<Task> List()`: list all tasks
 - `Task FindById(int taskId)`: returns the task whose id matches the parameter; or return `null` if there is none
@@ -354,15 +354,15 @@ Do not implement the other operations for now, but they must also have an implem
 
 ### Operations on the REST Api
 
-Create a new `TasksController` in the `Controllers` folder. The controller shall handle REST queries on URL `/api/task/neptun` where the last part is your **own Neptun code** lowercase.
+Create a new `TaskController` in the `Controllers` folder. The controller shall handle REST queries on URL `/api/task/neptun` where the last part is your **own Neptun code** lowercase.
 
-Take an instance of `ITaskService` in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the `Program' class, just like the other service. (The controller _does_ not have to be registered.)
+Take an instance of `ITaskService` in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the `Program` class, just like the other service. (The controller _does_ not have to be registered.)
 
 Implement the following operations using the previously implemented repository methods:
 
 - `GET /api/task/neptun`: returns all tasks; response code is always `200 OK`
 - `GET /api/task/neptun/{id}`: gets a single task; response code is `200 OK` or `404 Not found`
-- `POST /api/task/neptun`: add a new task based on a `Dto.CreateTask` instance specified in the body; the response code is `201 Created` with the new entity in the body and an appropriate _Location_ header
+- `POST /api/task/neptun`: add a new task based on a `Dtos.CreateTask` instance specified in the body; the response code is `201 Created` with the new entity in the body and an appropriate _Location_ header
 - `DELETE /api/task/neptun/{id}`: deleted a task; response code is `204 No content` or `404 Not found`
 
 !!! example "SUBMISSION"
@@ -374,7 +374,7 @@ Implement two new endpoints in the controller handling tasks that alter existing
 
 ### Marking a task as done (3 points)
 
-The flag `Task.Done` signals that a task is completed. Create a new http endpoint that uses the `ITasksRepository.MarkDone` method to set this flag on a task instance.
+The flag `Task.IsDone` signals that a task is completed. Create a new http endpoint that uses the `ITaskService.MarkDone` method to set this flag on a task instance.
 
 Request: `PATCH /api/task/neptun/{id}/done` with `{id}` being the tasks ID.
 
@@ -385,7 +385,7 @@ Response:
 
 ### Move to a new status (3 points)
 
-A task is associated with status through `Task.StatusId` (or similar). Create a new http endpoint that uses the `ITasksRepository.MoveToStatus` method to change the status of the specified tasks to a new one. If the new status with the provided name does not exist, create one.
+A task is associated with a status (`Task.Status`). Create a new http endpoint that uses the `ITaskService.MoveToStatus` method to change the status of the specified task to a new one. If the new status with the provided name does not exist, create one.
 
 Request: `PATCH /api/task/neptun/{id}/move` with
 
@@ -413,7 +413,7 @@ If we have lots of tasks listing them should not return all of them at once. Imp
 - Paging should be available at the existing address `GET /api/task/neptun/paged`.
 - During paging, only those entities that are really needed should be queried for the answer (so don't needlessly drag the entire table into memory).
     - You could extend the `ITaskService` interface for this excercise.
-- The paging response should be an instance of the `Dto.PagedTaskList` class. It includes:
+- The paging response should be an instance of the `Dtos.PagedTaskList` class. It includes:
     - array of elements on the page (`Items`),
     - the number of elements on the page (`Count`)
     - `fromId` value (`NextId`) required to retrieve the next page,

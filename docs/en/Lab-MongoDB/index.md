@@ -18,12 +18,12 @@ Required tools to complete the tasks:
     - MongoDB for VSCode extension
 - Sample database initialization script: ([mongo.js](../db/mongo.js))
 - GitHub account and a git client
-- Microsoft Visual Studio 2022 [with the settings here](../VisualStudio.md)
+- Microsoft Visual Studio 2026 [with the settings here](../VisualStudio.md)
     - When using Linux or macOS, you can use Visual Studio Code, the .NET SDK, and [dotnet CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/).
-- [.NET **8.0** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET **10.0** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
-    !!! warning ".NET 8.0"
-        Mind the version! You need .NET SDK version **8.0** to solve these exercises.
+    !!! warning ".NET 10.0"
+        Mind the version! You need .NET SDK version **10.0** to solve these exercises.
 
         On Windows it might already be installed along with Visual Studio (see [here](../VisualStudio.md#check-and-install-net-sdk) how to check it); if not, use the link above to install (the SDK and _not_ the runtime). You need to install it manually when using Linux or macOS.
 
@@ -31,7 +31,7 @@ Materials for preparing for this laboratory:
 
 - MongoDB database system and the C# driver
     - Check the materials of _Data-driven systems_ including the [seminars](https://bmeviauac01.github.io/datadriven/en/)
-- Official Microsoft tutorial for [WebApi using MongoDB](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-6.0&tabs=visual-studio)
+- Official Microsoft tutorial for [WebApi using MongoDB](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-10.0&tabs=visual-studio)
     - We will not be creating a WebApi in this lab, but the Mongo part is the same.
 
 ## Initial steps
@@ -66,7 +66,7 @@ Open the Visual Studio solution (the `.sln`) file in the checked-out repository.
 !!! warning "Do NOT upgrade any version"
     Do not upgrade the project, the .NET version, or any NuGet package! If you see such a question, always choose no!
 
-You will need to work in class `Dal.Repository`! You can make changes to this class as long as the source code complies, the repository implements interface `mongolab.DAL.IRepository`, and the constructor accepts a single `IMongoDatabase` parameter.
+You will need to work in class `Dal.Repository`! You can make changes to this class as long as the source code complies, the repository implements interface `Dal.IRepository`, and the constructor accepts a single `IMongoDatabase` parameter.
 
 The database access is configured in class `Dal.MongoConnectionConfig`. If needed, you can change the database name in this file.
 
@@ -118,7 +118,7 @@ You will need to create screenshots that display your Neptun code.
 
     public Repository(IMongoDatabase database)
     {
-        this._productCollection = database.GetCollection<Entities.Product>("products");
+        _productCollection = database.GetCollection<Entities.Product>("products");
     }
     ```
 
@@ -172,7 +172,7 @@ You will need to create screenshots that display your Neptun code.
 
 1. Implement the method `InsertProduct(Product product)`. The input is an instance of `Models.Product` that collects the information specified on the UI.
 
-1. To create a new product, we will first create a new database entity (in memory first). This is an instance of class `Entities.Product`. There is no need to set the `Id` - the database will generate it. `Name`, `Price` and `Stock` are provided by the user. What is left is `Vat` and `CategoryId`. We should hard-code values here: create a new VAT entity and find a random category using _Studio 3T_ and copy the `_id` value.
+1. To create a new product, we will first create a new database entity (in memory first). This is an instance of class `Entities.Product`. There is no need to set the `Id` - the database will generate it. `Name`, `Price` and `Stock` are provided by the user. What is left is `Vat` and `CategoryId`. We should hard-code values here: create a new VAT entity and find a random category using the _MongoDB for VSCode_ extension and copy the `_id` value.
 
     ```csharp
     var dbProduct = new Entities.Product
@@ -240,7 +240,7 @@ The method you should implement is `IList<Category> ListCategories()`. The metho
 
 The outline of the solution is as follows.
 
-1. Create and initialize a new `_productCollection` similar to how `_categoryCollection` is initialized. The name of the collection is `categories` - you can verify this using _Studio 3T_.
+1. Create and initialize a new `_categoryCollection` similar to how `_productCollection` is initialized. The name of the collection is `categories` - you can verify this using the _MongoDB for VSCode_ extension.
 
 1. `ListCategories()` should first query all categories. Perform this similarly to how it was done in the previous exercise. Store the result set in variable `dbCategories`.
 
@@ -249,11 +249,11 @@ The outline of the solution is as follows.
     ```csharp
     var productCounts = _productCollection
         .Aggregate()
-        .Group(t => t.CategoryID, g => new { CategoryID = g.Key, NumberOfProducts = g.Count() })
+        .Group(t => t.CategoryId, g => new { CategoryId = g.Key, NumberOfProducts = g.Count() })
         .ToList();
     ```
 
-    This query yields a list where each item has a `CategoryID` and the number of associated products.
+    This query yields a list where each item has a `CategoryId` and the number of associated products.
 
 1. We have all information we need: all categories (including the parents) and the number of products for each. The final step is to "merge" the results in C# code.
 
@@ -265,7 +265,7 @@ The outline of the solution is as follows.
             ParentCategoryName = k.ParentCategoryId.HasValue
                ? dbCategories.Single(p => p.Id == k.ParentCategoryId.Value).Name
                : null,
-            NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryID == k.Id)?.NumberOfProducts ?? 0
+            NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryId == k.Id)?.NumberOfProducts ?? 0
         })
        .ToList();
     ```
@@ -284,7 +284,7 @@ The outline of the solution is as follows.
 
 In this exercise, we will implement CRUD (create, retrieve, update, delete) operations for `Order` entities. This exercise is similar to the previous one; feel free to look back to the solutions of that exercise.
 
-The properties of `Model.Order` are:
+The properties of `Models.Order` are:
 
 - `Id`: the `Id` of the database serialized using `ToString`
 - `Date`, `Deadline`, `Status`: taken from the database directly
@@ -342,7 +342,7 @@ You can test the functionalities using the `Orders` link in the test web app. Ve
 
 We will list the customers in this exercise, along with the cumulative value of their orders. This will be similar to exercise 2: we will use aggregation and merging in C# code.
 
-The method to implement is `IList<Customer> ListCustomers()`. The method shall return every customer. The properties of `Model.Customer` are:
+The method to implement is `IList<Customer> ListCustomers()`. The method shall return every customer. The properties of `Models.Customer` are:
 
 - `Name`: the name of the customer
 - `ZipCode`, `City`, `Street`: the address fields of the main site of the customer

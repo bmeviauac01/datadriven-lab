@@ -18,12 +18,12 @@ A labor elvégzéséhez szükséges eszközök:
     - MongoDB for VSCode kiegészítő
 - Minta adatbázis kódja ([mongo.js](../db/mongo.js))
 - GitHub account és egy git kliens
-- Microsoft Visual Studio 2022 [az itt található beállításokkal](../VisualStudio.md)
+- Microsoft Visual Studio 2026 [az itt található beállításokkal](../VisualStudio.md)
     - Linux és MacOS esetén Visual Studio Code és a .NET SDK-val települő [dotnet CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/) használható.
-- [.NET **8.0** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET **10.0** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
-    !!! warning ".NET 8.0"
-        A feladat megoldásához **8.0**-es .NET SDK telepítése szükséges.
+    !!! warning ".NET 10.0"
+        A feladat megoldásához **10.0**-es .NET SDK telepítése szükséges.
 
         Windows-on Visual Studio verzió függvényében lehet, hogy telepítve van (lásd [itt](../VisualStudio.md#net-sdk-ellenorzese-es-telepitese) az ellenőrzés módját); ha nem, akkor a fenti linkről kell telepíteni (az SDK-t és _nem_ a runtime-ot.) Linux és MacOS esetén telepíteni szükséges.
 
@@ -31,7 +31,7 @@ A labor elvégzéséhez használható segédanyagok és felkészülési anyagok:
 
 - MongoDB adatbáziskezelő rendszer és a C# driver használata
     - Lásd az Adatvezérelt rendszerek c. tárgy jegyzetei és [gyakorlati anyagai](https://bmeviauac01.github.io/datadriven/hu/) között
-- Hivatalos Microsoft tutorial [Mongo-t használó Web API készítéséhez](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-8.0&tabs=visual-studio)
+- Hivatalos Microsoft tutorial [Mongo-t használó Web API készítéséhez](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-10.0&tabs=visual-studio)
     - A labor során nem WebAPI-t készítünk, de a Mongo használat azonos formában történik.
 
 ## Előkészület
@@ -172,7 +172,7 @@ A forráskód melletti képernyőképeken szerepelnie kell a Neptun kódodnak.
 
 1. Ebben a pontban az `InsertProduct(Product product)` függvényt valósítjuk meg. A bemenő `Models.Product` modell adatait a felhasználó szolgáltatja a felhasználói felületen keresztül.
 
-2. Egy termék létrehozásához először létre kell hoznunk egy új adatbázisentitás objektumot. Jelen esetben ez egy `Entites.Product` objektum lesz. Az `Id` értéket nem kell megadnunk — ezt majd az adatbázis generálja. A `Name`, `Price` és `Stock` értékeket a felhasználó szolgáltatja. Két érték maradt ki: az `Vat` és a `CategoryId`. Az előbbinek adjunk tetszőleges értéket, az utóbbinak pedig keressünk egy szimpatikus kategóriát az adatbázisban a _Studio 3T_ segítségével, és annak az `_id` értékét drótozzuk be!
+2. Egy termék létrehozásához először létre kell hoznunk egy új adatbázisentitás objektumot. Jelen esetben ez egy `Entites.Product` objektum lesz. Az `Id` értéket nem kell megadnunk — ezt majd az adatbázis generálja. A `Name`, `Price` és `Stock` értékeket a felhasználó szolgáltatja. Két érték maradt ki: az `Vat` és a `CategoryId`. Az előbbinek adjunk tetszőleges értéket, az utóbbinak pedig keressünk egy szimpatikus kategóriát az adatbázisban a _MongoDB for VSCode_ kiegészítő segítségével, és annak az `_id` értékét drótozzuk be!
 
     ```csharp
     var dbProduct = new Entities.Product
@@ -240,7 +240,7 @@ A megvalósítandó függvény a `IList<Category> ListCategories()`. Ennek minde
 
 A megvalósítás lépései a következők.
 
-1. Első lépésként a `_productCollection` mintájára vedd fel és inicializáld a `_categoryCollection`-t is. Az adatbázisban a kollekció neve `categories` — ezt _Studio 3T_ segítségével tudod ellenőrizni.
+1. Első lépésként a `_productCollection` mintájára vedd fel és inicializáld a `_categoryCollection`-t is. Az adatbázisban a kollekció neve `categories` — ezt a _MongoDB for VSCode_ kiegészítő segítségével tudod ellenőrizni.
 
 1. A `ListCategories()` metódusban először kérdezzük le a kategóriák teljes listáját. Ez pontosan ugyanúgy történik, mint az előző feladatban a termékek esetében. A lekérdezés értékét tegyük a `dbCategories` változóba.
 
@@ -249,11 +249,11 @@ A megvalósítás lépései a következők.
     ```csharp
     var productCounts = _productCollection
         .Aggregate()
-        .Group(t => t.CategoryId, g => new { CategoryID = g.Key, NumberOfProducts = g.Count() })
+        .Group(t => t.CategoryId, g => new { CategoryId = g.Key, NumberOfProducts = g.Count() })
         .ToList();
     ```
 
-    Ez az utasítás egy olyan listával tér vissza, melyben minden elem egy `CategoryID` értéket tartalmaz a hozzá tartozó termékek számával együtt.
+    Ez az utasítás egy olyan listával tér vissza, melyben minden elem egy `CategoryId` értéket tartalmaz a hozzá tartozó termékek számával együtt.
 
 1. Ezen a ponton minden számunkra szükséges információ rendelkezésünkre áll — ismerjük az összes kategóriát (a szülőkategória megkereséséhez), és ismerjük a kategóriákhoz tartozó termékek számát. Egyetlen dolgunk van, hogy ezeket az információkat (C# kódból) "összefésüljük".
 
@@ -265,7 +265,7 @@ A megvalósítás lépései a következők.
             ParentCategoryName = k.ParentCategoryId.HasValue
                 ? dbCategories.Single(p => p.Id == k.ParentCategoryId.Value).Name
                 : null,
-            NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryID == k.Id)?.NumberOfProducts ?? 0
+            NumberOfProducts = productCounts.SingleOrDefault(pc => pc.CategoryId == k.Id)?.NumberOfProducts ?? 0
         })
         .ToList();
     ```

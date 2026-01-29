@@ -1,6 +1,6 @@
 ﻿# Install Visual Studio & .NET SDK
 
-In some of the exercises require Microsoft Visual Studio **version 2022 17.8 or newer**. The free [Community edition](https://visualstudio.microsoft.com/vs/community/) is sufficient for solving these exercises.
+In some of the exercises require Microsoft Visual Studio **version 2026 18.2 or newer**. The free [Community edition](https://visualstudio.microsoft.com/vs/community/) is sufficient for solving these exercises.
 
 You can check the version by starting the _Visual Studio Installer_:
 
@@ -28,7 +28,7 @@ Visual Studio might install certain versions of the .NET SDK. To check if you ha
 
 ```hl_lines="2"
 PS C:\Users\toth.tibor> dotnet --list-sdks
-8.0.100 [C:\Program Files\dotnet\sdk]
+10.0.100 [C:\Program Files\dotnet\sdk]
 ```
 
-If you see version **8.0.x** in this list, then you are good to go. Otherwise, install the SDK [from here](https://dotnet.microsoft.com/download/dotnet-core/8.0).
+If you see version **10.0.x** in this list, then you are good to go. Otherwise, install the SDK [from here](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).

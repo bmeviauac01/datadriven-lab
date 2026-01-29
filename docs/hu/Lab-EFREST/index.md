@@ -10,12 +10,12 @@ A labor elvégzéséhez szükséges eszközök:
 - [Postman](https://www.getpostman.com/)
 - [DB Browser for SQLite](https://sqlitebrowser.org/), ha az adatbázisba szeretnél belenézni (nem feltétlenül szükséges)
 - GitHub account és egy git kliens
-- Microsoft Visual Studio 2022 [az itt található beállításokkal](../VisualStudio.md)
+- Microsoft Visual Studio 2026 [az itt található beállításokkal](../VisualStudio.md)
     - Linux és MacOS esetén Visual Studio Code és a .NET SDK-val települő [dotnet CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/) használható.
-- [.NET **8** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- [.NET **10** SDK](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
-    !!! warning ".NET 8.0"
-        A feladat megoldásához **8.0**-ás .NET SDK telepítése szükséges.
+    !!! warning ".NET 10.0"
+        A feladat megoldásához **10.0**-ás .NET SDK telepítése szükséges.
 
         Windows-on Visual Studio verzió függvényében lehet, hogy telepítve van (lásd [itt](../VisualStudio.md#net-sdk-ellenorzese-es-telepitese) az ellenőrzés módját); ha nem, akkor a fenti linkről kell telepíteni (az SDK-t és _nem_ a runtime-ot.) Linux és MacOS esetén telepíteni szükséges.
 
@@ -23,7 +23,7 @@ A labor elvégzéséhez használható segédanyagok és felkészülési anyagok:
 
 - Entity Framework Core, REST API, Web API elméleti háttere és mintapéldái, valamint a Postman használata
     - Lásd az Adatvezérelt rendszerek c. tárgy jegyzetei és [gyakorlati anyagai](https://bmeviauac01.github.io/datadriven/hu/) között
-- Hivatalos Microsoft tutorial [Web API készítéséhez](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&tabs=visual-studio)
+- Hivatalos Microsoft tutorial [Web API készítéséhez](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-10.0&tabs=visual-studio)
 
 ## Feladat áttekintése
 
@@ -362,7 +362,7 @@ A fent implementált service műveletekre építve valósítsd meg az alábbi m�
 
 - `GET /api/task/neptun`: minden task listázása, válasza `200 OK`
 - `GET /api/task/neptun/{id}`: adott azonosítójú task lekérdezése, válasza `200 OK` vagy `404 Not found`
-- `POST /api/task/neptun`: új task felvétele, body-ban egy `Dto.CreateTask` entitást vár, válasza `201 Created`, az új entitás body-ban, és a megfelelő _Location_ header
+- `POST /api/task/neptun`: új task felvétele, body-ban egy `Dtos.CreateTask` entitást vár, válasza `201 Created`, az új entitás body-ban, és a megfelelő _Location_ header
 - `DELETE /api/task/neptun/{id}`: adott azonosítójú task törlése, válasza `204 No content` vagy `404 Not found`
 
 !!! example "BEADANDÓ"
@@ -414,7 +414,7 @@ Amennyiben sok task van, nem célszerű egyszerre mindet visszaadni listázásko
 - A lapozás a meglévő `GET /api/task/neptun/paged` címen legyen elérhető.
 - A lapozás során a válaszhoz csak azok az entitások legyenek lekérdezve, amelyekre tényleg szükség is van (tehát ne rántsd be feleslegesen a teljes táblát memóriába).
     - A megvalósításhoz kiegészítheted az `ITaskService` interfészt is, ne a Controllerbe rakj minden üzleti logikát.
-- A lapozás válasza a `Dto.PagedTaskList` osztály példánya legyen. Ebben szerepel:
+- A lapozás válasza a `Dtos.PagedTaskList` osztály példánya legyen. Ebben szerepel:
     - a lapon található elemek tömbje (`Items`),
     - a lapon található elemek száma (`Count`)
     - a következő lap lekéréséhez szükséges `fromId` érték (`NextId`),
