@@ -1392,15 +1392,15 @@
 </li>
 <li>Sample database initialization script: (<a href="../db/mongo.js">mongo.js</a>)</li>
 <li>GitHub account and a git client</li>
-<li>Microsoft Visual Studio 2022 <a href="../VisualStudio/">with the settings here</a><ul>
+<li>Microsoft Visual Studio 2026 <a href="../VisualStudio/">with the settings here</a><ul>
 <li>When using Linux or macOS, you can use Visual Studio Code, the .NET SDK, and <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/">dotnet CLI</a>.</li>
 </ul>
 </li>
 <li>
-<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET <strong>8.0</strong> SDK</a></p>
+<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0">.NET <strong>10.0</strong> SDK</a></p>
 <div class="admonition warning">
-<p class="admonition-title">.NET 8.0</p>
-<p>Mind the version! You need .NET SDK version <strong>8.0</strong> to solve these exercises.</p>
+<p class="admonition-title">.NET 10.0</p>
+<p>Mind the version! You need .NET SDK version <strong>10.0</strong> to solve these exercises.</p>
 <p>On Windows it might already be installed along with Visual Studio (see <a href="../VisualStudio/#check-and-install-net-sdk">here</a> how to check it); if not, use the link above to install (the SDK and <em>not</em> the runtime). You need to install it manually when using Linux or macOS.</p>
 </div>
 </li>
@@ -1411,7 +1411,7 @@
 <li>Check the materials of <em>Data-driven systems</em> including the <a href="https://bmeviauac01.github.io/datadriven/en/">seminars</a></li>
 </ul>
 </li>
-<li>Official Microsoft tutorial for <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-6.0&amp;tabs=visual-studio">WebApi using MongoDB</a><ul>
+<li>Official Microsoft tutorial for <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mongo-app?view=aspnetcore-10.0&amp;tabs=visual-studio">WebApi using MongoDB</a><ul>
 <li>We will not be creating a WebApi in this lab, but the Mongo part is the same.</li>
 </ul>
 </li>
@@ -1447,7 +1447,7 @@
 <p class="admonition-title">Do NOT upgrade any version</p>
 <p>Do not upgrade the project, the .NET version, or any NuGet package! If you see such a question, always choose no!</p>
 </div>
-<p>You will need to work in class <code>Dal.Repository</code>! You can make changes to this class as long as the source code complies, the repository implements interface <code>mongolab.DAL.IRepository</code>, and the constructor accepts a single <code>IMongoDatabase</code> parameter.</p>
+<p>You will need to work in class <code>Dal.Repository</code>! You can make changes to this class as long as the source code complies, the repository implements interface <code>Dal.IRepository</code>, and the constructor accepts a single <code>IMongoDatabase</code> parameter.</p>
 <p>The database access is configured in class <code>Dal.MongoConnectionConfig</code>. If needed, you can change the database name in this file.</p>
 <p>Other parts of the application should <strong>NOT</strong> be modified!</p>
 <div class="admonition info">
@@ -1498,7 +1498,7 @@
 
 <span class="k">public</span><span class="w"> </span><span class="nf">Repository</span><span class="p">(</span><span class="n">IMongoDatabase</span><span class="w"> </span><span class="n">database</span><span class="p">)</span>
 <span class="p">{</span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="n">_productCollection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">GetCollection</span><span class="o">&lt;</span><span class="n">Entities</span><span class="p">.</span><span class="n">Product</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"products"</span><span class="p">);</span>
+<span class="w">    </span><span class="n">_productCollection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">database</span><span class="p">.</span><span class="n">GetCollection</span><span class="o">&lt;</span><span class="n">Entities</span><span class="p">.</span><span class="n">Product</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"products"</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 </li>
@@ -1547,7 +1547,7 @@
 <p>Implement the method <code>InsertProduct(Product product)</code>. The input is an instance of <code>Models.Product</code> that collects the information specified on the UI.</p>
 </li>
 <li>
-<p>To create a new product, we will first create a new database entity (in memory first). This is an instance of class <code>Entities.Product</code>. There is no need to set the <code>Id</code> - the database will generate it. <code>Name</code>, <code>Price</code> and <code>Stock</code> are provided by the user. What is left is <code>Vat</code> and <code>CategoryId</code>. We should hard-code values here: create a new VAT entity and find a random category using <em>Studio 3T</em> and copy the <code>_id</code> value.</p>
+<p>To create a new product, we will first create a new database entity (in memory first). This is an instance of class <code>Entities.Product</code>. There is no need to set the <code>Id</code> - the database will generate it. <code>Name</code>, <code>Price</code> and <code>Stock</code> are provided by the user. What is left is <code>Vat</code> and <code>CategoryId</code>. We should hard-code values here: create a new VAT entity and find a random category using the <em>MongoDB for VSCode</em> extension and copy the <code>_id</code> value.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">dbProduct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Entities</span><span class="p">.</span><span class="n">Product</span>
 <span class="p">{</span>
 <span class="w">    </span><span class="n">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">product</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>
@@ -1614,7 +1614,7 @@
 <p>The outline of the solution is as follows.</p>
 <ol>
 <li>
-<p>Create and initialize a new <code>_productCollection</code> similar to how <code>_categoryCollection</code> is initialized. The name of the collection is <code>categories</code> - you can verify this using <em>Studio 3T</em>.</p>
+<p>Create and initialize a new <code>_categoryCollection</code> similar to how <code>_productCollection</code> is initialized. The name of the collection is <code>categories</code> - you can verify this using the <em>MongoDB for VSCode</em> extension.</p>
 </li>
 <li>
 <p><code>ListCategories()</code> should first query all categories. Perform this similarly to how it was done in the previous exercise. Store the result set in variable <code>dbCategories</code>.</p>
@@ -1623,10 +1623,10 @@
 <p>Query the number of products associated with each category (<code>Product.CategoryId</code>). Use an aggregation pipeline and a <a href="https://docs.mongodb.com/manual/reference/operator/aggregation/group/"><code>$group</code></a> step as follows.</p>
 <div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">productCounts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">_productCollection</span>
 <span class="w">    </span><span class="p">.</span><span class="n">Aggregate</span><span class="p">()</span>
-<span class="w">    </span><span class="p">.</span><span class="n">Group</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">CategoryID</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CategoryID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Count</span><span class="p">()</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="n">Group</span><span class="p">(</span><span class="n">t</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">t</span><span class="p">.</span><span class="n">CategoryId</span><span class="p">,</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">CategoryId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Key</span><span class="p">,</span><span class="w"> </span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">g</span><span class="p">.</span><span class="n">Count</span><span class="p">()</span><span class="w"> </span><span class="p">})</span>
 <span class="w">    </span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
 </code></pre></div>
-<p>This query yields a list where each item has a <code>CategoryID</code> and the number of associated products.</p>
+<p>This query yields a list where each item has a <code>CategoryId</code> and the number of associated products.</p>
 </li>
 <li>
 <p>We have all information we need: all categories (including the parents) and the number of products for each. The final step is to "merge" the results in C# code.</p>
@@ -1637,7 +1637,7 @@
 <span class="w">        </span><span class="n">ParentCategoryName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">ParentCategoryId</span><span class="p">.</span><span class="n">HasValue</span>
 <span class="w">           </span><span class="o">?</span><span class="w"> </span><span class="n">dbCategories</span><span class="p">.</span><span class="n">Single</span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">Id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">ParentCategoryId</span><span class="p">.</span><span class="n">Value</span><span class="p">).</span><span class="n">Name</span>
 <span class="w">           </span><span class="p">:</span><span class="w"> </span><span class="k">null</span><span class="p">,</span>
-<span class="w">        </span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">productCounts</span><span class="p">.</span><span class="n">SingleOrDefault</span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">pc</span><span class="p">.</span><span class="n">CategoryID</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span><span class="o">?.</span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">productCounts</span><span class="p">.</span><span class="n">SingleOrDefault</span><span class="p">(</span><span class="n">pc</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">pc</span><span class="p">.</span><span class="n">CategoryId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">k</span><span class="p">.</span><span class="n">Id</span><span class="p">)</span><span class="o">?.</span><span class="n">NumberOfProducts</span><span class="w"> </span><span class="o">??</span><span class="w"> </span><span class="mi">0</span>
 <span class="w">    </span><span class="p">})</span>
 <span class="w">   </span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
 </code></pre></div>
@@ -1657,7 +1657,7 @@
 </div>
 <h2 id="exercise-3-querying-and-modifying-orders">Exercise 3: Querying and modifying orders<a class="headerlink" href="#exercise-3-querying-and-modifying-orders" title="Permanent link">¶</a></h2>
 <p>In this exercise, we will implement CRUD (create, retrieve, update, delete) operations for <code>Order</code> entities. This exercise is similar to the previous one; feel free to look back to the solutions of that exercise.</p>
-<p>The properties of <code>Model.Order</code> are:</p>
+<p>The properties of <code>Models.Order</code> are:</p>
 <ul>
 <li><code>Id</code>: the <code>Id</code> of the database serialized using <code>ToString</code></li>
 <li><code>Date</code>, <code>Deadline</code>, <code>Status</code>: taken from the database directly</li>
@@ -1714,7 +1714,7 @@
 </div>
 <h2 id="exercise-4-listing-customers">Exercise 4: Listing customers<a class="headerlink" href="#exercise-4-listing-customers" title="Permanent link">¶</a></h2>
 <p>We will list the customers in this exercise, along with the cumulative value of their orders. This will be similar to exercise 2: we will use aggregation and merging in C# code.</p>
-<p>The method to implement is <code>IList&lt;Customer&gt; ListCustomers()</code>. The method shall return every customer. The properties of <code>Model.Customer</code> are:</p>
+<p>The method to implement is <code>IList&lt;Customer&gt; ListCustomers()</code>. The method shall return every customer. The properties of <code>Models.Customer</code> are:</p>
 <ul>
 <li><code>Name</code>: the name of the customer</li>
 <li><code>ZipCode</code>, <code>City</code>, <code>Street</code>: the address fields of the main site of the customer</li>
@@ -1831,8 +1831,8 @@
           </path>
         </svg>
       </span>
-      <span title="April 22, 2025 13:50:39">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 22, 2025 13:50:39 CEST"><span class="timeago" datetime="2025-04-22T13:50:39+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 22, 2025 13:50:39 CEST">2025-04-22</span>
+      <span title="January 29, 2026 21:28:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 29, 2026 21:28:50 CET"><span class="timeago" datetime="2026-01-29T21:28:50+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 29, 2026 21:28:50 CET">2026-01-29</span>
       </span>
     </span>
 

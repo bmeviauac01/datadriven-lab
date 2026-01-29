@@ -1265,15 +1265,15 @@
 <li><a href="https://www.getpostman.com/">Postman</a></li>
 <li><a href="https://sqlitebrowser.org/">DB Browser for SQLite</a>, ha az adatbázisba szeretnél belenézni (nem feltétlenül szükséges)</li>
 <li>GitHub account és egy git kliens</li>
-<li>Microsoft Visual Studio 2022 <a href="../VisualStudio/">az itt található beállításokkal</a><ul>
+<li>Microsoft Visual Studio 2026 <a href="../VisualStudio/">az itt található beállításokkal</a><ul>
 <li>Linux és MacOS esetén Visual Studio Code és a .NET SDK-val települő <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/">dotnet CLI</a> használható.</li>
 </ul>
 </li>
 <li>
-<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET <strong>8</strong> SDK</a></p>
+<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0">.NET <strong>10</strong> SDK</a></p>
 <div class="admonition warning">
-<p class="admonition-title">.NET 8.0</p>
-<p>A feladat megoldásához <strong>8.0</strong>-ás .NET SDK telepítése szükséges.</p>
+<p class="admonition-title">.NET 10.0</p>
+<p>A feladat megoldásához <strong>10.0</strong>-ás .NET SDK telepítése szükséges.</p>
 <p>Windows-on Visual Studio verzió függvényében lehet, hogy telepítve van (lásd <a href="../VisualStudio/#net-sdk-ellenorzese-es-telepitese">itt</a> az ellenőrzés módját); ha nem, akkor a fenti linkről kell telepíteni (az SDK-t és <em>nem</em> a runtime-ot.) Linux és MacOS esetén telepíteni szükséges.</p>
 </div>
 </li>
@@ -1284,7 +1284,7 @@
 <li>Lásd az Adatvezérelt rendszerek c. tárgy jegyzetei és <a href="https://bmeviauac01.github.io/datadriven/hu/">gyakorlati anyagai</a> között</li>
 </ul>
 </li>
-<li>Hivatalos Microsoft tutorial <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-8.0&amp;tabs=visual-studio">Web API készítéséhez</a></li>
+<li>Hivatalos Microsoft tutorial <a href="https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-10.0&amp;tabs=visual-studio">Web API készítéséhez</a></li>
 </ul>
 <h2 id="feladat-attekintese">Feladat áttekintése<a class="headerlink" href="#feladat-attekintese" title="Permanent link">¶</a></h2>
 <p>A feladok elkészítése során egy egyszerű feladatkezelő webalkalmazás backendjét készítjük el. Az alkalmazás <strong>két féle entitást kezel: státusz és task</strong>, ahol egy státuszhoz több task rendelhető (1-* kapcsolat). (A feladatszövegben <em>task</em> néven fogunk hivatkozni a második entitásra, és kerüljük a "feladat" megnevezést, amely félreérthető lenne.)</p>
@@ -1605,7 +1605,7 @@
 <ul>
 <li><code>GET /api/task/neptun</code>: minden task listázása, válasza <code>200 OK</code></li>
 <li><code>GET /api/task/neptun/{id}</code>: adott azonosítójú task lekérdezése, válasza <code>200 OK</code> vagy <code>404 Not found</code></li>
-<li><code>POST /api/task/neptun</code>: új task felvétele, body-ban egy <code>Dto.CreateTask</code> entitást vár, válasza <code>201 Created</code>, az új entitás body-ban, és a megfelelő <em>Location</em> header</li>
+<li><code>POST /api/task/neptun</code>: új task felvétele, body-ban egy <code>Dtos.CreateTask</code> entitást vár, válasza <code>201 Created</code>, az új entitás body-ban, és a megfelelő <em>Location</em> header</li>
 <li><code>DELETE /api/task/neptun/{id}</code>: adott azonosítójú task törlése, válasza <code>204 No content</code> vagy <code>404 Not found</code></li>
 </ul>
 <div class="admonition example">
@@ -1655,7 +1655,7 @@
 </ul>
 </li>
 <li>
-<p>A lapozás válasza a <code>Dto.PagedTaskList</code> osztály példánya legyen. Ebben szerepel:</p>
+<p>A lapozás válasza a <code>Dtos.PagedTaskList</code> osztály példánya legyen. Ebben szerepel:</p>
 <ul>
 <li>a lapon található elemek tömbje (<code>Items</code>),</li>
 <li>a lapon található elemek száma (<code>Count</code>)</li>
@@ -1747,8 +1747,8 @@
           </path>
         </svg>
       </span>
-      <span title="2024. május 19. 21:51:17">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2024. május 19. 21:51:17 CEST"><span class="timeago" datetime="2024-05-19T21:51:17+02:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2024. május 19. 21:51:17 CEST">2024-05-19</span>
+      <span title="2026. január 29. 21:28:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. január 29. 21:28:50 CET"><span class="timeago" datetime="2026-01-29T21:28:50+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. január 29. 21:28:50 CET">2026-01-29</span>
       </span>
     </span>
 

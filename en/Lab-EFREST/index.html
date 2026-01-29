@@ -891,10 +891,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#operations-in-the-repository" class="md-nav__link">
+  <a href="#operations-in-the-service-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operations in the repository
+        Operations in the service layer
       
     </span>
   </a>
@@ -1155,10 +1155,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#operations-in-the-repository" class="md-nav__link">
+  <a href="#operations-in-the-service-layer" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Operations in the repository
+        Operations in the service layer
       
     </span>
   </a>
@@ -1265,15 +1265,15 @@
 <li><a href="https://www.getpostman.com/">Postman</a></li>
 <li><a href="https://sqlitebrowser.org/">DB Browser for SQLite</a> - if you would like to check the database (not necessary)</li>
 <li>GitHub account and a git client</li>
-<li>Microsoft Visual Studio 2022 <a href="../VisualStudio/">with the settings here</a><ul>
+<li>Microsoft Visual Studio 2026 <a href="../VisualStudio/">with the settings here</a><ul>
 <li>When using Linux or macOS, you can use Visual Studio Code, the .NET SDK, and <a href="https://learn.microsoft.com/en-us/dotnet/core/tools/">dotnet CLI</a>.</li>
 </ul>
 </li>
 <li>
-<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/8.0">.NET <strong>8</strong> SDK</a></p>
+<p><a href="https://dotnet.microsoft.com/en-us/download/dotnet/10.0">.NET <strong>10</strong> SDK</a></p>
 <div class="admonition warning">
-<p class="admonition-title">.NET 8.0</p>
-<p>Mind the version! You need .NET SDK version <strong>8.0</strong> to solve these exercises.</p>
+<p class="admonition-title">.NET 10.0</p>
+<p>Mind the version! You need .NET SDK version <strong>10.0</strong> to solve these exercises.</p>
 <p>On Windows, it might already be installed along with Visual Studio (see <a href="../VisualStudio/#check-and-install-net-core-sdk">here</a> how to check it); if not, use the link above to install (the SDK and <em>not</em> the runtime). You need to install it manually when using Linux or macOS.</p>
 </div>
 </li>
@@ -1354,17 +1354,17 @@
 <p>Implement the first operation to list all available status entities.</p>
 <ol>
 <li>
-<p>Open class <code>Model.Status</code>. This is the entity class used by the business layer.</p>
+<p>Open class <code>Dtos.Status</code>. This is the entity class used by the business layer.</p>
 <div class="admonition warning">
 <p>Do <strong>NOT</strong> make any changes to this class.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Records in C#</p>
-<p>The <code>record</code> keyword represents a type (by default <code>class</code>) that has the constructor defined in the header and the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language- reference/proposals/csharp-9.0/init"><code>init</code> only setter</a> has properties. This makes a record have immutable behavior, which better matches the behavior of a DTO. Records also have other conveniences (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record">see more</a>), but we will not take advantage of here.</p>
+<p>The <code>record</code> keyword represents a type (by default <code>class</code>) that has the constructor defined in the header and the <a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-9.0/init"><code>init</code> only setter</a> has properties. This makes a record have immutable behavior, which better matches the behavior of a DTO. Records also have other conveniences (<a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record">see more</a>), but we will not take advantage of here.</p>
 </div>
 </li>
 <li>
-<p>Open class <code>DAL.EfDbContext.DbStatus</code>. This is the Entity Framework and database representation of the same entity. Let us implement this class:</p>
+<p>Open class <code>Dal.Entities.DbStatus</code>. This is the Entity Framework and database representation of the same entity. Let us implement this class:</p>
 <div class="highlight"><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">DbStatus</span>
 <span class="p">{</span>
 <span class="hll"><span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">Id</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
@@ -1374,7 +1374,7 @@
 <p>The <code>Id</code> is the primary key in the database, and <code>Name</code> is the name of the status.</p>
 </li>
 <li>
-<p>Open class <code>DAL.EfDbContext.TasksDbContext</code>. We need to add a new DbSet property here and configure the C# - database mapping in method <code>OnModelCreating</code>:</p>
+<p>Open class <code>Dal.TasksDbContext</code>. We need to add a new DbSet property here and configure the C# - database mapping in method <code>OnModelCreating</code>:</p>
 <div class="highlight"><span class="filename">TasksDbContext.cs</span><pre><span></span><code><span class="k">public</span><span class="w"> </span><span class="n">DbSet</span><span class="o">&lt;</span><span class="n">DbStatus</span><span class="o">&gt;</span><span class="w"> </span><span class="n">Statuses</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">get</span><span class="p">;</span><span class="w"> </span><span class="k">set</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
 
 <span class="k">protected</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">OnModelCreating</span><span class="p">(</span><span class="n">ModelBuilder</span><span class="w"> </span><span class="n">modelBuilder</span><span class="p">)</span>
@@ -1584,8 +1584,8 @@
 <p>It will be advisable to record sample data as seen earlier.</p>
 </li>
 </ol>
-<h3 id="operations-in-the-repository">Operations in the repository<a class="headerlink" href="#operations-in-the-repository" title="Permanent link">¶</a></h3>
-<p>In the <code>Dal</code> folder, create a new class called <code>TaskService</code> that implements the existing <code>ITaskService</code> interface. Perform the following actions:</p>
+<h3 id="operations-in-the-service-layer">Operations in the service layer<a class="headerlink" href="#operations-in-the-service-layer" title="Permanent link">¶</a></h3>
+<p>In the <code>Services</code> folder, create a new class called <code>TaskService</code> that implements the existing <code>ITaskService</code> interface. Perform the following actions:</p>
 <ul>
 <li><code>IReadOnlyCollection&lt;Task&gt; List()</code>: list all tasks</li>
 <li><code>Task FindById(int taskId)</code>: returns the task whose id matches the parameter; or return <code>null</code> if there is none</li>
@@ -1598,13 +1598,13 @@
 <p>For the mapping between the C# class used in the database and the model entity class, it will be useful to define a <code>ToModel</code> helper function as seen earlier. In order for the database to query the status entity connected to the task (which will be needed for the name), it will be important to use the appropriate <code>Include</code>.</p>
 </div>
 <h3 id="operations-on-the-rest-api">Operations on the REST Api<a class="headerlink" href="#operations-on-the-rest-api" title="Permanent link">¶</a></h3>
-<p>Create a new <code>TasksController</code> in the <code>Controllers</code> folder. The controller shall handle REST queries on URL <code>/api/task/neptun</code> where the last part is your <strong>own Neptun code</strong> lowercase.</p>
-<p>Take an instance of <code>ITaskService</code> in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the `Program' class, just like the other service. (The controller <em>does</em> not have to be registered.)</p>
+<p>Create a new <code>TaskController</code> in the <code>Controllers</code> folder. The controller shall handle REST queries on URL <code>/api/task/neptun</code> where the last part is your <strong>own Neptun code</strong> lowercase.</p>
+<p>Take an instance of <code>ITaskService</code> in the controller constructor parameter. In order for the dependency injection framework to solve this at runtime, configuration will also be necessary. This interface must be registered in the <code>Program</code> class, just like the other service. (The controller <em>does</em> not have to be registered.)</p>
 <p>Implement the following operations using the previously implemented repository methods:</p>
 <ul>
 <li><code>GET /api/task/neptun</code>: returns all tasks; response code is always <code>200 OK</code></li>
 <li><code>GET /api/task/neptun/{id}</code>: gets a single task; response code is <code>200 OK</code> or <code>404 Not found</code></li>
-<li><code>POST /api/task/neptun</code>: add a new task based on a <code>Dto.CreateTask</code> instance specified in the body; the response code is <code>201 Created</code> with the new entity in the body and an appropriate <em>Location</em> header</li>
+<li><code>POST /api/task/neptun</code>: add a new task based on a <code>Dtos.CreateTask</code> instance specified in the body; the response code is <code>201 Created</code> with the new entity in the body and an appropriate <em>Location</em> header</li>
 <li><code>DELETE /api/task/neptun/{id}</code>: deleted a task; response code is <code>204 No content</code> or <code>404 Not found</code></li>
 </ul>
 <div class="admonition example">
@@ -1614,7 +1614,7 @@
 <h2 id="exercise-3-task-operations-6-points">Exercise 3: Task operations (6 points)<a class="headerlink" href="#exercise-3-task-operations-6-points" title="Permanent link">¶</a></h2>
 <p>Implement two new endpoints in the controller handling tasks that alter existing tasks as follows.</p>
 <h3 id="marking-a-task-as-done-3-points">Marking a task as done (3 points)<a class="headerlink" href="#marking-a-task-as-done-3-points" title="Permanent link">¶</a></h3>
-<p>The flag <code>Task.Done</code> signals that a task is completed. Create a new http endpoint that uses the <code>ITasksRepository.MarkDone</code> method to set this flag on a task instance.</p>
+<p>The flag <code>Task.IsDone</code> signals that a task is completed. Create a new http endpoint that uses the <code>ITaskService.MarkDone</code> method to set this flag on a task instance.</p>
 <p>Request: <code>PATCH /api/task/neptun/{id}/done</code> with <code>{id}</code> being the tasks ID.</p>
 <p>Response:</p>
 <ul>
@@ -1622,7 +1622,7 @@
 <li><code>200 OK</code> if the operation was successful - returns the task in the body after the modification is done.</li>
 </ul>
 <h3 id="move-to-a-new-status-3-points">Move to a new status (3 points)<a class="headerlink" href="#move-to-a-new-status-3-points" title="Permanent link">¶</a></h3>
-<p>A task is associated with status through <code>Task.StatusId</code> (or similar). Create a new http endpoint that uses the <code>ITasksRepository.MoveToStatus</code> method to change the status of the specified tasks to a new one. If the new status with the provided name does not exist, create one.</p>
+<p>A task is associated with a status (<code>Task.Status</code>). Create a new http endpoint that uses the <code>ITaskService.MoveToStatus</code> method to change the status of the specified task to a new one. If the new status with the provided name does not exist, create one.</p>
 <p>Request: <code>PATCH /api/task/neptun/{id}/move</code> with</p>
 <ul>
 <li><code>{id}</code> is the task identifier,</li>
@@ -1651,7 +1651,7 @@
 </ul>
 </li>
 <li>
-<p>The paging response should be an instance of the <code>Dto.PagedTaskList</code> class. It includes:</p>
+<p>The paging response should be an instance of the <code>Dtos.PagedTaskList</code> class. It includes:</p>
 <ul>
 <li>array of elements on the page (<code>Items</code>),</li>
 <li>the number of elements on the page (<code>Count</code>)</li>
@@ -1741,8 +1741,8 @@
           </path>
         </svg>
       </span>
-      <span title="April 30, 2025 09:00:38">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="April 30, 2025 09:00:38 CEST"><span class="timeago" datetime="2025-04-30T09:00:38+02:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="April 30, 2025 09:00:38 CEST">2025-04-30</span>
+      <span title="January 29, 2026 21:28:50">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="January 29, 2026 21:28:50 CET"><span class="timeago" datetime="2026-01-29T21:28:50+01:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="January 29, 2026 21:28:50 CET">2026-01-29</span>
       </span>
     </span>
 
