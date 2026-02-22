@@ -184,7 +184,7 @@ Az alábbiakban egyedi szűrőket definiálunk a jelentéshez, majd publikáljuk
 !!! example "BEADANDÓ"
     Készíts egy képernyőképet a **publikált jelentésről**. A képet a megoldásban `f1.png` néven add be. A képen a teljes képernyő (böngésző ablak, tálca stb. látszódjon). Ismét ellenőrizd, hogy a **Neptun kódod** látszódik (a felső szürke sorban)!
 
-    A megváltozott NEPTUN.pbix fájlt is töltsd fel.
+    A létrehozott NEPTUN.pbix fájlt is töltsd fel.
 
 ## 2. Feladat: Diagram (5p)
 
