@@ -11,7 +11,7 @@ A Power BI egy Microsoft által fejlesztett üzleti analitikai eszköz, mely leh
 - Webes és mobil megjelenés: Lehetővé teszi a jelentések megtekintését és megosztását bárhonnan, bármilyen eszközről.
 - Felhasználóbarát felület: Könnyen használható, drag-and-drop felülettel rendelkezik, amely minimális technikai háttérrel is hozzáférhető.
 
-Feladatunk interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgozikbaj és táblázatos megjelenítést szolgáltatbak a felhasználó számára szűrhető módon.
+Feladatunk interaktív jelentések elkészítése, amelyek most egy Excel alapú adathalmazból dolgoznak és táblázatos megjelenítést szolgáltatnak a felhasználó számára szűrhető módon.
 Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb vizualizációjához.
 
 ## Előfeltételek, felkészülés
@@ -57,7 +57,7 @@ Power BI jelentések készítéséhez a Power BI Desktop alkalmazást fogjuk has
 
     A Power BI Desktop alkalmazást a Microsoft Store-ból a legkényelmesebb telepíteni. Laborgépeken ez azért is praktikus, mert nincs szükség hozzá rendszergazdai jogosultságokra. Saját gépen választhatjuk a [letölthető telepítőt is](https://www.microsoft.com/en-us/download/details.aspx?id=58494).
 
-1. Nyisd meg a [Power Bi Desktop oldalát a Microsoft Store](https://aka.ms/pbidesktopstore)-ban és válaszd a telepítést! A telepítéshez nem szükséges a Store-ba belépni.
+1. Nyisd meg a [Power BI Desktop oldalát a Microsoft Store](https://aka.ms/pbidesktopstore)-ban és válaszd a telepítést! A telepítéshez nem szükséges a Store-ba belépni.
 
     ![Telepítés](../images/powerbi/pb-install-store.png)
 
@@ -87,7 +87,7 @@ A Power BI-ban mintegy 150 féle adatforrásból tudunk adatokat importálni, ak
 1. Zárd be a felugró dialógusablakokat, majd mentsd el a projektet (_File/Save_) a leklónozott saját repódba. **A projekt neve a Neptun kódod legyen**!
 
     !!! tip "Tipp"
-        Minden, amit Power BI Desktopban csinálunk, ebbe a projekt fájlba (`NEPTUN.pbix`) fog kerülni. A projektfájlt a megoldásról készült képernyőképekkel együtt szintén be kell adni.
+        Minden, amit Power BI Desktop-ban csinálunk, ebbe a projekt fájlba (`NEPTUN.pbix`) fog kerülni. A projektfájlt a megoldásról készült képernyőképekkel együtt szintén be kell adni.
 
 1. Töltsd be a korábban letöltött _AdventureWorksSales.xlsx_ fájlt! (_Get data_ / _Excel workbook_)
 
@@ -153,31 +153,31 @@ Az alábbiakban egyedi szűrőket definiálunk a jelentéshez, majd publikáljuk
 
     ![Szűrő elrejtése](../images/powerbi/pb-1streport-hidefilter.png)
 
-1. Nevezzük át magyarra a megmaradt szűrőket jobb egérgombbal rájuk kattintva és a _rename_ opciót választva. Az új magyar nevek:_Kategória_, _Modell_, _Ország_, _Termék_
+1. Nevezzük át magyarra a megmaradt szűrőket jobb egérgombbal rájuk kattintva és a _rename_ opciót választva. Az új magyar nevek: _Kategória_, _Modell_, _Ország_, _Termék_
 
-1. Kattintsunk az oldalon egy olyan részre, ahol nincs táblázat, ezzel magát az oldalt (_Page_) kijelölve. A _Visualizations_ eszköztárban ekkor a formázások az egész oldalra vonatkozó beállításokat fognak tartalmazni (_Format page_). Ezen belül szabjuk testre a szűrők megjelenését a következő lépésekben.
+2. Kattintsunk az oldalon egy olyan részre, ahol nincs táblázat, ezzel magát az oldalt (_Page_) kijelölve. A _Visualizations_ eszköztárban ekkor a formázások az egész oldalra vonatkozó beállításokat fognak tartalmazni (_Format page_). Ezen belül szabjuk testre a szűrők megjelenését a következő lépésekben.
 
-1. Állítsuk a _Filter pane_/_Input_ tulajdonságot egy másik világos színre.
+3. Állítsuk a _Filter pane_/_Input_ tulajdonságot egy másik világos színre.
 
-1. Állítsuk a _Filter pane_/_Background_ tulajdonságot egy sötétebb színre.
+4. Állítsuk a _Filter pane_/_Background_ tulajdonságot egy sötétebb színre.
 
-1. Állítsuk a _Filter **cards**_/_Background_ tulajdonságot a _Filter pane_/_Input_-tal azonos színre. A végeredmény pl. ilyesmi lehet:
+5. Állítsuk a _Filter **cards**_/_Background_ tulajdonságot a _Filter pane_/_Input_-tal azonos színre. A végeredmény pl. ilyesmi lehet:
 
     ![Formázott szűrők](../images/powerbi/pb-1streport-formattedfilters.png)
 
-1. Mentsük el a változtatásokat, majd publikáljuk az elkészült jelentést az online szolgáltatásba a _Home_ lap _Publish_ gombjával!
+6. Mentsük el a változtatásokat, majd publikáljuk az elkészült jelentést az online szolgáltatásba a _Home_ lap _Publish_ gombjával!
 
     ![Publikálás gomb](../images/powerbi/pb-1streport-publishbutton.png)
 
-1. A publikálásnál jelöljük meg az alapértelmezett munkaterületet célként (_My Workspace_)
+7. A publikálásnál jelöljük meg az alapértelmezett munkaterületet célként (_My Workspace_)
 
     ![Publikálás dialógus](../images/powerbi/pb-1streport-publishdialog.png)
 
-1. Sikeres publikálást követően kattintsunk a dialógusablakban megjelenő linkre a jelentés megnyitásához.
+8. Sikeres publikálást követően kattintsunk a dialógusablakban megjelenő linkre a jelentés megnyitásához.
 
     ![Publikálás kész](../images/powerbi/pb-1streport-publishready.png)
 
-1. Kísérletezzünk az elkészült jelentésünkkel, hogy lássuk, mit csináltunk.
+9. Kísérletezzünk az elkészült jelentésünkkel, hogy lássuk, mit csináltunk.
 
     ![Publikált jelentés](../images/powerbi/pb-1streport-online.png)
 
@@ -337,7 +337,7 @@ A megoldás lépéseit az alábbiakban ismertetjük:
 
 **A feladat megoldásával 3 IMSc pont szerezhető.**
 
-Készíts tortadiagramot az egyes termékkategóriákban létrejövő tranzakciók számáról! **A diagram címébe írd bele a Neptun kódod!**.
+Készíts tortadiagramot az egyes termékkategóriákban létrejövő tranzakciók számáról! **A diagram címébe írd bele a Neptun kódod!**
 
 - A kategóriák színei a lentiek szerint piros, sárga, zöld és kék legyenek
 
