@@ -87,7 +87,7 @@ A Power BI-ban mintegy 150 féle adatforrásból tudunk adatokat importálni, ak
 1. Zárd be a felugró dialógusablakokat, majd mentsd el a projektet (_File/Save_) a leklónozott saját repódba. **A projekt neve a Neptun kódod legyen**!
 
     !!! tip "Tipp"
-        Minden, amit Power BI Desktop-ban csinálunk, ebbe a projekt fájlba (`NEPTUN.pbix`) fog kerülni. A projektfájlt a megoldásról készült képernyőképekkel együtt szintén be kell adni.
+        Minden, amit Power BI Desktop-ban csinálunk, ebbe a projektfájlba (`NEPTUN.pbix`) fog kerülni. A projektfájlt a megoldásról készült képernyőképekkel együtt szintén be kell adni.
 
 1. Töltsd be a korábban letöltött _AdventureWorksSales.xlsx_ fájlt! (_Get data_ / _Excel workbook_)
 
