@@ -155,29 +155,29 @@ Az alábbiakban egyedi szűrőket definiálunk a jelentéshez, majd publikáljuk
 
 1. Nevezzük át magyarra a megmaradt szűrőket jobb egérgombbal rájuk kattintva és a _rename_ opciót választva. Az új magyar nevek: _Kategória_, _Modell_, _Ország_, _Termék_
 
-2. Kattintsunk az oldalon egy olyan részre, ahol nincs táblázat, ezzel magát az oldalt (_Page_) kijelölve. A _Visualizations_ eszköztárban ekkor a formázások az egész oldalra vonatkozó beállításokat fognak tartalmazni (_Format page_). Ezen belül szabjuk testre a szűrők megjelenését a következő lépésekben.
+1. Kattintsunk az oldalon egy olyan részre, ahol nincs táblázat, ezzel magát az oldalt (_Page_) kijelölve. A _Visualizations_ eszköztárban ekkor a formázások az egész oldalra vonatkozó beállításokat fognak tartalmazni (_Format page_). Ezen belül szabjuk testre a szűrők megjelenését a következő lépésekben.
 
-3. Állítsuk a _Filter pane_/_Input_ tulajdonságot egy másik világos színre.
+1. Állítsuk a _Filter pane_/_Input_ tulajdonságot egy másik világos színre.
 
-4. Állítsuk a _Filter pane_/_Background_ tulajdonságot egy sötétebb színre.
+1. Állítsuk a _Filter pane_/_Background_ tulajdonságot egy sötétebb színre.
 
-5. Állítsuk a _Filter **cards**_/_Background_ tulajdonságot a _Filter pane_/_Input_-tal azonos színre. A végeredmény pl. ilyesmi lehet:
+1. Állítsuk a _Filter **cards**_/_Background_ tulajdonságot a _Filter pane_/_Input_-tal azonos színre. A végeredmény pl. ilyesmi lehet:
 
     ![Formázott szűrők](../images/powerbi/pb-1streport-formattedfilters.png)
 
-6. Mentsük el a változtatásokat, majd publikáljuk az elkészült jelentést az online szolgáltatásba a _Home_ lap _Publish_ gombjával!
+1. Mentsük el a változtatásokat, majd publikáljuk az elkészült jelentést az online szolgáltatásba a _Home_ lap _Publish_ gombjával!
 
     ![Publikálás gomb](../images/powerbi/pb-1streport-publishbutton.png)
 
-7. A publikálásnál jelöljük meg az alapértelmezett munkaterületet célként (_My Workspace_)
+1. A publikálásnál jelöljük meg az alapértelmezett munkaterületet célként (_My Workspace_)
 
     ![Publikálás dialógus](../images/powerbi/pb-1streport-publishdialog.png)
 
-8. Sikeres publikálást követően kattintsunk a dialógusablakban megjelenő linkre a jelentés megnyitásához.
+1. Sikeres publikálást követően kattintsunk a dialógusablakban megjelenő linkre a jelentés megnyitásához.
 
     ![Publikálás kész](../images/powerbi/pb-1streport-publishready.png)
 
-9. Kísérletezzünk az elkészült jelentésünkkel, hogy lássuk, mit csináltunk.
+1. Kísérletezzünk az elkészült jelentésünkkel, hogy lássuk, mit csináltunk.
 
     ![Publikált jelentés](../images/powerbi/pb-1streport-online.png)
 
