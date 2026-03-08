@@ -105,6 +105,8 @@ A Power BI-ban mintegy 150 féle adatforrásból tudunk adatokat importálni, ak
 
     ![Dátumok relációi](../images/powerbi/pb-load-datekey.png)
 
+1. Lehetséges, hogy a betöltés után nem jön létre kapcsolat a _Product_ tábla _ProductKey_ és a _Sales_ tábla _ProductKey_ oszlopai között. Ebben az esetben hozzuk létre a relációt az előző ponthoz hasonlóan.
+
 ### Hozzuk létre az első jelentést
 
 1. Váltsunk át _Report view_-ra.
