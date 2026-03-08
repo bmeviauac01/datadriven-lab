@@ -308,6 +308,9 @@ A megoldás lépéseit az alábbiakban ismertetjük:
 
 1. A táblázatban a megrendelési időket fogjuk év és hónap alapján csoportosítani. Itt kihasználjuk, hogy a rendszer "érti" a dátumok működését, így a _Date_/_Date_ oszlop kibontható és az év és hónap mező külön behúzható az adatok közé. Tegyük ezt meg!
 
+    !!! tip "Tipp"
+        Lehetséges, hogy a betöltés során nem jön létre automatikusan a _Date_/_Date_ dátum értelmezése. Ebben az esetben váltsuk át a _Date_/_Date_ oszlop értéktípusát _Date_-re a _Model View_-ban!
+
 1. Vegyük hozzá a táblázathoz a _Sales_/_Sales Amount_ és a _Sales_/_Order Quantity_ oszlopokat is.
 
 1. Próbáljuk ki, hogyan hat a _Slicer_-ben egyes kategóriák kiválasztása a mindenkori adatainkra.
