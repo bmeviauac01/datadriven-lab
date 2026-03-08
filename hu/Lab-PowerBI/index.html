@@ -1386,6 +1386,9 @@ Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb
 <p>Figyeljük meg a modellben, hogy a dátumok esetében a relációkat nem ismerte fel a betöltő. Adjuk ezt meg kézzel! Húzzuk rá egyesével a <em>Sales</em> tábla <em>DueDateKey</em>, <em>OrderDateKey</em> és <em>ShipDateKey</em> mezőit a <em>Date</em> tábla <em>DateKey</em> oszlopára.</p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/powerbi/pb-load-datekey.png" data-desc-position="bottom"><img alt="Dátumok relációi" src="../images/powerbi/pb-load-datekey.png"></a></p>
 </li>
+<li>
+<p>Lehetséges, hogy a betöltés után nem jön létre kapcsolat a <em>Product</em> tábla <em>ProductKey</em> és a <em>Sales</em> tábla <em>ProductKey</em> oszlopai között. Ebben az esetben hozzuk létre a relációt az előző ponthoz hasonlóan.</p>
+</li>
 </ol>
 <h3 id="hozzuk-letre-az-elso-jelentest">Hozzuk létre az első jelentést<a class="headerlink" href="#hozzuk-letre-az-elso-jelentest" title="Permanent link">¶</a></h3>
 <ol>
@@ -1608,6 +1611,10 @@ Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb
 </li>
 <li>
 <p>A táblázatban a megrendelési időket fogjuk év és hónap alapján csoportosítani. Itt kihasználjuk, hogy a rendszer "érti" a dátumok működését, így a <em>Date</em>/<em>Date</em> oszlop kibontható és az év és hónap mező külön behúzható az adatok közé. Tegyük ezt meg!</p>
+<div class="admonition tip">
+<p class="admonition-title">Tipp</p>
+<p>Lehetséges, hogy a betöltés során nem jön létre automatikusan a <em>Date</em>/<em>Date</em> dátum értelmezése. Ebben az esetben váltsuk át a <em>Date</em>/<em>Date</em> oszlop értéktípusát <em>Date</em>-re a <em>Model view</em>-ban!</p>
+</div>
 </li>
 <li>
 <p>Vegyük hozzá a táblázathoz a <em>Sales</em>/<em>Sales Amount</em> és a <em>Sales</em>/<em>Order Quantity</em> oszlopokat is.</p>
@@ -1682,8 +1689,8 @@ Majd ezekhez kapcsolódóan grafikonos nézetet is szolgáltatnak az adatok jobb
           </path>
         </svg>
       </span>
-      <span title="2026. március 6. 21:25:58">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 6. 21:25:58 CET"><span class="timeago" datetime="2026-03-06T21:25:58+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 6. 21:25:58 CET">2026-03-06</span>
+      <span title="2026. március 8. 04:06:11">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 8. 04:06:11 CET"><span class="timeago" datetime="2026-03-08T04:06:11+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 8. 04:06:11 CET">2026-03-08</span>
       </span>
     </span>
 
