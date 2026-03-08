@@ -105,6 +105,8 @@ A Power BI-ban mintegy 150 féle adatforrásból tudunk adatokat importálni, ak
 
     ![Dátumok relációi](../images/powerbi/pb-load-datekey.png)
 
+1. Lehetséges, hogy a betöltés után nem jön létre kapcsolat a _Product_ tábla _ProductKey_ és a _Sales_ tábla _ProductKey_ oszlopai között. Ebben az esetben hozzuk létre a relációt az előző ponthoz hasonlóan.
+
 ### Hozzuk létre az első jelentést
 
 1. Váltsunk át _Report view_-ra.
@@ -305,6 +307,9 @@ A megoldás lépéseit az alábbiakban ismertetjük:
 1. Helyezz egy _Table_ komponenst a _Slicer_ mellé. Szükség szerint méretezd át mindkettőt, hogy magasságuk hasonló legyen.
 
 1. A táblázatban a megrendelési időket fogjuk év és hónap alapján csoportosítani. Itt kihasználjuk, hogy a rendszer "érti" a dátumok működését, így a _Date_/_Date_ oszlop kibontható és az év és hónap mező külön behúzható az adatok közé. Tegyük ezt meg!
+
+    !!! tip "Tipp"
+        Lehetséges, hogy a betöltés során nem jön létre automatikusan a _Date_/_Date_ dátum értelmezése. Ebben az esetben váltsuk át a _Date_/_Date_ oszlop értéktípusát _Date_-re a _Model view_-ban!
 
 1. Vegyük hozzá a táblázathoz a _Sales_/_Sales Amount_ és a _Sales_/_Order Quantity_ oszlopokat is.
 
