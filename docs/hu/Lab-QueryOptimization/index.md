@@ -1,6 +1,6 @@
 # Lekérdezés optimalizálás
 
-A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldás és a magyarázat vázát. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának **saját szavaiddal** mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.
+A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldás és a magyarázat vázát. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. A feladatok megoldásának **saját szavaiddal** mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.
 
 ## Előfeltételek, felkészülés
 
