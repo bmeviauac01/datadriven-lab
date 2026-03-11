@@ -1,6 +1,6 @@
 # Lekérdezés optimalizálás
 
-A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldás és amagyarázat vázát. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának **saját szavaiddal** mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.
+A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az **első 5 feladat** során megadjuk a megoldás és a magyarázat vázát. A **továbbiak önálló feladatok**, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának **saját szavaiddal** mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.
 
 ## Előfeltételek, felkészülés
 
@@ -219,7 +219,7 @@ Add meg a használt SQL utasításokat, majd vizsgáld meg a lekérdezési terve
     
     ![](../images/queryopt/f3-2.png)
     
-    Ez is Clustered Index Scan lesz, de ami az érdekes, hogy a rendezés költsége jelentős (nagyobb mint a kikeresésé). Miután az elég költséges Index Scan-t megcsináltuk, még rendeznünk is kell, hiszen a kiolvasott rekordok ID szerint sorrendezettek nem `Price` szerint. Ez a lekérdezés nagyon költséges, az amúgy is drága scan után még rendezni is kell. A jó index nem csak a keresést segíti - de most nincs megfelelő indexünk.
+    Ez is Clustered Index Scan lesz, de ami az érdekes, hogy a rendezés költsége jelentős (nagyobb, mint a kikeresésé). Miután az elég költséges Index Scan-t megcsináltuk, még rendeznünk is kell, hiszen a kiolvasott rekordok ID szerint sorrendezettek nem `Price` szerint. Ez a lekérdezés nagyon költséges, az amúgy is drága scan után még rendezni is kell. A jó index nem csak a keresést segíti - de most nincs megfelelő indexünk.
 
 ### 4. Feladat (2p)
 
@@ -240,7 +240,7 @@ Ismételd meg az előbbi lekérdezéseket, és értelmezd a terveket!
 
     **f)**
 
-    Hiába az új index, ez még mindíg Index Scan lesz - hiszen a teljes tábla tartalmát kértük.
+    Hiába az új index, ez még mindig Index Scan lesz - hiszen a teljes tábla tartalmát kértük.
 
     **g)-i)**
     
