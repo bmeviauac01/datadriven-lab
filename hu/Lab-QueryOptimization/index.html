@@ -1435,7 +1435,7 @@
 
 
 <h1 id="lekerdezes-optimalizalas">Lekérdezés optimalizálás<a class="headerlink" href="#lekerdezes-optimalizalas" title="Permanent link">¶</a></h1>
-<p>A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az <strong>első 5 feladat</strong> során megadjuk a megoldás és amagyarázat vázát. A <strong>továbbiak önálló feladatok</strong>, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. Az feladatok megoldásának <strong>saját szavaiddal</strong> mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.</p>
+<p>A labor során a lekérdezés optimalizálást vizsgáljuk Microsoft SQL Server platformon. Azért, hogy a feladatok során megfelelően megértsük a működést, és dokumentálni is tudjuk, az <strong>első 5 feladat</strong> során megadjuk a megoldás és a magyarázat vázát. A <strong>továbbiak önálló feladatok</strong>, ahol a magyarázat kitalálása a feladat része. Mindegyik feladatmegoldás eredményét dokumentálni kell. A feladatok megoldásának <strong>saját szavaiddal</strong> mondatokba fogalmazva kell megadnod egy markdown formátumban írott dokumentumban.</p>
 <h2 id="elofeltetelek-felkeszules">Előfeltételek, felkészülés<a class="headerlink" href="#elofeltetelek-felkeszules" title="Permanent link">¶</a></h2>
 <p>A labor elvégzéséhez szükséges eszközök:</p>
 <ul>
@@ -1636,7 +1636,7 @@
 <p>Clustered Index Scan végigmegy a clustered index mentén. Ez továbbra is a teljes tábla felolvasása, hiszen a szűrésre nincs index. Ha van szűrési feltétel, minden soron végig kell menni és ki kell értékelni a feltételt. Mivel van Clusterd Index, így amentén haladunk, de nem sokra megyünk ezzel, lényegében egy Table Scan. Ezek nem hatékony lekérdezések. Mivel nem a Clustered Index rendezési kulcsra fogalmaztuk meg a feltételt, így az index nem sokat segít nekünk (ezért lesz Scan és nem Seek).</p>
 <p><strong>j)</strong></p>
 <p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../images/queryopt/f3-2.png" data-desc-position="bottom"><img alt="" src="../images/queryopt/f3-2.png"></a></p>
-<p>Ez is Clustered Index Scan lesz, de ami az érdekes, hogy a rendezés költsége jelentős (nagyobb mint a kikeresésé). Miután az elég költséges Index Scan-t megcsináltuk, még rendeznünk is kell, hiszen a kiolvasott rekordok ID szerint sorrendezettek nem <code>Price</code> szerint. Ez a lekérdezés nagyon költséges, az amúgy is drága scan után még rendezni is kell. A jó index nem csak a keresést segíti - de most nincs megfelelő indexünk.</p>
+<p>Ez is Clustered Index Scan lesz, de ami az érdekes, hogy a rendezés költsége jelentős (nagyobb, mint a kikeresésé). Miután az elég költséges Index Scan-t megcsináltuk, még rendeznünk is kell, hiszen a kiolvasott rekordok ID szerint sorrendezettek nem <code>Price</code> szerint. Ez a lekérdezés nagyon költséges, az amúgy is drága scan után még rendezni is kell. A jó index nem csak a keresést segíti - de most nincs megfelelő indexünk.</p>
 </details>
 <h3 id="4-feladat-2p">4. Feladat (2p)<a class="headerlink" href="#4-feladat-2p" title="Permanent link">¶</a></h3>
 <p>Vegyél fel indexet a <code>Price</code> oszlopra. Hogyan változnak az előbbi lekérdezések végrehajtási tervei?</p>
@@ -1649,7 +1649,7 @@
 <summary>Megoldás vázlat</summary>
 <p>A parancsok megegyeznek az előző feladatéval.</p>
 <p><strong>f)</strong></p>
-<p>Hiába az új index, ez még mindíg Index Scan lesz - hiszen a teljes tábla tartalmát kértük.</p>
+<p>Hiába az új index, ez még mindig Index Scan lesz - hiszen a teljes tábla tartalmát kértük.</p>
 <p><strong>g)-i)</strong></p>
 <p>Clustered Index Scan lesz, lényegében megegyezik a szűréshez elvileg használható index nélküli esettel.</p>
 <p>Miért nem használja az új indexünket? A nem túl nyilvánvaló ok a projekcióban rejlik, azaz, hogy teljes rekordokat kérünk vissza. Az NonClustered Index-ből csak egy halom rekordreferenciát kapnánk, amik alapján még utána fel kellene olvasni a szükséges rekordokat. Az optimalizáló – főleg kis táblák esetén- dönthet úgy, hogy ennek összköltsége nagyobb lenne, mint egy index scan-nek.</p>
@@ -1776,8 +1776,8 @@
           </path>
         </svg>
       </span>
-      <span title="2025. február 7. 09:36:03">
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2025. február 7. 09:36:03 CET"><span class="timeago" datetime="2025-02-07T09:36:03+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025. február 7. 09:36:03 CET">2025-02-07</span>
+      <span title="2026. március 11. 03:37:37">
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago" title="2026. március 11. 03:37:37 CET"><span class="timeago" datetime="2026-03-11T03:37:37+01:00" locale="hu"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2026. március 11. 03:37:37 CET">2026-03-11</span>
       </span>
     </span>
 
@@ -1793,6 +1793,8 @@
       <span>Szerzők</span>
       <nav><a href="https://github.com/akosdudas" target="_blank" rel="noopener noreferrer" class="md-author" title="@Akos Dudas">
           <img src="https://avatars.githubusercontent.com/u/11335181?u=9971512094b94810046de53f5c1dee78e9776a4f&amp;v=4?size=72" alt="@Akos Dudas">
+        </a><a href="https://github.com/C00lCr4ft24" target="_blank" rel="noopener noreferrer" class="md-author" title="@None">
+          <img src="https://avatars.githubusercontent.com/u/68408671?v=4?size=72" alt="@None">
         </a><a href="https://github.com/tibitoth" target="_blank" rel="noopener noreferrer" class="md-author" title="@Tibor Tóth">
           <img src="https://avatars.githubusercontent.com/u/8333960?u=d26653213d265ecdceeaf20a896d74f479d35450&amp;v=4?size=72" alt="@Tibor Tóth">
         </a></nav>      
